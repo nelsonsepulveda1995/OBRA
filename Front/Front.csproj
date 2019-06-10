@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{591E7F76-0F3B-4C2D-8E99-D5A8290E7BE0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Front</RootNamespace>
+    <AssemblyName>Front</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Net4.1.0.0\lib\net40\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Users\Admin\Acciones\Eliminar Usuario\EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Admin\Acciones\Eliminar Usuario\EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Admin\BotonesAdmid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Admin\BotonesAdmid.Designer.cs">
+      <DependentUpon>BotonesAdmid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Admin\Acciones\Modificar Usuario\ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Admin\Acciones\Modificar Usuario\ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Admin\Acciones\Registrar Usuario\NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Admin\Acciones\Registrar Usuario\NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Facturas de compra\FacturasDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Facturas de compra\FacturasDeCompras.Designer.cs">
+      <DependentUpon>FacturasDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Gestionar Provedores\GestionarProvedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Gestionar Provedores\GestionarProvedores.Designer.cs">
+      <DependentUpon>GestionarProvedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Lista de productos\ListaDeProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Lista de productos\ListaDeProductos.Designer.cs">
+      <DependentUpon>ListaDeProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Ordenes de compas\OrdenesDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Ordenes de compas\OrdenesDeCompras.Designer.cs">
+      <DependentUpon>OrdenesDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Gestionar Remitos\GestionarRemitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\Acciones\Gestionar Remitos\GestionarRemitos.Designer.cs">
+      <DependentUpon>GestionarRemitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\BotonesCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Compras\BotonesCompras.designer.cs">
+      <DependentUpon>BotonesCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Lista de productos\ListaDeProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Lista de productos\ListaDeProductos.Designer.cs">
+      <DependentUpon>ListaDeProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Ordenes de compas\OrdenesDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Ordenes de compas\OrdenesDeCompras.Designer.cs">
+      <DependentUpon>OrdenesDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Productos sin stock\ProductosSinStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Productos sin stock\ProductosSinStock.Designer.cs">
+      <DependentUpon>ProductosSinStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Recepcion de pedidos\RecepcionDePedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\Acciones\Recepcion de pedidos\RecepcionDePedidos.Designer.cs">
+      <DependentUpon>RecepcionDePedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\BotonesDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Deposito\BotonesDeposito.designer.cs">
+      <DependentUpon>BotonesDeposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Gerencia\Acciones\Reporte de compras\ReporteDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Gerencia\Acciones\Reporte de compras\ReporteDeCompras.Designer.cs">
+      <DependentUpon>ReporteDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Gerencia\Acciones\Reporte de ventas\ReporteDeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Gerencia\Acciones\Reporte de ventas\ReporteDeVentas.Designer.cs">
+      <DependentUpon>ReporteDeVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Gerencia\BotonesGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Gerencia\BotonesGerente.designer.cs">
+      <DependentUpon>BotonesGerente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Usuario\Acciones\Configuracion\ConfiguracionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Usuario\Acciones\Configuracion\ConfiguracionUsuario.Designer.cs">
+      <DependentUpon>ConfiguracionUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Facturas de ventas\FacturaDeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Facturas de ventas\FacturaDeVentas.Designer.cs">
+      <DependentUpon>FacturaDeVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Gestionar clientes\GestionarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Gestionar clientes\GestionarClientes.Designer.cs">
+      <DependentUpon>GestionarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Lista de productos\ListaDeProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Lista de productos\ListaDeProductos.Designer.cs">
+      <DependentUpon>ListaDeProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Productos sin stock\ProductosSinStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Productos sin stock\ProductosSinStock.Designer.cs">
+      <DependentUpon>ProductosSinStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\BotonesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\BotonesVentas.designer.cs">
+      <DependentUpon>BotonesVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Windows\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Windows\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Usuario\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Usuario\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Windows\Otros\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Windows\Otros\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Users\Admin\Acciones\Eliminar Usuario\EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Admin\BotonesAdmid.resx">
+      <DependentUpon>BotonesAdmid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Admin\Acciones\Modificar Usuario\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Admin\Acciones\Registrar Usuario\NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Compras\Acciones\Facturas de compra\FacturasDeCompras.resx">
+      <DependentUpon>FacturasDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Compras\Acciones\Gestionar Provedores\GestionarProvedores.resx">
+      <DependentUpon>GestionarProvedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Compras\Acciones\Lista de productos\ListaDeProductos.resx">
+      <DependentUpon>ListaDeProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Compras\Acciones\Ordenes de compas\OrdenesDeCompras.resx">
+      <DependentUpon>OrdenesDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Compras\Acciones\Gestionar Remitos\GestionarRemitos.resx">
+      <DependentUpon>GestionarRemitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Compras\BotonesCompras.resx">
+      <DependentUpon>BotonesCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Deposito\Acciones\Lista de productos\ListaDeProductos.resx">
+      <DependentUpon>ListaDeProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Deposito\Acciones\Ordenes de compas\OrdenesDeCompras.resx">
+      <DependentUpon>OrdenesDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Deposito\Acciones\Productos sin stock\ProductosSinStock.resx">
+      <DependentUpon>ProductosSinStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Deposito\Acciones\Recepcion de pedidos\RecepcionDePedidos.resx">
+      <DependentUpon>RecepcionDePedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Deposito\BotonesDeposito.resx">
+      <DependentUpon>BotonesDeposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Gerencia\Acciones\Reporte de compras\ReporteDeCompras.resx">
+      <DependentUpon>ReporteDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Gerencia\Acciones\Reporte de ventas\ReporteDeVentas.resx">
+      <DependentUpon>ReporteDeVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Gerencia\BotonesGerente.resx">
+      <DependentUpon>BotonesGerente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Usuario\Acciones\Configuracion\ConfiguracionUsuario.resx">
+      <DependentUpon>ConfiguracionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Ventas\Acciones\Facturas de ventas\FacturaDeVentas.resx">
+      <DependentUpon>FacturaDeVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Ventas\Acciones\Gestionar clientes\GestionarClientes.resx">
+      <DependentUpon>GestionarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Ventas\Acciones\Lista de productos\ListaDeProductos.resx">
+      <DependentUpon>ListaDeProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Ventas\Acciones\Productos sin stock\ProductosSinStock.resx">
+      <DependentUpon>ProductosSinStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Ventas\BotonesVentas.resx">
+      <DependentUpon>BotonesVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Usuario\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\Otros\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Logo\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\BarraVentana\Minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\BarraVentana\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Assets\Img\Perfil\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\BarraVentana\Maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\BarraVentana\Restaurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Login\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Login\Perfil\MaleUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Login\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Login\background V2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Main\Toggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Logo\Obra-GreyColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Main\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Logo\Obra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Img\Login\Warnig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{bb095c91-5b42-406a-99b6-a4e16fb97c85}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidad.csproj">
+      <Project>{e7217af6-7bcb-4294-bf89-ff7c0146ec20}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
