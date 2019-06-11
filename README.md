@@ -1,6 +1,4 @@
-# OBRA
-TP - Corralón de materiales
-
+# OBRA - Corralón de materiales
 Proyecto del Grupo 3 de la materia Tecnicas de la Programacion
 Universidad Provincial de Ezeiza
 
