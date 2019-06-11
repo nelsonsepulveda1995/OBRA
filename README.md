@@ -3,8 +3,8 @@
 Tecnicas de la Programacion
 Universidad Provincial de Ezeiza"
 
-###Integrantes
-####Elias Dominguez
-####Juan Madeo
-####Nelson Sepulveda
-####Juan Salomon
+### Integrantes
+#### Elias Dominguez
+#### Juan Madeo
+#### Nelson Sepulveda
+#### Juan Salomon
