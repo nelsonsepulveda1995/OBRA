@@ -82,5 +82,19 @@ namespace Front.Forms
         {
             Application.Exit();
         }
+
+        private void CajaIngresarContraceña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals(Keys.Enter))
+            {
+                MessageBox.Show($"PRESIONO {e.KeyChar}");
+                Instancia.BotonLoginIngresar_Click(sender, e);
+            }
+        }
+
+        private void CajaIngresarContraceña_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -40,9 +40,9 @@
             this.CajaIngresarContraceña = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.CajaIngresarUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.BotonLoginIngresar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.EtiquetaIniciarSesion = new MaterialSkin.Controls.MaterialLabel();
             this.ContenedorDelLogo = new System.Windows.Forms.PictureBox();
             this.BotonSalir = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Titulo = new System.Windows.Forms.Label();
             this.SigInPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContenedorDelLogo)).BeginInit();
             this.SuspendLayout();
@@ -179,6 +179,8 @@
             this.CajaIngresarContraceña.TabIndex = 1;
             this.CajaIngresarContraceña.TabStop = false;
             this.CajaIngresarContraceña.UseSystemPasswordChar = true;
+            this.CajaIngresarContraceña.Click += new System.EventHandler(this.CajaIngresarContraceña_Click);
+            this.CajaIngresarContraceña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CajaIngresarContraceña_KeyPress);
             // 
             // CajaIngresarUsuario
             // 
@@ -213,20 +215,6 @@
             this.BotonLoginIngresar.UseVisualStyleBackColor = true;
             this.BotonLoginIngresar.Click += new System.EventHandler(this.BotonLoginIngresar_Click);
             // 
-            // EtiquetaIniciarSesion
-            // 
-            this.EtiquetaIniciarSesion.AutoSize = true;
-            this.EtiquetaIniciarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.EtiquetaIniciarSesion.Depth = 0;
-            this.EtiquetaIniciarSesion.Font = new System.Drawing.Font("Roboto", 11F);
-            this.EtiquetaIniciarSesion.ForeColor = System.Drawing.Color.Gray;
-            this.EtiquetaIniciarSesion.Location = new System.Drawing.Point(142, 35);
-            this.EtiquetaIniciarSesion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.EtiquetaIniciarSesion.Name = "EtiquetaIniciarSesion";
-            this.EtiquetaIniciarSesion.Size = new System.Drawing.Size(99, 19);
-            this.EtiquetaIniciarSesion.TabIndex = 0;
-            this.EtiquetaIniciarSesion.Text = "Iniciar sesion";
-            // 
             // ContenedorDelLogo
             // 
             this.ContenedorDelLogo.BackColor = System.Drawing.Color.Transparent;
@@ -255,14 +243,25 @@
             this.BotonSalir.UseVisualStyleBackColor = true;
             this.BotonSalir.Click += new System.EventHandler(this.BotonSalir_Click);
             // 
+            // Titulo
+            // 
+            this.Titulo.AutoSize = true;
+            this.Titulo.BackColor = System.Drawing.Color.Transparent;
+            this.Titulo.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.Titulo.Location = new System.Drawing.Point(141, 37);
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Size = new System.Drawing.Size(89, 13);
+            this.Titulo.TabIndex = 6;
+            this.Titulo.Text = "INICIAR SESION";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(370, 540);
+            this.Controls.Add(this.Titulo);
             this.Controls.Add(this.BotonSalir);
-            this.Controls.Add(this.EtiquetaIniciarSesion);
             this.Controls.Add(this.BotonLoginIngresar);
             this.Controls.Add(this.SigInPanel);
             this.Controls.Add(this.PieDeVentana);
@@ -289,12 +288,12 @@
         private MaterialSkin.Controls.MaterialLabel EtiquetaContraceña;
         private MaterialSkin.Controls.MaterialSingleLineTextField CajaIngresarContraceña;
         private MaterialSkin.Controls.MaterialSingleLineTextField CajaIngresarUsuario;
-        private MaterialSkin.Controls.MaterialLabel EtiquetaIniciarSesion;
         private MaterialSkin.Controls.MaterialFlatButton BotonSalir;
         private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
         private System.Windows.Forms.Label WarningUser;
         private System.Windows.Forms.Label Warning;
         private System.Windows.Forms.Label WarningPassword;
+        private System.Windows.Forms.Label Titulo;
     }
 }
 
