@@ -179,7 +179,6 @@
             this.CajaIngresarContraceña.TabIndex = 1;
             this.CajaIngresarContraceña.TabStop = false;
             this.CajaIngresarContraceña.UseSystemPasswordChar = true;
-            this.CajaIngresarContraceña.Click += new System.EventHandler(this.CajaIngresarContraceña_Click);
             this.CajaIngresarContraceña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CajaIngresarContraceña_KeyPress);
             // 
             // CajaIngresarUsuario
@@ -247,10 +246,11 @@
             // 
             this.Titulo.AutoSize = true;
             this.Titulo.BackColor = System.Drawing.Color.Transparent;
-            this.Titulo.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.Titulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Titulo.Location = new System.Drawing.Point(141, 37);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(89, 13);
+            this.Titulo.Size = new System.Drawing.Size(97, 16);
             this.Titulo.TabIndex = 6;
             this.Titulo.Text = "INICIAR SESION";
             // 
