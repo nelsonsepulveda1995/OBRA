@@ -3,7 +3,7 @@ using System;
 using System.Data;
 namespace DAL
 {
-    public class ProductoDal
+    public class ProductoDAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para a conexion
         public DataTable Listarproductos() //listar todos los productos

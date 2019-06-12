@@ -5,7 +5,7 @@ using Entidad;
 
 namespace DAL
 {
-    public class AdministracionDal
+    public class AdministracionDAL
     {
         Conexion nuevaC = new Conexion();   //llamar esta instancia para la coneccion
 

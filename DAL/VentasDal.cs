@@ -3,7 +3,7 @@ using Entidad;
 
 namespace DAL
 {
-    public class VentasDal
+    public class VentasDAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
         public DataTable VerunCliente(Ecliente _cliente)
