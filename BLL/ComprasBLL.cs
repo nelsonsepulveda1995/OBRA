@@ -5,7 +5,7 @@ namespace BLL
 {
     public class ComprasDominio
     {
-        ProductoDal producto = new ProductoDal();
+        ProductoDAL producto = new ProductoDAL();
         public int CrearCompra()
         {
 

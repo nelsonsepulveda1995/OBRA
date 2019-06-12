@@ -6,7 +6,7 @@ namespace BLL
 {
     public class AdministracionBLL
     {
-        AdministracionDal Admin = new AdministracionDal();
+        AdministracionDAL Admin = new AdministracionDAL();
         public int CrearUsuario(Eusuario usuario)  //los medodos de escritura retornan un int
         {
             int res = 0;

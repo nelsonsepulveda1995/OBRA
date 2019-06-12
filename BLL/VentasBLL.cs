@@ -11,7 +11,7 @@ namespace BLL
 {
     public class VentasBLL
     {
-        VentasDal venta = new VentasDal();
+        VentasDAL venta = new VentasDAL();
         public DataTable ListarFacturaVentaBLL()
         {
             DataTable respuesta = new DataTable();

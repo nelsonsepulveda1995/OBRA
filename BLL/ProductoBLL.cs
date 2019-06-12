@@ -6,7 +6,7 @@ namespace BLL
 {
     public class ProductoDominio
     {
-        ProductoDal producto = new ProductoDal();
+        ProductoDAL producto = new ProductoDAL();
         public int CrearProducto()
         {
             return 1;

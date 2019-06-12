@@ -41,14 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministracionDal.cs" />
+    <Compile Include="AdministracionDAL.cs" />
     <Compile Include="ConnectiontoSql.cs" />
-    <Compile Include="DepositoDal.cs" />
-    <Compile Include="ProductoDal.cs" />
+    <Compile Include="DepositoDAL.cs" />
+    <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComprasDAL.cs" />
     <Compile Include="UserDAL.cs" />
-    <Compile Include="VentasDal.cs" />
+    <Compile Include="VentasDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidad.csproj">

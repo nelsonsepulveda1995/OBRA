@@ -5,7 +5,7 @@ namespace BLL
 {
     public class DepositoBLL
     {
-        readonly DepositoDal deposito = new DepositoDal();
+        readonly DepositoDAL deposito = new DepositoDAL();
         public DataTable ListarProductosconPocoStockBLL(int _cantidad)
         {
             return deposito.ListarProductosconPocoStockDAL(_cantidad);
