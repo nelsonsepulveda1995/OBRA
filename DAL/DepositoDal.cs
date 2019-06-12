@@ -1,14 +1,8 @@
-﻿using Entidad;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace DAL
 {
-    public class DepositoDal
+    public class DepositoDAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la coneccion
 
