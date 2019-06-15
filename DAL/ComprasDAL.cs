@@ -13,14 +13,14 @@ namespace DAL
             respuesta = nuevaC.LeerPorComando(coneccion);
             return respuesta;
         }
-        public int CrearCompraDAL()//Cambiar Variables para Crear Compras
+        public int CrearCompra()//Cambiar Variables para Crear Compras
         {
             int respuesta = 1;
 
 
             return respuesta;
         }
-        public int CrearProveedorDAL(Eproveedor _proveedor)
+        public int CrearProveedor(Eproveedor _proveedor)
         {
             int respuesta;
             string consulta = $"INSERT TO PROVEDOR(ID_PROV,NOMBRE,DIRECCION,TELEFONO,CUIT,CORREOELECTRONICO)VALUE({_proveedor.getidproveedor()},'{_proveedor.getnoombre()}','{_proveedor.getdireccion()}','{_proveedor.gettelefono()}','{_proveedor.getcuit()}','{_proveedor.getcorreo()}')";
