@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.BotonOrdenarCompras = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BotonCrearOrdenCompra = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.ProductoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.numupdow_cantidad = new System.Windows.Forms.NumericUpDown();
             this.cblistaproducto = new System.Windows.Forms.ComboBox();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Agregar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Vaciar = new MaterialSkin.Controls.MaterialFlatButton();
             this.tb_vistacarrito = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numupdow_cantidad)).BeginInit();
             this.SuspendLayout();
@@ -52,20 +52,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ORDENES DE COMPRAS";
             // 
-            // BotonOrdenarCompras
+            // BotonCrearOrdenCompra
             // 
-            this.BotonOrdenarCompras.AutoSize = true;
-            this.BotonOrdenarCompras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BotonOrdenarCompras.Depth = 0;
-            this.BotonOrdenarCompras.Icon = null;
-            this.BotonOrdenarCompras.Location = new System.Drawing.Point(515, 482);
-            this.BotonOrdenarCompras.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BotonOrdenarCompras.Name = "BotonOrdenarCompras";
-            this.BotonOrdenarCompras.Primary = true;
-            this.BotonOrdenarCompras.Size = new System.Drawing.Size(201, 36);
-            this.BotonOrdenarCompras.TabIndex = 1;
-            this.BotonOrdenarCompras.Text = "Crear Orden de Compras";
-            this.BotonOrdenarCompras.UseVisualStyleBackColor = true;
+            this.BotonCrearOrdenCompra.AutoSize = true;
+            this.BotonCrearOrdenCompra.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BotonCrearOrdenCompra.Depth = 0;
+            this.BotonCrearOrdenCompra.Icon = null;
+            this.BotonCrearOrdenCompra.Location = new System.Drawing.Point(515, 482);
+            this.BotonCrearOrdenCompra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BotonCrearOrdenCompra.Name = "BotonCrearOrdenCompra";
+            this.BotonCrearOrdenCompra.Primary = true;
+            this.BotonCrearOrdenCompra.Size = new System.Drawing.Size(201, 36);
+            this.BotonCrearOrdenCompra.TabIndex = 1;
+            this.BotonCrearOrdenCompra.Text = "Crear Orden de Compras";
+            this.BotonCrearOrdenCompra.UseVisualStyleBackColor = true;
             // 
             // BotonCancelar
             // 
@@ -83,18 +83,18 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
-            // materialLabel1
+            // ProductoLabel
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(63, 149);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(70, 19);
-            this.materialLabel1.TabIndex = 3;
-            this.materialLabel1.Text = "Producto";
+            this.ProductoLabel.AutoSize = true;
+            this.ProductoLabel.Depth = 0;
+            this.ProductoLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.ProductoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ProductoLabel.Location = new System.Drawing.Point(63, 149);
+            this.ProductoLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ProductoLabel.Name = "ProductoLabel";
+            this.ProductoLabel.Size = new System.Drawing.Size(70, 19);
+            this.ProductoLabel.TabIndex = 3;
+            this.ProductoLabel.Text = "Producto";
             // 
             // numupdow_cantidad
             // 
@@ -111,39 +111,39 @@
             this.cblistaproducto.Size = new System.Drawing.Size(228, 21);
             this.cblistaproducto.TabIndex = 10;
             // 
-            // materialFlatButton1
+            // Agregar
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(549, 141);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(167, 36);
-            this.materialFlatButton1.TabIndex = 11;
-            this.materialFlatButton1.Text = "Agregar al  Carrito";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
-            this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1_Click);
+            this.Agregar.AutoSize = true;
+            this.Agregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Agregar.Depth = 0;
+            this.Agregar.Icon = null;
+            this.Agregar.Location = new System.Drawing.Point(549, 141);
+            this.Agregar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Agregar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Primary = false;
+            this.Agregar.Size = new System.Drawing.Size(167, 36);
+            this.Agregar.TabIndex = 11;
+            this.Agregar.Text = "Agregar al  Carrito";
+            this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.AgregarAlCarrito_Click);
             // 
-            // materialFlatButton2
+            // Vaciar
             // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(67, 482);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(133, 36);
-            this.materialFlatButton2.TabIndex = 12;
-            this.materialFlatButton2.Text = "Vaciar  Carrito";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
-            this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2_Click);
+            this.Vaciar.AutoSize = true;
+            this.Vaciar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Vaciar.Depth = 0;
+            this.Vaciar.Icon = null;
+            this.Vaciar.Location = new System.Drawing.Point(67, 482);
+            this.Vaciar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Vaciar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Vaciar.Name = "Vaciar";
+            this.Vaciar.Primary = false;
+            this.Vaciar.Size = new System.Drawing.Size(133, 36);
+            this.Vaciar.TabIndex = 12;
+            this.Vaciar.Text = "Vaciar  Carrito";
+            this.Vaciar.UseVisualStyleBackColor = true;
+            this.Vaciar.Click += new System.EventHandler(this.VaciarCarrito_Click);
             // 
             // tb_vistacarrito
             // 
@@ -160,13 +160,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
             this.Controls.Add(this.tb_vistacarrito);
-            this.Controls.Add(this.materialFlatButton2);
-            this.Controls.Add(this.materialFlatButton1);
+            this.Controls.Add(this.Vaciar);
+            this.Controls.Add(this.Agregar);
             this.Controls.Add(this.cblistaproducto);
             this.Controls.Add(this.numupdow_cantidad);
-            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.BotonCancelar);
-            this.Controls.Add(this.BotonOrdenarCompras);
+            this.Controls.Add(this.BotonCrearOrdenCompra);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrdenesDeCompras";
@@ -181,13 +181,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialRaisedButton BotonOrdenarCompras;
+        private MaterialSkin.Controls.MaterialRaisedButton BotonCrearOrdenCompra;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel ProductoLabel;
         private System.Windows.Forms.NumericUpDown numupdow_cantidad;
         private System.Windows.Forms.ComboBox cblistaproducto;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private MaterialSkin.Controls.MaterialFlatButton Agregar;
+        private MaterialSkin.Controls.MaterialFlatButton Vaciar;
         private System.Windows.Forms.TextBox tb_vistacarrito;
     }
 }

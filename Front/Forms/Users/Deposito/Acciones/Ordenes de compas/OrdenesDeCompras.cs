@@ -13,8 +13,7 @@ namespace Front.Forms.Users.Deposito.Acciones
         Eproducto eproducto = new Eproducto();// instancia de entidad producto
         ProductoDominio productoBll = new ProductoDominio(); //instancias de producto en BLL  
         List<Eproducto> ListaProductos = new List<Eproducto>();//lista de  carrito donde se guardan los productos para laorden de compras
-
-
+        
         public OrdenesDeCompras()
         {
             InitializeComponent();
@@ -22,16 +21,13 @@ namespace Front.Forms.Users.Deposito.Acciones
 
         private void OrdenesDeCompras_Load(object sender, System.EventArgs e)
         {
-           
-            DataTable tabla = new DataTable();
-            tabla = productoBll.listarproductosBLL();
-            cblistaproducto.DataSource = tabla;
+            cblistaproducto.DataSource = productoBll.listarproductosBLL();;
             cblistaproducto.DisplayMember = "DESCRIPCION";
             cblistaproducto.ValueMember = "ID_PROD";
             tb_vistacarrito.Text = "  ";
         }
 
-        private void MaterialFlatButton1_Click(object sender, System.EventArgs e) //al tocar este boton hay que cargar a la lista lo seleccionado y mostrarlo en "listbCarrito"
+        private void AgregarAlCarrito_Click(object sender, System.EventArgs e) //al tocar este boton hay que cargar a la lista lo seleccionado y mostrarlo en "listbCarrito"
         {
             eproducto.setid_prod(Convert.ToInt16(cblistaproducto.SelectedValue)); //guarda el producto que agrego al carrito
             eproducto.setdescripcion(cblistaproducto.Text);
@@ -40,7 +36,7 @@ namespace Front.Forms.Users.Deposito.Acciones
             tb_vistacarrito.AppendText("\n"+eproducto.getdescripcion()+"     " + eproducto.getstock());
 
         }
-        private void MaterialFlatButton2_Click(object sender, EventArgs e)
+        private void VaciarCarrito_Click(object sender, EventArgs e)
         {
             ListaProductos.Clear();
         }
