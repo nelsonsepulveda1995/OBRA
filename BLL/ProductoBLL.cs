@@ -12,10 +12,10 @@ namespace BLL
             return 1;
         }
 
-        public DataTable listarproductosBLL()
+        public DataTable ListarProductos()
         {
             DataTable respuesta = new DataTable();
-            respuesta = producto.Listarproductos();
+            respuesta = producto.GetListaProductos();
             return respuesta;
         }
 

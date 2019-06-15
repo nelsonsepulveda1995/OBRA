@@ -84,10 +84,10 @@
             this.dglistaproductos.AllowUserToOrderColumns = true;
             this.dglistaproductos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dglistaproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dglistaproductos.Location = new System.Drawing.Point(116, 131);
+            this.dglistaproductos.Location = new System.Drawing.Point(67, 97);
             this.dglistaproductos.Name = "dglistaproductos";
             this.dglistaproductos.ReadOnly = true;
-            this.dglistaproductos.Size = new System.Drawing.Size(510, 316);
+            this.dglistaproductos.Size = new System.Drawing.Size(498, 168);
             this.dglistaproductos.TabIndex = 3;
             this.dglistaproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 

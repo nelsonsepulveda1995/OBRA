@@ -21,7 +21,7 @@ namespace Front.Forms.Users.Deposito.Acciones
 
         private void OrdenesDeCompras_Load(object sender, System.EventArgs e)
         {
-            cblistaproducto.DataSource = productoBll.listarproductosBLL();;
+            cblistaproducto.DataSource = productoBll.ListarProductos();;
             cblistaproducto.DisplayMember = "DESCRIPCION";
             cblistaproducto.ValueMember = "ID_PROD";
             tb_vistacarrito.Text = "  ";

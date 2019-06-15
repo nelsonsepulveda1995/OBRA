@@ -6,12 +6,9 @@ namespace DAL
     public class ProductoDAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para a conexion
-        public DataTable Listarproductos() //listar todos los productos
+        public DataTable GetListaProductos() //listar todos los productos
         {
-            string coneccion = "SELECT * FROM PRODUCTO";
-            DataTable respuesta = new DataTable();
-            respuesta = nuevaC.LeerPorComando(coneccion);
-            return respuesta;
+            return nuevaC.LeerPorStoreProcedure("spListarProductos");;
         }
         public DataTable Verunproducto(Eproducto _producto) //Trae todos los datos de un producto (puede servir para calcular el precio total o verificar stock)
         {

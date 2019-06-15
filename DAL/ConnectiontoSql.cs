@@ -45,7 +45,6 @@ namespace DAL
             //Me conecto...
             this.Conectar();
 
-
             try
             {
                 objComando.CommandText = pNombreStoreProcedure;
@@ -101,6 +100,43 @@ namespace DAL
                     //Lleno los SqlParameters a la lista de parametros
                     objComando.Parameters.Add(pParametrosSql);
                 }
+
+                //Instancio un adaptador con el parametro SqlCommand
+                var objAdaptador = new SqlDataAdapter(objComando);
+
+                //Lleno la tabla, el objeto unaTabla con el adaptador
+                objAdaptador.Fill(unaTabla);
+            }
+            catch (Exception)
+            {
+                //Como hay error... por el motivo que sea asigno el resultado a null
+                unaTabla = null;
+                throw;
+            }
+            finally
+            {
+                //Pase lo que pase me desconecto
+                this.Desconectar();
+            }
+            return unaTabla;
+        }
+
+        public DataTable LeerPorStoreProcedure(string pNombreStoreProcedure)
+        {
+            //Instancio un objeto del tipo DataTable
+            var unaTabla = new DataTable();
+
+            //Instancio un objeto del tipo SqlCommand
+            var objComando = new SqlCommand();
+
+            //Me conecto...
+            this.Conectar();
+
+            try
+            {
+                objComando.CommandText = pNombreStoreProcedure;
+                objComando.CommandType = CommandType.StoredProcedure;
+                objComando.Connection = this.objConexion;
 
                 //Instancio un adaptador con el parametro SqlCommand
                 var objAdaptador = new SqlDataAdapter(objComando);

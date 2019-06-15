@@ -2,7 +2,6 @@
 using System.Data;
 using System.Windows.Forms;
 
-
 namespace Front.Forms.Users.Compras.Acciones
 {
     
@@ -22,7 +21,7 @@ namespace Front.Forms.Users.Compras.Acciones
         private void ListaDeProductos_Load(object sender, System.EventArgs e)
         {
             DataTable tabla = new DataTable();
-            tabla = productos.listarproductosBLL();
+            tabla = productos.ListarProductos();
             dglistaproductos.DataSource = tabla;
         }
     }
