@@ -7,7 +7,7 @@ namespace Front.Forms.Users.Compras.Acciones
     
     public partial class ListaDeProductos : Form
     {
-        ProductoDominio productos = new ProductoDominio();
+        ProductoBLL productos = new ProductoBLL();
         public ListaDeProductos()
         {
             InitializeComponent();

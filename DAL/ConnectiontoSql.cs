@@ -88,7 +88,6 @@ namespace DAL
             //Me conecto...
             this.Conectar();
 
-
             try
             {
                 objComando.CommandText = pNombreStoreProcedure;
