@@ -11,12 +11,7 @@ namespace BLL
             return 1;
         }
 
-        public DataTable ListarProductos()
-        {
-            DataTable respuesta = new DataTable();
-            respuesta = productoDAL.GetListaProductos();
-            return respuesta;
-        }
+        public DataTable ListarProductos() => productoDAL.GetListaProductos();
 
         public int CargarStock()
         {

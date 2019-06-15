@@ -12,7 +12,7 @@ namespace DAL
         {
             return nuevaC.LeerPorStoreProcedure("spListarProductos");
         }
-        public DataTable Verunproducto(int ID) //Trae todos los datos de un producto (puede servir para calcular el precio total o verificar stock)
+        public DataTable GetProducto(int ID) //Trae todos los datos de un producto (puede servir para calcular el precio total o verificar stock)
         {
             SqlParameter parametro = nuevaC.CrearParametro("@idProducto", ID);
             return nuevaC.LeerPorStoreProcedure("uspGetProducto", parametro);
