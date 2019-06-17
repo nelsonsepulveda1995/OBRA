@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Boton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -41,9 +43,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label1.Location = new System.Drawing.Point(62, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 30);
+            this.label1.Size = new System.Drawing.Size(230, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ELIMINAR USUARIO";
+            this.label1.Text = "DESABILITAR USUARIO";
             // 
             // Boton
             // 
@@ -55,9 +57,9 @@
             this.Boton.MouseState = MaterialSkin.MouseState.HOVER;
             this.Boton.Name = "Boton";
             this.Boton.Primary = true;
-            this.Boton.Size = new System.Drawing.Size(144, 36);
+            this.Boton.Size = new System.Drawing.Size(166, 36);
             this.Boton.TabIndex = 1;
-            this.Boton.Text = "Eliminar usuario";
+            this.Boton.Text = "desabilitar usuario";
             this.Boton.UseVisualStyleBackColor = true;
             // 
             // BotonCancelar
@@ -76,11 +78,34 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(270, 150);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(306, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(63, 152);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(139, 19);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Seleccione Usuario";
+            // 
             // EliminarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.Boton);
             this.Controls.Add(this.label1);
@@ -97,5 +122,7 @@
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton Boton;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
