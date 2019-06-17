@@ -28,5 +28,32 @@ namespace DAL
             respuesta=nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
+        public DataTable ListarDetalleVentaBLL()
+        {
+            DataTable respuesta = new DataTable();
+            string consulta = "select* from DETALLEFACTURAVENTA";
+            respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
+        }
+        public int CrearClienteBLL(Ecliente cliente)
+        {
+            if (VerificarClienteBLL(cliente))
+            {
+                string consulta = $"insert to cliente ()"; // COMPLETAR
+                return 1;
+            }
+            return -1;
+        }
+        public bool VerificarClienteBLL(Ecliente cliente)
+        {
+            DataTable temp = new DataTable();
+            string consulta = $"select * from CLIENTE WHERE DNI={cliente.getidcliente()}";
+            temp = nuevaC.LeerPorComando(consulta);
+            if (temp.Rows.Count > 0)
+            {
+                return false;   //si ya existe un cliente igual
+            }
+            return true;
+        }
     }
 }

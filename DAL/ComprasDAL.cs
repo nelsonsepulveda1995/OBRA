@@ -28,11 +28,28 @@ namespace DAL
         }
         public DataTable VerFacturasCompras() //FUNCION  A COMPLETAR
         {
-            
             DataTable respuesta = new DataTable();
-
+            string consulta = "SELECT * FROM FACTURACOMPRA";
+            respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
-
+        }
+        public DataTable VerDetalleFacturaCompraDAL()
+        {
+            DataTable respuesta = new DataTable();
+            string consulta = "SELECT * FROM DETALLEFACTURACOMPRA";
+            respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
+        }
+        public bool VerificarProveedorDAL(Eproveedor proveedor)
+        {
+            DataTable temp = new DataTable();
+            string consulta = $"SELECT ID_PROV FROM PROVEEDOR WHERE CUIT ={proveedor.getcuit()}"; //se busca proveedor por cuit
+            temp = nuevaC.LeerPorComando(consulta);
+            if (temp.Rows.Count > 0)
+            {
+                return false;    // si existe no se puede crear de nuevo
+            }
+            return true;    //si no existe true
         }
     }
 }

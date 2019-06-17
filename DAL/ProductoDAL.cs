@@ -22,5 +22,13 @@ namespace DAL
             SqlParameter parametro = nuevaC.CrearParametro("@idProducto", ID);
             return Convert.ToInt32(nuevaC.LeerPorStoreProcedure("uspGetProducto", parametro).Rows[0]["CANTIDAD"]);
         }
+        public DataTable ListarMediosdePagoDAL()
+        {
+            DataTable respuesta = new DataTable();
+            SqlParameter[] parametros = new SqlParameter[0];
+            respuesta = nuevaC.LeerPorStoreProcedure("spListarMedioDePago", parametros);
+            return respuesta;
+        }
+
     }
 }
