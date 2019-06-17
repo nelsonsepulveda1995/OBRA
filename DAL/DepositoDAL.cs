@@ -1,4 +1,4 @@
-﻿using Entidades;
+﻿using Entidad;
 using System.Data;
 
 namespace DAL

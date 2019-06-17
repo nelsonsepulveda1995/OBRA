@@ -18,5 +18,11 @@ namespace BLL
             return 1;
         }
         public bool VerificarStockProducto(int ID) => productoDAL.GetStockProducto(ID) > 0;
+
+        public DataTable ListarMediodePagoBLL()
+        {
+            DataTable respuesta = new DataTable();
+            return respuesta;
+        }
     }
 }
