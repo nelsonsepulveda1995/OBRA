@@ -128,6 +128,7 @@
             this.BotonCrearVenta.TabIndex = 16;
             this.BotonCrearVenta.Text = "CREAR VENTA";
             this.BotonCrearVenta.UseVisualStyleBackColor = true;
+            this.BotonCrearVenta.Click += new System.EventHandler(this.BotonCrearVenta_Click);
             // 
             // BotonesVentas
             // 

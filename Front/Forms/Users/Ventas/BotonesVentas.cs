@@ -28,5 +28,10 @@ namespace Front.Forms.Users.Ventas
         {
             Main.AtenderAccion<Acciones.ListaDeProductos>(this);
         }
+
+        private void BotonCrearVenta_Click(object sender, System.EventArgs e)
+        {
+            Main.AtenderAccion<Acciones.CrearVenta>(this);
+        }
     }
 }

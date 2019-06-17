@@ -178,6 +178,12 @@
     <Compile Include="Forms\Users\Usuario\Acciones\Configuracion\ConfiguracionUsuario.Designer.cs">
       <DependentUpon>ConfiguracionUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Crear Venta\CrearVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Ventas\Acciones\Crear Venta\CrearVenta.Designer.cs">
+      <DependentUpon>CrearVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Users\Ventas\Acciones\Facturas de ventas\FacturaDeVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\Usuario\Acciones\Configuracion\ConfiguracionUsuario.resx">
       <DependentUpon>ConfiguracionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Ventas\Acciones\Crear Venta\CrearVenta.resx">
+      <DependentUpon>CrearVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\Ventas\Acciones\Facturas de ventas\FacturaDeVentas.resx">
       <DependentUpon>FacturaDeVentas.cs</DependentUpon>
