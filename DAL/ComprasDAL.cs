@@ -7,7 +7,6 @@ namespace DAL
         Conexion nuevaC = new Conexion(); //llamar esta instancia para la coneccion
         public DataTable ListarProveedor()
         {
-
             string coneccion = $"select * from PROVEEDOR";
             DataTable respuesta = new DataTable();
             respuesta = nuevaC.LeerPorComando(coneccion);
