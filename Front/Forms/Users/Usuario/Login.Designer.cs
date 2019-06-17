@@ -161,7 +161,7 @@
             this.EtiquetaContraceña.Name = "EtiquetaContraceña";
             this.EtiquetaContraceña.Size = new System.Drawing.Size(86, 19);
             this.EtiquetaContraceña.TabIndex = 2;
-            this.EtiquetaContraceña.Text = "Contraceña";
+            this.EtiquetaContraceña.Text = "Contraseña";
             // 
             // CajaIngresarContraceña
             // 

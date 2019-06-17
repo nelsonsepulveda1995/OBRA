@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ecliente.cs" />
+    <Compile Include="EDetalleOrdenCompra.cs" />
+    <Compile Include="EordenCompra.cs" />
     <Compile Include="Eproducto.cs" />
     <Compile Include="Eproveedor.cs" />
     <Compile Include="Eusuario.cs" />

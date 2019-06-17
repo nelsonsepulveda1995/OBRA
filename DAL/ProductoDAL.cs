@@ -1,38 +1,33 @@
 ﻿using Entidad;
 using System;
 using System.Data;
+using System.Data.SqlClient;
+
 namespace DAL
 {
     public class ProductoDAL
     {
-        Conexion nuevaC = new Conexion(); //llamar a esta instancia para a conexion
-        public DataTable Listarproductos() //listar todos los productos
+        readonly Conexion nuevaC = new Conexion(); //llamar a esta instancia para a conexion
+        public DataTable GetListaProductos() //listar todos los productos
         {
-            string coneccion = "SELECT * FROM PRODUCTO";
-            DataTable respuesta = new DataTable();
-            respuesta = nuevaC.LeerPorComando(coneccion);
-            return respuesta;
+            return nuevaC.LeerPorStoreProcedure("spListarProductos");
         }
-        public DataTable Verunproducto(Eproducto _producto) //Trae todos los datos de un producto (puede servir para calcular el precio total o verificar stock)
+        public DataTable GetProducto(int ID) //Trae todos los datos de un producto (puede servir para calcular el precio total o verificar stock)
         {
-            string coneccion = $"SELECT * FROM PRODUCTOS WHERE ID_PROD='{_producto.getid_prod()}'";
-            DataTable respuesta = new DataTable();
-            respuesta = nuevaC.LeerPorComando(coneccion);
-            return respuesta;
-
+            SqlParameter parametro = nuevaC.CrearParametro("@idProducto", ID);
+            return nuevaC.LeerPorStoreProcedure("uspGetProducto", parametro);
         }
-        public bool VerificarStockunProductoDAL(Eproducto _producto)// TRUE si cantidad >0 FALSE si cantidad ==0
+        public int GetStockProducto(int ID)// TRUE si cantidad >0 FALSE si cantidad ==0
         {
-            bool respuesta = true;
-            DataTable temp = new DataTable();
-            string coneccion = $"SELECT CANTIDAD FROM PRODUCTO WHERE ID_PRODUCTO='{_producto.getid_prod()}'";
-            temp = nuevaC.LeerPorComando(coneccion);
-            if (Convert.ToInt64(temp.Rows[0]["CANTIDAD"]) == 0)
-            {
-                respuesta = false;
-                return respuesta;
-            }
-            else return respuesta;
+            SqlParameter parametro = nuevaC.CrearParametro("@idProducto", ID);
+            return Convert.ToInt32(nuevaC.LeerPorStoreProcedure("uspGetProducto", parametro).Rows[0]["CANTIDAD"]);
+        }
+        public DataTable ListarMediosdePagoDAL()
+        {
+            DataTable respuesta = new DataTable();
+            SqlParameter[] parametros = new SqlParameter[0];
+            respuesta = nuevaC.LeerPorStoreProcedure("spListarMedioDePago", parametros);
+            return respuesta;
         }
 
     }

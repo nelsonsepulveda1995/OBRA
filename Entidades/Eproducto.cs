@@ -11,24 +11,24 @@ namespace Entidad
 
         public override string ToString()
         {
-            //Asumo nombres de propiedades Marca, Modelo y Anno.
+            //Asumo nombres de propiedades Marca, Modelo y Año.
             return String.Format("{0} {1}", descripcion, stock);
         }
 
         #region setters
-        public void setid_prod(int _idprod)
+        public void SetID(int _idprod)
         {
             id_prod = _idprod;
         }
-        public void setstock(int _stock)
+        public void SetStock(int _stock)
         {
             stock = _stock;
         }
-        public void setdescripcion(string _des)
+        public void SetDescripcion(string _des)
         {
             descripcion = _des;
         }
-        public void setprecio(decimal _precio)
+        public void SetPrecio(decimal _precio)
         {
             precio = _precio;
         }
@@ -36,19 +36,19 @@ namespace Entidad
 
         #region getters
 
-        public int getid_prod()
+        public int GerID()
         {
             return this.id_prod;
         }
-        public int getstock()
+        public int GetStock()
         {
             return this.stock;
         }
-        public string getdescripcion()
+        public string GetDescripcion()
         {
             return this.descripcion;
         }
-        public decimal getprecio()
+        public decimal GetPrecio()
         {
             return this.precio;
         }

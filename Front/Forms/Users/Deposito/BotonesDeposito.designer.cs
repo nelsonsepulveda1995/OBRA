@@ -47,7 +47,7 @@
             this.BotonProductosSinStock.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonProductosSinStock.Name = "BotonProductosSinStock";
             this.BotonProductosSinStock.Primary = false;
-            this.BotonProductosSinStock.Size = new System.Drawing.Size(185, 36);
+            this.BotonProductosSinStock.Size = new System.Drawing.Size(205, 36);
             this.BotonProductosSinStock.TabIndex = 14;
             this.BotonProductosSinStock.Text = "Productos sin stock";
             this.BotonProductosSinStock.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             this.BotonListaDeProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonListaDeProductos.Name = "BotonListaDeProductos";
             this.BotonListaDeProductos.Primary = false;
-            this.BotonListaDeProductos.Size = new System.Drawing.Size(185, 36);
+            this.BotonListaDeProductos.Size = new System.Drawing.Size(205, 36);
             this.BotonListaDeProductos.TabIndex = 13;
             this.BotonListaDeProductos.Text = "Lista de productos";
             this.BotonListaDeProductos.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             this.BotonOrdenesDeCompra.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonOrdenesDeCompra.Name = "BotonOrdenesDeCompra";
             this.BotonOrdenesDeCompra.Primary = false;
-            this.BotonOrdenesDeCompra.Size = new System.Drawing.Size(185, 36);
+            this.BotonOrdenesDeCompra.Size = new System.Drawing.Size(205, 36);
             this.BotonOrdenesDeCompra.TabIndex = 15;
             this.BotonOrdenesDeCompra.Text = "Crear Ordenes de compra";
             this.BotonOrdenesDeCompra.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.BotonRecepcionDePedidos.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonRecepcionDePedidos.Name = "BotonRecepcionDePedidos";
             this.BotonRecepcionDePedidos.Primary = false;
-            this.BotonRecepcionDePedidos.Size = new System.Drawing.Size(185, 36);
+            this.BotonRecepcionDePedidos.Size = new System.Drawing.Size(205, 36);
             this.BotonRecepcionDePedidos.TabIndex = 16;
             this.BotonRecepcionDePedidos.Text = "Recepcion de pedidos";
             this.BotonRecepcionDePedidos.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(185, 497);
+            this.ClientSize = new System.Drawing.Size(205, 497);
             this.Controls.Add(this.BotonRecepcionDePedidos);
             this.Controls.Add(this.BotonOrdenesDeCompra);
             this.Controls.Add(this.BotonProductosSinStock);

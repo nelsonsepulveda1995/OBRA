@@ -1,36 +1,27 @@
 ﻿using DAL;
-using Entidad;
 using System.Data;
 
 namespace BLL
 {
-    public class ProductoDominio
+    public class ProductoBLL
     {
-        ProductoDAL producto = new ProductoDAL();
+        ProductoDAL productoDAL = new ProductoDAL();
         public int CrearProducto()
         {
             return 1;
         }
 
-        public DataTable listarproductosBLL()
-        {
-            DataTable respuesta = new DataTable();
-            respuesta = producto.Listarproductos();
-            return respuesta;
-        }
+        public DataTable ListarProductos() => productoDAL.GetListaProductos();
 
         public int CargarStock()
         {
             return 1;
         }
-        public bool VerificarStockunProductoBLL(Eproducto _producto)
+        public bool VerificarStockProducto(int ID) => productoDAL.GetStockProducto(ID) > 0;
+
+        public DataTable ListarMediodePagoBLL()
         {
-            bool respuesta = true;
-            if (producto.VerificarStockunProductoDAL(_producto))
-            {
-                respuesta = false;
-                return respuesta;
-            }
+            DataTable respuesta = new DataTable();
             return respuesta;
         }
     }

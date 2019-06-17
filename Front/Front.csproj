@@ -351,7 +351,9 @@
   <ItemGroup>
     <None Include="Assets\Img\BarraVentana\Cerrar.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\Users\Ventas\Acciones\Crear Venta\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Img\Perfil\User.png" />
   </ItemGroup>
