@@ -37,6 +37,7 @@
             this.Agregar = new MaterialSkin.Controls.MaterialFlatButton();
             this.Vaciar = new MaterialSkin.Controls.MaterialFlatButton();
             this.tb_vistacarrito = new System.Windows.Forms.TextBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numupdow_cantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@
             // 
             // numupdow_cantidad
             // 
-            this.numupdow_cantidad.Location = new System.Drawing.Point(422, 147);
+            this.numupdow_cantidad.Location = new System.Drawing.Point(443, 147);
             this.numupdow_cantidad.Name = "numupdow_cantidad";
             this.numupdow_cantidad.Size = new System.Drawing.Size(64, 20);
             this.numupdow_cantidad.TabIndex = 9;
@@ -147,18 +148,31 @@
             // 
             // tb_vistacarrito
             // 
-            this.tb_vistacarrito.Location = new System.Drawing.Point(153, 213);
+            this.tb_vistacarrito.Location = new System.Drawing.Point(280, 237);
             this.tb_vistacarrito.Multiline = true;
             this.tb_vistacarrito.Name = "tb_vistacarrito";
-            this.tb_vistacarrito.ReadOnly = true;
-            this.tb_vistacarrito.Size = new System.Drawing.Size(358, 219);
+            this.tb_vistacarrito.Size = new System.Drawing.Size(206, 213);
             this.tb_vistacarrito.TabIndex = 13;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(191, 237);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel1.TabIndex = 14;
+            this.materialLabel1.Text = "Carrito";
             // 
             // OrdenesDeCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.tb_vistacarrito);
             this.Controls.Add(this.Vaciar);
             this.Controls.Add(this.Agregar);
@@ -189,5 +203,6 @@
         private MaterialSkin.Controls.MaterialFlatButton Agregar;
         private MaterialSkin.Controls.MaterialFlatButton Vaciar;
         private System.Windows.Forms.TextBox tb_vistacarrito;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

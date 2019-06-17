@@ -48,7 +48,7 @@
             this.DelUsuario.Primary = false;
             this.DelUsuario.Size = new System.Drawing.Size(200, 36);
             this.DelUsuario.TabIndex = 5;
-            this.DelUsuario.Text = "ELIMINAR USUARIO";
+            this.DelUsuario.Text = "desabilitar USUARIO";
             this.DelUsuario.UseVisualStyleBackColor = true;
             this.DelUsuario.Click += new System.EventHandler(this.DelUsuario_Click);
             // 
