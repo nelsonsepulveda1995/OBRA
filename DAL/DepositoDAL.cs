@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using System;
 using System.Data;
 
 namespace DAL
@@ -16,18 +17,33 @@ namespace DAL
         }
         public int CrearOrdenCompraDAL(EordenCompra Orden)
         {
-            int respuesta = 0;
+            int respuesta;
             string consulta = $"INSERT INTO ORDENDECOMPRA(ID_OCOMPRA,NOMBREUSUARIO,FECHA,ESTADO)VALUE('{Orden.GetIdOrdenCompra()}','{Orden.Getid_usuario()}','{Orden.GetFecha()}','{Orden.Getestado()}')";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
         public int CrearDetalleOrdenCompraDAL(EDetalleOrdenCompra detalle)
         {
-            int respuesta = 0;
-            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (id_detalleoc,id_ocompra,id_prod,cant,precioxunidad)VALUE('{detalle.get_idDetalleOrden()}','{detalle.get_idOCompras()}','{detalle.get_idProducto()}','{detalle.getCantidad()}','{detalle.getPrecio()}')";
+            int respuesta;
+            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (id_ocompra,id_prod,cant,precioxunidad)VALUE('{detalle.get_idOCompras()}','{detalle.get_idProducto()}','{detalle.getCantidad()}','{detalle.getPrecio()}')";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
-
+        public int UltimoIdOrdeCompra()
+        {
+            DataTable temp = new DataTable();
+            string consulta = "select top(1) ID_OCOMPRA FROM ORDENDECOMPRA ORDER BY ID_OCOMPRA DESC";
+            temp = nuevaC.LeerPorComando(consulta);
+            if (temp.Rows.Count > 0)
+            {
+                int respuesta = Convert.ToInt32(temp.Rows[0]["ID_OCOMPRA"]);
+                return respuesta;
+            }
+            else
+            {
+                return 1;//si la bd esta vacia retorna el valor 1 para empezar la cuenta
+            }
+        
+        }
     }
 }

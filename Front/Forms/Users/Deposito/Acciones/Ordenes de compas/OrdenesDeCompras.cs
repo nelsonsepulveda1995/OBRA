@@ -14,7 +14,7 @@ namespace Front.Forms.Users.Deposito.Acciones
         EDetalleOrdenCompra eDetalleOrden = new EDetalleOrdenCompra();// instancia de entidad producto
         ProductoBLL productoBll = new ProductoBLL(); //instancias de producto en BLL  
         List<EDetalleOrdenCompra> ListaProductos = new List<EDetalleOrdenCompra>();//lista de  carrito donde se guardan los productos para laorden de compras
-        DepositoDAL deposito = new DepositoDAL();
+        DepositoBLL deposito = new DepositoBLL();
         UsuarioBLL usuario = new UsuarioBLL();
 
         public OrdenesDeCompras()
@@ -55,7 +55,14 @@ namespace Front.Forms.Users.Deposito.Acciones
             ordencompra.Setid_usuario(usuario.GetUsuarioName());
             //orden de compra cargada 
 
-            deposito.CrearOrdenCompraDAL(ordencompra);   //seguir mañana !!!!!  conectar orden con detalle eso es mucho muy importate
+            if (ListaProductos.Count == 0) //revisa si la lista tiene objetos
+            {
+                MessageBox.Show("Carrito vacio !!!");
+            }
+            else {
+                deposito.CrearOrdenCompraBLL(ordencompra, ListaProductos);  //seguir mañana !!!!!  conectar orden con detalle eso es mucho muy importate
+            }
+               
         }
     }
 }

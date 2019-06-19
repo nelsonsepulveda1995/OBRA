@@ -16,6 +16,7 @@ namespace BLL
         }
         public int CrearOrdenCompraBLL(EordenCompra Orden, List<EDetalleOrdenCompra> listadetalles)
         {
+
             int respuesta;
             respuesta = deposito.CrearOrdenCompraDAL(Orden);
             if (respuesta == 0)
@@ -24,13 +25,12 @@ namespace BLL
             }
             foreach (EDetalleOrdenCompra detalle in listadetalles)
             {
-
+                detalle.Setid_Compras(Orden.GetIdOrdenCompra()); //carga la fk de orden de compra  en el detalle
                 if (CrearDetalleOrdenCompraBLL(detalle) == 0)
                 {
                     return -2;   //error  en crear el detalle de compra
                 }
             }
-
             return respuesta;
         }
 
