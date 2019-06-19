@@ -1,5 +1,7 @@
 ﻿using Entidad;
 using System.Data;
+using System.Data.SqlClient;
+
 namespace DAL
 {
     public class ComprasDAL
@@ -50,6 +52,27 @@ namespace DAL
                 return false;    // si existe no se puede crear de nuevo
             }
             return true;    //si no existe true
+        }
+        public DataTable ListarOrdenesdeCompras()
+        {
+            DataTable respuesta = new DataTable();
+            SqlParameter[] parameter   = new SqlParameter[0];
+            respuesta = nuevaC.LeerPorStoreProcedure("spListarOrdenCompra", parameter);
+            return respuesta;
+        }
+        public DataTable ListarOrdenesporEstado(int estado)//1 sin aprobar 2 aprobado
+        {
+            DataTable respuesta = new DataTable();
+            string consulta = $"Select * FROM ORDENDECOMPRA WHERE ESTADO='{estado}'";
+            respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
+        }
+        public DataTable DetalledeUnaOrden(int id)
+        {
+            DataTable respuesta = new DataTable();
+            string consulta = $"Select * from DETALLEORDENCOMPRA WHERE ID_DETALLEOC='{id}'";
+            respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
         }
     }
 }

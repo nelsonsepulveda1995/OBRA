@@ -31,11 +31,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BotonOrdenarCompras = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_listordenes = new System.Windows.Forms.ComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_vistadetalle = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.cb_listprovee = new System.Windows.Forms.ComboBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -81,13 +83,13 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cb_listordenes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(267, 130);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(325, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cb_listordenes.FormattingEnabled = true;
+            this.cb_listordenes.Location = new System.Drawing.Point(267, 130);
+            this.cb_listordenes.Name = "cb_listordenes";
+            this.cb_listordenes.Size = new System.Drawing.Size(302, 21);
+            this.cb_listordenes.TabIndex = 3;
             // 
             // materialLabel1
             // 
@@ -102,13 +104,13 @@
             this.materialLabel1.TabIndex = 4;
             this.materialLabel1.Text = "Seleccione Orden sin Aprovar ";
             // 
-            // textBox1
+            // tb_vistadetalle
             // 
-            this.textBox1.Location = new System.Drawing.Point(267, 237);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 182);
-            this.textBox1.TabIndex = 7;
+            this.tb_vistadetalle.Location = new System.Drawing.Point(267, 198);
+            this.tb_vistadetalle.Multiline = true;
+            this.tb_vistadetalle.Name = "tb_vistadetalle";
+            this.tb_vistadetalle.Size = new System.Drawing.Size(259, 175);
+            this.tb_vistadetalle.TabIndex = 7;
             // 
             // materialLabel2
             // 
@@ -116,7 +118,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(130, 236);
+            this.materialLabel2.Location = new System.Drawing.Point(39, 216);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(119, 19);
@@ -129,7 +131,7 @@
             this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton1.Depth = 0;
             this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(629, 121);
+            this.materialFlatButton1.Location = new System.Drawing.Point(593, 121);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
@@ -138,23 +140,48 @@
             this.materialFlatButton1.TabIndex = 9;
             this.materialFlatButton1.Text = "Ver Detalle";
             this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1_Click);
+            // 
+            // cb_listprovee
+            // 
+            this.cb_listprovee.FormattingEnabled = true;
+            this.cb_listprovee.Location = new System.Drawing.Point(267, 418);
+            this.cb_listprovee.Name = "cb_listprovee";
+            this.cb_listprovee.Size = new System.Drawing.Size(187, 21);
+            this.cb_listprovee.TabIndex = 10;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(39, 420);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(159, 19);
+            this.materialLabel3.TabIndex = 11;
+            this.materialLabel3.Text = "Seleccionar proveedor";
             // 
             // OrdenesDeCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.cb_listprovee);
             this.Controls.Add(this.materialFlatButton1);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_vistadetalle);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cb_listordenes);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonOrdenarCompras);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrdenesDeCompras";
             this.Text = "EliminarUsuario";
+            this.Load += new System.EventHandler(this.OrdenesDeCompras_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,10 +192,12 @@
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton BotonOrdenarCompras;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_listordenes;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_vistadetalle;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private System.Windows.Forms.ComboBox cb_listprovee;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
     }
 }

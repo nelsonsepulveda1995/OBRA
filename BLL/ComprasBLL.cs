@@ -62,6 +62,8 @@ namespace BLL
             DataTable respuesta = new DataTable();
             return respuesta;
         }
+        public DataTable ListarOrdenesdeCompraporEstado(int estado) => compras.ListarOrdenesporEstado(estado);
 
+        public DataTable DetalledeUnaordenBLL(int id) => compras.DetalledeUnaOrden(id);
     }
 }
