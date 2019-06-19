@@ -12,7 +12,7 @@ namespace Entidad
         private int id_OCompras;
         private int id_Producto;
         private int cantidad;
-        private int PrecioUnidad;
+        private decimal PrecioUnidad;
 
         #region Setters
         public void Setid_Detalleorde(int _iddetalle)
@@ -32,7 +32,7 @@ namespace Entidad
         {
             cantidad = _cant;
         }
-        public void Setprecio(int _precio)
+        public void Setprecio(decimal _precio)
         {
             PrecioUnidad = _precio;
         }
@@ -58,7 +58,7 @@ namespace Entidad
         {
             return cantidad;
         }
-        public int getPrecio()
+        public decimal getPrecio()
         {
             return PrecioUnidad;
         }

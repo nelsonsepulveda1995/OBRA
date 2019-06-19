@@ -351,9 +351,7 @@
   <ItemGroup>
     <None Include="Assets\Img\BarraVentana\Cerrar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Users\Ventas\Acciones\Crear Venta\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Assets\Img\Perfil\User.png" />
   </ItemGroup>
@@ -406,6 +404,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{bb095c91-5b42-406a-99b6-a4e16fb97c85}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{54E15090-6F21-4018-B315-E9D721BCC78E}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidad.csproj">
       <Project>{e7217af6-7bcb-4294-bf89-ff7c0146ec20}</Project>

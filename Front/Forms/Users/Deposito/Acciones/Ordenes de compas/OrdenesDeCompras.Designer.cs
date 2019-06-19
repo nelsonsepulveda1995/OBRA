@@ -67,6 +67,7 @@
             this.BotonCrearOrdenCompra.TabIndex = 1;
             this.BotonCrearOrdenCompra.Text = "Crear Orden de Compras";
             this.BotonCrearOrdenCompra.UseVisualStyleBackColor = true;
+            this.BotonCrearOrdenCompra.Click += new System.EventHandler(this.BotonCrearOrdenCompra_Click);
             // 
             // BotonCancelar
             // 

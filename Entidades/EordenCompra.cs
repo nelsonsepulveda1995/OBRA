@@ -9,7 +9,6 @@ namespace Entidad
     public class EordenCompra
     {
         private int OrdenCompra;
-        private int id_proveedor;
         private string id_usuario;
         private DateTime Fecha;
         private bool estado;
@@ -23,10 +22,7 @@ namespace Entidad
         {
             return id_usuario;
         }
-        public int Getid_proveedor()
-        {
-            return id_proveedor;
-        }
+
         public DateTime GetFecha()
         {
             return Fecha;
@@ -44,10 +40,7 @@ namespace Entidad
         {
             OrdenCompra = idorden;
         }
-        public void Setid_proveedor(int _proveedor)
-        {
-            id_proveedor = _proveedor;
-        }
+
         public void Setid_usuario(string _usuario)
         {
             id_usuario = _usuario;

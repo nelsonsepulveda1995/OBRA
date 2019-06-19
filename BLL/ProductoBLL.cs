@@ -24,5 +24,9 @@ namespace BLL
             DataTable respuesta = new DataTable();
             return respuesta;
         }
+        public DataTable VerunProducto(int id)
+        {
+            return productoDAL.GetProducto(id);
+        }
     }
 }
