@@ -33,7 +33,7 @@ namespace Front.Forms.Users.Compras.Acciones
         {
             DataTable detalles = new DataTable();
             detalles = compras.DetalledeUnaordenBLL(Convert.ToInt32(cb_listordenes.SelectedItem.ToString())); //corregir combo box
-            tb_vistadetalle.AppendText("");
+            dataGridView1.DataSource = detalles;
         }
     }
 }

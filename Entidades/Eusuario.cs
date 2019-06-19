@@ -8,7 +8,7 @@
         private int DNI;
         private string Contraseña;
         private int idTipo;
-        private string TipoUsuario;
+        private string TipoUsuario;   
 
         #region getters
         public string getidUsuario()

@@ -15,7 +15,7 @@ namespace DAL
          */
         private void Conectar()
         {
-            strCadenaDeConexion = "Server=.\\SQLEXPRESS;DataBase= Corralon; integrated security=true";
+            strCadenaDeConexion = "Server=.\\;DataBase= Corralon; integrated security=true";
 
             //Instanció un objeto del tipo SqlConnection
             objConexion = new SqlConnection();

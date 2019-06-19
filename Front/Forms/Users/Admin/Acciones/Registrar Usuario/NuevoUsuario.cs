@@ -57,7 +57,7 @@ namespace Front.Forms.Users.Admin.Acciones
             DataTable tabla= admin.ListasTipoUsuarioBll();
             TipoSeleccionado.DataSource = tabla;
             TipoSeleccionado.DisplayMember = "descripcion";
-            TipoSeleccionado.ValueMember = "id_tipousuario";
+            TipoSeleccionado.ValueMember = "id";
         }
     }
 }

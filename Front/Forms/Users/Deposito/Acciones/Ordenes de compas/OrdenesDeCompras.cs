@@ -37,8 +37,8 @@ namespace Front.Forms.Users.Deposito.Acciones
             eDetalleOrden.Setprecio(Convert.ToDecimal((productoBll.VerunProducto(eDetalleOrden.get_idProducto())).Rows[0]["PRECIO"]));
 
             ListaProductos.Add(eDetalleOrden);
-            tb_vistacarrito.AppendText("\n"+cblistaproducto.DisplayMember+"     " + eDetalleOrden.getCantidad());
-            tb_vistacarrito.AppendText("\n");
+            tb_vistacarrito.AppendText("/n" + cblistaproducto.DisplayMember+"     " + eDetalleOrden.getCantidad());
+            tb_vistacarrito.AppendText("/n");
         }
         private void VaciarCarrito_Click(object sender, EventArgs e)
         {
