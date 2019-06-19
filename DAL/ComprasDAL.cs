@@ -7,7 +7,7 @@ namespace DAL
         Conexion nuevaC = new Conexion(); //llamar esta instancia para la coneccion
         public DataTable ListarProveedor()
         {
-            string coneccion = $"select * from PROVEEDOR";
+            string coneccion = $"select * from PROVEDOR";
             DataTable respuesta = new DataTable();
             respuesta = nuevaC.LeerPorComando(coneccion);
             return respuesta;
@@ -22,7 +22,7 @@ namespace DAL
         public int CrearProveedor(Eproveedor _proveedor)
         {
             int respuesta;
-            string consulta = $"INSERT TO PROVEDOR(ID_PROV,NOMBRE,DIRECCION,TELEFONO,CUIT,CORREOELECTRONICO)VALUE({_proveedor.getidproveedor()},'{_proveedor.getnoombre()}','{_proveedor.getdireccion()}','{_proveedor.gettelefono()}','{_proveedor.getcuit()}','{_proveedor.getcorreo()}')";
+            string consulta = $"INSERT TO PROVEDOR(CUIT_PROV,NOMBRE,DIRECCION,TELEFONO,CORREOELECTRONICO)VALUE({_proveedor.getcuit()},'{_proveedor.getnoombre()}','{_proveedor.getdireccion()}','{_proveedor.gettelefono()}','{_proveedor.getcorreo()}')";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
@@ -43,7 +43,7 @@ namespace DAL
         public bool VerificarProveedorDAL(Eproveedor proveedor)
         {
             DataTable temp = new DataTable();
-            string consulta = $"SELECT ID_PROV FROM PROVEEDOR WHERE CUIT ={proveedor.getcuit()}"; //se busca proveedor por cuit
+            string consulta = $"SELECT CUIT_PROV FROM PROVEDOR WHERE CUIT_PROV ={proveedor.getcuit()}"; //se busca proveedor por cuit
             temp = nuevaC.LeerPorComando(consulta);
             if (temp.Rows.Count > 0)
             {

@@ -20,7 +20,7 @@ namespace DAL
         }
         public int CrearUsuario(Eusuario usuario) //crea un nuevo usuario
         {
-            String consulta = $"insert into USUARIO(ID_USUARIO,ID_TIPOUSUARIO, NOMBRE,APELLIDO,DNI,CONTRASENIA)VALUES('{usuario.getidUsuario()}','{usuario.getIdTipo()}', '{usuario.getNombre()}', '{usuario.getApellido()}', '{usuario.getDNI()}','{usuario.getContraseña()}')";  
+            String consulta = $"insert into USUARIO(NOMBREUSUARIO,ID, NOMBRE,APELLIDO,DNI,CONTRASENIA,ESTADO)VALUES('{usuario.getidUsuario()}','{usuario.getIdTipo()}', '{usuario.getNombre()}', '{usuario.getApellido()}', '{usuario.getDNI()}','{usuario.getContraseña()}',1)";  
             int respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }

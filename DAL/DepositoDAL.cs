@@ -17,14 +17,14 @@ namespace DAL
         public int CrearOrdenCompraDAL(EordenCompra Orden)
         {
             int respuesta = 0;
-            string consulta = $"INSERT TO ORDENDECOMPRA(ID_OCOMPRA,ID_PROV,ID_USUARIO,FECHA,APROBADA_GERENTE,APROBADA_COMPRAS,ESTADO)VALUE('{Orden.GetIdOrdenCompra()}','{Orden.Getid_proveedor()}','{Orden.Getid_usuario()}','{Orden.GetFecha()}','{Orden.Getestado()}')";
+            string consulta = $"INSERT INTO ORDENDECOMPRA(ID_OCOMPRA,NOMBREUSUARIO,FECHA,ESTADO)VALUE('{Orden.GetIdOrdenCompra()}','{Orden.Getid_usuario()}','{Orden.GetFecha()}','{Orden.Getestado()}')";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
         public int CrearDetalleOrdenCompraDAL(EDetalleOrdenCompra detalle)
         {
             int respuesta = 0;
-            string consulta = $"INSERT TO DETALLEORDENCOMPRA (id_detalleoc,id_ocompra,id_prod,cant,precioxunidad)VALUE('{detalle.get_idDetalleOrden()}','{detalle.get_idOCompras()}','{detalle.get_idProducto()}','{detalle.getCantidad()}','{detalle.getPrecio()}')";
+            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (id_detalleoc,id_ocompra,id_prod,cant,precioxunidad)VALUE('{detalle.get_idDetalleOrden()}','{detalle.get_idOCompras()}','{detalle.get_idProducto()}','{detalle.getCantidad()}','{detalle.getPrecio()}')";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }

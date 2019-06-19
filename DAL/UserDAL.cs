@@ -18,8 +18,8 @@ namespace DAL
 
             if (user.Rows.Count > 0)
             {
-                usuario.setIdUsuario(user.Rows[0]["ID_USUARIO"].ToString());
-                usuario.setIdTipo(Convert.ToInt32(user.Rows[0]["ID_TIPOUSUARIO"]));
+                usuario.setIdUsuario(user.Rows[0]["NOMBREUSUARIO"].ToString());
+                usuario.setIdTipo(Convert.ToInt32(user.Rows[0]["ID"]));
                 usuario.setNombre(user.Rows[0]["NOMBRE"].ToString());
                 usuario.setApellido(user.Rows[0]["APELLIDO"].ToString());
                 usuario.setTipoUsuario(this.GetCategoria(usuario.getIdTipo()));

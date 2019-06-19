@@ -16,7 +16,7 @@ namespace DAL
         public DataTable ListarClientes()
         {
             
-            string coneccion = "select * from CLIENTES";
+            string coneccion = "select * from CLIENTE";
             DataTable respuesta = new DataTable();
             respuesta = nuevaC.LeerPorComando(coneccion);
             return respuesta;
@@ -39,7 +39,7 @@ namespace DAL
         {
             if (VerificarClienteBLL(cliente))
             {
-                string consulta = $"insert to cliente ()"; // COMPLETAR
+                string consulta = $"insert into cliente (DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)VALUES('{cliente.getidcliente()}','{cliente.getnombre()}','{cliente.getdireccion()}','{cliente.getcp()}','{cliente.gettelefono()}','{cliente.getcorreo()}')"; // COMPLETAR
                 return 1;
             }
             return -1;
