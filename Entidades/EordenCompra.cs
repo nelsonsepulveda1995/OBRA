@@ -11,7 +11,7 @@ namespace Entidad
         private int OrdenCompra;
         private string id_usuario;
         private DateTime Fecha;
-        private bool estado;
+        private int estado;
 
         #region Getters
         public int GetIdOrdenCompra()
@@ -28,7 +28,7 @@ namespace Entidad
             return Fecha;
         }
        
-        public bool Getestado()
+        public int Getestado()
         {
             return estado;
         }
@@ -49,7 +49,7 @@ namespace Entidad
         {
             Fecha = _fecha;
         }
-        public void Setestado(bool _estado)
+        public void Setestado(int _estado)
         {
             estado = _estado;
         }

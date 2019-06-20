@@ -24,7 +24,7 @@ namespace Front.Forms.Users.Deposito.Acciones
 
         private void OrdenesDeCompras_Load(object sender, System.EventArgs e)
         {
-            cblistaproducto.DataSource = productoBll.ListarProductos();;
+            cblistaproducto.DataSource = productoBll.ListarProductos();
             cblistaproducto.DisplayMember = "DESCRIPCION";
             cblistaproducto.ValueMember = "ID_PROD";
             tb_vistacarrito.Text = "  ";
@@ -37,8 +37,8 @@ namespace Front.Forms.Users.Deposito.Acciones
             eDetalleOrden.Setprecio(Convert.ToDecimal((productoBll.VerunProducto(eDetalleOrden.get_idProducto())).Rows[0]["PRECIO"]));
 
             ListaProductos.Add(eDetalleOrden);
-            tb_vistacarrito.AppendText("/n" + cblistaproducto.DisplayMember+"     " + eDetalleOrden.getCantidad());
-            tb_vistacarrito.AppendText("/n");
+            tb_vistacarrito.AppendText("\n" + cblistaproducto.Text+"     " + eDetalleOrden.getCantidad()+"\n");
+            tb_vistacarrito.AppendText("\n");
         }
         private void VaciarCarrito_Click(object sender, EventArgs e)
         {
@@ -49,10 +49,11 @@ namespace Front.Forms.Users.Deposito.Acciones
         private void BotonCrearOrdenCompra_Click(object sender, EventArgs e)
         {
             EordenCompra ordencompra = new EordenCompra();
-            ordencompra.Setestado(false); //revisar si es int o bool en la  BD
-            DateTime fec = new DateTime();
-            ordencompra.Setfecha(fec.ToUniversalTime());//revisar que guarda esta funcion de fecha
-            ordencompra.Setid_usuario(usuario.GetUsuarioName());
+            ordencompra.Setestado(1); //revisar si es int o bool en la  BD
+            DateTime fec = DateTime.Now;
+            ordencompra.Setfecha(Convert.ToDateTime(fec.ToShortDateString()));//revisar que guarda esta funcion de fecha
+            ordencompra.Setid_usuario((usuario.GetUsuarioName()).Trim('@')); //quita el arroba del nomre de usuario
+
             //orden de compra cargada 
 
             if (ListaProductos.Count == 0) //revisa si la lista tiene objetos

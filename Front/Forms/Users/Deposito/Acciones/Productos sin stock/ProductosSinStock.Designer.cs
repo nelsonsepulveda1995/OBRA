@@ -58,7 +58,7 @@
             this.BotonMostrarStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BotonMostrarStock.Depth = 0;
             this.BotonMostrarStock.Icon = null;
-            this.BotonMostrarStock.Location = new System.Drawing.Point(136, 482);
+            this.BotonMostrarStock.Location = new System.Drawing.Point(67, 482);
             this.BotonMostrarStock.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonMostrarStock.Name = "BotonMostrarStock";
             this.BotonMostrarStock.Primary = true;
@@ -74,10 +74,10 @@
             this.dgProductosSinStock.AllowUserToOrderColumns = true;
             this.dgProductosSinStock.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgProductosSinStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProductosSinStock.Location = new System.Drawing.Point(136, 195);
+            this.dgProductosSinStock.Location = new System.Drawing.Point(21, 195);
             this.dgProductosSinStock.Name = "dgProductosSinStock";
             this.dgProductosSinStock.ReadOnly = true;
-            this.dgProductosSinStock.Size = new System.Drawing.Size(242, 248);
+            this.dgProductosSinStock.Size = new System.Drawing.Size(381, 248);
             this.dgProductosSinStock.TabIndex = 4;
             // 
             // dataGridView1
@@ -86,10 +86,10 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(436, 195);
+            this.dataGridView1.Location = new System.Drawing.Point(421, 195);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(242, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 248);
             this.dataGridView1.TabIndex = 5;
             // 
             // materialRaisedButton1
@@ -98,7 +98,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(497, 482);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(549, 482);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -106,6 +106,7 @@
             this.materialRaisedButton1.TabIndex = 6;
             this.materialRaisedButton1.Text = "USAR FILTRO";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
             // 
             // materialLabel1
             // 
@@ -113,7 +114,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(432, 143);
+            this.materialLabel1.Location = new System.Drawing.Point(545, 149);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(57, 19);
@@ -122,7 +123,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(579, 142);
+            this.numericUpDown1.Location = new System.Drawing.Point(666, 148);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(99, 20);
             this.numericUpDown1.TabIndex = 8;

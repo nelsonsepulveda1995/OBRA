@@ -11,21 +11,22 @@ namespace DAL
         public DataTable ListarProductosconPocoStockDAL(int cantidad)//SE puede usar para filtrar (normalmente se usa con: 0)
         {
             DataTable respuesta = new DataTable();
-            string consulta = $"SELECT * FROM PRODUCTOS WHERE CANTIDAD<={cantidad}";
+            string consulta = $"SELECT * FROM PRODUCTO WHERE CANTIDAD<={cantidad}";
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
         public int CrearOrdenCompraDAL(EordenCompra Orden)
         {
             int respuesta;
-            string consulta = $"INSERT INTO ORDENDECOMPRA(ID_OCOMPRA,NOMBREUSUARIO,FECHA,ESTADO)VALUE('{Orden.GetIdOrdenCompra()}','{Orden.Getid_usuario()}','{Orden.GetFecha()}','{Orden.Getestado()}')";
+            DateTime fec = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            string consulta = $"INSERT ORDENDECOMPRA(NOMBREUSUARIO,FECHA,ESTADO)VALUES('{Orden.Getid_usuario()}',{Convert.ToDateTime(Orden.GetFecha().ToShortDateString())}',{Orden.Getestado()})"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
         public int CrearDetalleOrdenCompraDAL(EDetalleOrdenCompra detalle)
         {
             int respuesta;
-            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (id_ocompra,id_prod,cant,precioxunidad)VALUE('{detalle.get_idOCompras()}','{detalle.get_idProducto()}','{detalle.getCantidad()}','{detalle.getPrecio()}')";
+            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (id_ocompra,id_prod,cant,precioxunidad)VALUES('{detalle.get_idOCompras()}','{detalle.get_idProducto()}','{detalle.getCantidad()}','{detalle.getPrecio()}')";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
