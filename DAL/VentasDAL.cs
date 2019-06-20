@@ -6,14 +6,14 @@ namespace DAL
     public class VentasDAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
-        public DataTable VerunCliente(Ecliente _cliente)
+        public DataTable VerunClienteDAL(Ecliente _cliente)
         {
             string coneccion = $"select * from CLIENTES WHERE ID_CLIENTE='{_cliente.getidcliente()}'";
             DataTable respuesta = new DataTable();
             respuesta=nuevaC.LeerPorComando(coneccion);
             return respuesta;
         }
-        public DataTable ListarClientes()
+        public DataTable ListarClientesDAL()
         {
             
             string coneccion = "select * from CLIENTE";
@@ -35,16 +35,16 @@ namespace DAL
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public int CrearClienteBLL(Ecliente cliente)
+        public int CrearClienteDAL(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
         {
-            if (VerificarClienteBLL(cliente))
+            if (VerificarClienteDAL(cliente))
             {
                 string consulta = $"insert into cliente (DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)VALUES('{cliente.getidcliente()}','{cliente.getnombre()}','{cliente.getdireccion()}','{cliente.getcp()}','{cliente.gettelefono()}','{cliente.getcorreo()}')"; // COMPLETAR
                 return 1;
             }
             return -1;
         }
-        public bool VerificarClienteBLL(Ecliente cliente)
+        public bool VerificarClienteDAL(Ecliente cliente)
         {
             DataTable temp = new DataTable();
             string consulta = $"select * from CLIENTE WHERE DNI={cliente.getidcliente()}";

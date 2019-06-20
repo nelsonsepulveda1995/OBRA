@@ -34,11 +34,11 @@ namespace BLL
         {
             return 1;
         }
-        public int CrearCliente()
+        public int CrearCliente(Ecliente cliente)
         {
-
-            return 1;
-
+            int respuesta;
+            respuesta= venta.CrearClienteDAL(cliente);
+            return respuesta;
         }
     }
 }

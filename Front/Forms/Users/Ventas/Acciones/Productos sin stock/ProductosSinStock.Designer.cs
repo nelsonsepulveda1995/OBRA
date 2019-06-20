@@ -31,6 +31,8 @@
             this.Titulo = new System.Windows.Forms.Label();
             this.BotonMostrarStock = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Titulo
@@ -51,14 +53,15 @@
             this.BotonMostrarStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BotonMostrarStock.Depth = 0;
             this.BotonMostrarStock.Icon = null;
-            this.BotonMostrarStock.Location = new System.Drawing.Point(546, 482);
+            this.BotonMostrarStock.Location = new System.Drawing.Point(507, 482);
             this.BotonMostrarStock.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonMostrarStock.Name = "BotonMostrarStock";
             this.BotonMostrarStock.Primary = true;
-            this.BotonMostrarStock.Size = new System.Drawing.Size(132, 36);
+            this.BotonMostrarStock.Size = new System.Drawing.Size(241, 36);
             this.BotonMostrarStock.TabIndex = 1;
-            this.BotonMostrarStock.Text = "MOSTRAR STOCK";
+            this.BotonMostrarStock.Text = "MOSTRAR productos sin stock";
             this.BotonMostrarStock.UseVisualStyleBackColor = true;
+            this.BotonMostrarStock.Click += new System.EventHandler(this.BotonMostrarStock_Click);
             // 
             // BotonCancelar
             // 
@@ -66,7 +69,7 @@
             this.BotonCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BotonCancelar.Depth = 0;
             this.BotonCancelar.Icon = null;
-            this.BotonCancelar.Location = new System.Drawing.Point(435, 482);
+            this.BotonCancelar.Location = new System.Drawing.Point(372, 482);
             this.BotonCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BotonCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonCancelar.Name = "BotonCancelar";
@@ -76,17 +79,27 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(178, 158);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(426, 219);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // ProductosSinStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonMostrarStock);
             this.Controls.Add(this.Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductosSinStock";
             this.Text = "Productos sin stock";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,5 +110,6 @@
         private System.Windows.Forms.Label Titulo;
         private MaterialSkin.Controls.MaterialRaisedButton BotonMostrarStock;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

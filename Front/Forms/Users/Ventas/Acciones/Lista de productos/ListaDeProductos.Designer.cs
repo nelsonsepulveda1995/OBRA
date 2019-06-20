@@ -31,6 +31,8 @@
             this.Titulo = new System.Windows.Forms.Label();
             this.BotonListaDeProductos = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Titulo
@@ -59,6 +61,7 @@
             this.BotonListaDeProductos.TabIndex = 1;
             this.BotonListaDeProductos.Text = "Listar productos";
             this.BotonListaDeProductos.UseVisualStyleBackColor = true;
+            this.BotonListaDeProductos.Click += new System.EventHandler(this.BotonListaDeProductos_Click);
             // 
             // BotonCancelar
             // 
@@ -76,17 +79,27 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(155, 131);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(488, 304);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // ListaDeProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonListaDeProductos);
             this.Controls.Add(this.Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListaDeProductos";
             this.Text = "ListaDeProductos";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,5 +110,6 @@
         private System.Windows.Forms.Label Titulo;
         private MaterialSkin.Controls.MaterialRaisedButton BotonListaDeProductos;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
