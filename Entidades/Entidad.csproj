@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ecliente.cs" />
+    <Compile Include="EDetalleFacturaVenta.cs" />
     <Compile Include="EDetalleOrdenCompra.cs" />
+    <Compile Include="EFacturaVenta.cs" />
     <Compile Include="EordenCompra.cs" />
     <Compile Include="Eproducto.cs" />
     <Compile Include="Eproveedor.cs" />
