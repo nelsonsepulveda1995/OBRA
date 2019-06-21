@@ -11,9 +11,13 @@ namespace Entidad
         private int DNI;
         private string nombreusuario;
         private string fecha;
+        private int mediop;
 
         #region setters
-
+        public void Setmodiop(int _medio)
+        {
+            mediop = _medio;
+        }
         public void Setdni(int _dni)
         {
             DNI = _dni;
@@ -29,6 +33,10 @@ namespace Entidad
         #endregion
 
         #region getters
+        public int Getmediop()
+        {
+            return mediop;
+        }
         public int Getdni()
         {
             return DNI;

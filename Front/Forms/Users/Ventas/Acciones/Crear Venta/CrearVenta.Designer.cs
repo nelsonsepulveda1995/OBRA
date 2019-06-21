@@ -39,6 +39,8 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.tbcarrito = new System.Windows.Forms.TextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.cbmediodepago = new System.Windows.Forms.ComboBox();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // Titulo
@@ -169,11 +171,34 @@
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Carrito";
             // 
+            // cbmediodepago
+            // 
+            this.cbmediodepago.FormattingEnabled = true;
+            this.cbmediodepago.Location = new System.Drawing.Point(264, 350);
+            this.cbmediodepago.Name = "cbmediodepago";
+            this.cbmediodepago.Size = new System.Drawing.Size(162, 21);
+            this.cbmediodepago.TabIndex = 12;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(105, 352);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(108, 19);
+            this.materialLabel5.TabIndex = 13;
+            this.materialLabel5.Text = "Medio de pago";
+            // 
             // CrearVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.materialLabel5);
+            this.Controls.Add(this.cbmediodepago);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.tbcarrito);
             this.Controls.Add(this.materialLabel3);
@@ -207,5 +232,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.TextBox tbcarrito;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.ComboBox cbmediodepago;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
     }
 }

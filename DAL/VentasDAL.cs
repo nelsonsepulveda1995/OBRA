@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using Entidad;
 
 namespace DAL
@@ -39,7 +40,7 @@ namespace DAL
         {
             if (VerificarClienteDAL(cliente))
             {
-                string consulta = $"insert into cliente (DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)VALUES({cliente.getidcliente()},'{cliente.getnombre()}','{cliente.getdireccion()}','{cliente.getcp()}','{cliente.gettelefono()}','{cliente.getcorreo()}')"; // COMPLETAR
+                string consulta = $"insert into cliente (DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)VALUES({cliente.getidcliente()},'{cliente.getnombre()}','{cliente.getdireccion()}','{cliente.getcp()}','{cliente.gettelefono()}','{cliente.getcorreo()}')"; 
                 return 1;
             }
             return -1;
@@ -54,6 +55,32 @@ namespace DAL
                 return false;   //si ya existe un cliente igual
             }
             return true;
+        }
+        public int CrearventaDAL(EFacturaVenta factura)
+        {
+            int respuesta;
+            string consulta = $"insert into FACTURAVENTA (ID_MEDIOP,DNI,NOMBREUSUARIO,FECHA)VALUES({factura.Getmediop()},{factura.Getdni()},'{factura.Getnombreusuario()}',CONVERT(date,'{factura.GetFecha()}'))";
+            respuesta = nuevaC.EscribirPorComando(consulta);
+            return respuesta;
+        }
+        public int CrearDetalledeVenta(EDetalleFacturaVenta detalle)
+        {
+            int respuesta;
+            string consulta = $"INSERT INTO DETALLEFACTURAVENTA (ID_FACTURAVENTA,ID_PROD,CANT,PRECIOXUNIDAD)VALUES({detalle.GetIdFacturaCompra()},{detalle.GetIdProd()},{detalle.GetCant()},CONVERT(decimal,{detalle.GetPrecio()}))";
+            respuesta = nuevaC.EscribirPorComando(consulta);
+            return respuesta;
+        }
+        public int UltimoIdFacturaVentaDAL()
+        {
+            int respuesta;
+            DataTable temp = new DataTable();
+            string consulta = "SELECT ID_FACTURAVENTA TOP(1) FROM FACTURA VENTA ORDER BY DESC";
+            temp = nuevaC.LeerPorComando(consulta);
+            if (temp.Rows.Count<0) {
+                respuesta =Convert.ToInt32(temp.Rows[0]["ID_FACTURAVENTA"]);
+                return respuesta;
+            }
+            else { return 1; }
         }
     }
 }
