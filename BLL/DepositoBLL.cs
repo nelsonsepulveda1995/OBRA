@@ -23,9 +23,10 @@ namespace BLL
             {
                 return -1;    //error en crear la orden
             }
+            int id = deposito.UltimoIdOrdeCompra();
             foreach (EDetalleOrdenCompra detalle in listadetalles)
             {
-                detalle.Setid_Compras(Orden.GetIdOrdenCompra()); //carga la fk de orden de compra  en el detalle
+                detalle.Setid_Compras(id); //carga la fk de orden de compra  en el detalle
                 if (CrearDetalleOrdenCompraBLL(detalle) == 0)
                 {
                     return -2;   //error  en crear el detalle de compra

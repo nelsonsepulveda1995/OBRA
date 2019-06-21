@@ -50,8 +50,11 @@ namespace Front.Forms.Users.Deposito.Acciones
         {
             EordenCompra ordencompra = new EordenCompra();
             ordencompra.Setestado(1); //revisar si es int o bool en la  BD
-            DateTime fec = DateTime.Now;
-            ordencompra.Setfecha(Convert.ToDateTime(fec.ToShortDateString()));//revisar que guarda esta funcion de fecha
+            int dia = DateTime.Today.Day;
+            int mes = DateTime.Today.Month;
+            int año = DateTime.Today.Year;
+            string fecha = $"{dia}-{mes}-{año}";
+            ordencompra.Setfecha(fecha);//revisar que guarda esta funcion de fecha
             ordencompra.Setid_usuario((usuario.GetUsuarioName()).Trim('@')); //quita el arroba del nomre de usuario
 
             //orden de compra cargada 

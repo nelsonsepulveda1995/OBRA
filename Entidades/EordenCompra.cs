@@ -10,7 +10,7 @@ namespace Entidad
     {
         private int OrdenCompra;
         private string id_usuario;
-        private DateTime Fecha;
+        private string Fecha;
         private int estado;
 
         #region Getters
@@ -23,7 +23,7 @@ namespace Entidad
             return id_usuario;
         }
 
-        public DateTime GetFecha()
+        public string GetFecha()
         {
             return Fecha;
         }
@@ -45,7 +45,7 @@ namespace Entidad
         {
             id_usuario = _usuario;
         }
-        public void Setfecha(DateTime _fecha)
+        public void Setfecha(string _fecha)
         {
             Fecha = _fecha;
         }
