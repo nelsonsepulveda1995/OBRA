@@ -2,6 +2,7 @@
 {
     public class Eproveedor
     {
+        private int id_proveedor;
         private int cuit;
         private string nombre;
         private string direccion;
@@ -9,7 +10,11 @@
         private string correo;
 
         #region getteers
+        public int getidproveedor()
+        {
 
+            return this.id_proveedor;
+        }
         public int getcuit()
         {
             return this.cuit;
@@ -33,7 +38,10 @@
         #endregion
 
         #region setters
-
+        public void setidproveedor(int id)
+        {
+            id_proveedor = id;
+        }
         public void setcuit(int _cuit)
         {
             cuit = _cuit;

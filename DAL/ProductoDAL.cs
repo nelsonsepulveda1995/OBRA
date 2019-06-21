@@ -1,5 +1,4 @@
-﻿using Entidad;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -22,7 +21,7 @@ namespace DAL
             SqlParameter parametro = nuevaC.CrearParametro("@idProducto", ID);
             return Convert.ToInt32(nuevaC.LeerPorStoreProcedure("uspGetProducto", parametro).Rows[0]["CANTIDAD"]);
         }
-        public DataTable ListarMediosdePagoDAL()
+        public DataTable GetMediosdePago()
         {
             DataTable respuesta = new DataTable();
             SqlParameter[] parametros = new SqlParameter[0];

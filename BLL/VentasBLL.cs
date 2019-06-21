@@ -1,43 +1,37 @@
 ﻿using DAL;
 using Entidad;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BLL
 {
     public class VentasBLL
     {
         VentasDAL venta = new VentasDAL();
-        public DataTable ListarFacturaVentaBLL()
+        public DataTable ListarFacturaVenta()
         {
             DataTable respuesta = new DataTable();
             respuesta = venta.ListarFacturasVentas();
             return respuesta;
         }
 
-        public int CrearVentaBLL(Eproducto _producto,Ecliente _cliente,Eusuario _vendedor)//cambiar parametros
+        public int CrearVenta(Eproducto _producto,Ecliente _cliente,Eusuario _vendedor)//cambiar parametros
         {
             int x=0;
             return x;
         }
-        public DataTable BuscarClienteBLL()
+        public DataTable BuscarCliente()
         {
             DataTable x = new DataTable();
             return x = null;
 
         }
-        public int ModificarClienteBLL()
+        public int ModificarCliente()
         {
             return 1;
         }
         public int CrearCliente(Ecliente cliente)
         {
             int respuesta;
-            respuesta= venta.CrearClienteDAL(cliente);
+            respuesta= venta.CrearCliente(cliente);
             return respuesta;
         }
     }

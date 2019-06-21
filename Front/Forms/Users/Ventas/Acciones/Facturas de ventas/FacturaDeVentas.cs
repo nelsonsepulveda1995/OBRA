@@ -14,7 +14,7 @@ namespace Front.Forms.Users.Ventas.Acciones
 
         private void BotonFacturaDeVentas_Click(object sender, System.EventArgs e)
         {
-            dataGridView1.DataSource = venta.ListarFacturaVentaBLL();
+            dataGridView1.DataSource = venta.ListarFacturaVenta();
         }
     }
 }

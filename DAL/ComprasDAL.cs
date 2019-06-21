@@ -1,19 +1,12 @@
 ﻿using Entidad;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace DAL
 {
     public class ComprasDAL
     {
         Conexion nuevaC = new Conexion(); //llamar esta instancia para la coneccion
-        public DataTable ListarProveedor()
-        {
-            string coneccion = $"select * from PROVEDOR";
-            DataTable respuesta = new DataTable();
-            respuesta = nuevaC.LeerPorComando(coneccion);
-            return respuesta;
-        }
+        public DataTable GetProveedores() => nuevaC.LeerPorStoreProcedure("spListarProvedores");
         public int CrearCompra()//Cambiar Variables para Crear Compras
         {
             int respuesta = 1;
@@ -21,28 +14,26 @@ namespace DAL
 
             return respuesta;
         }
-        public int CrearProveedor(Eproveedor _proveedor)
+        public int GuardarProveedor(Eproveedor _proveedor)
         {
-            int respuesta;
             string consulta = $"INSERT TO PROVEDOR(CUIT_PROV,NOMBRE,DIRECCION,TELEFONO,CORREOELECTRONICO)VALUE({_proveedor.getcuit()},'{_proveedor.getnoombre()}','{_proveedor.getdireccion()}','{_proveedor.gettelefono()}','{_proveedor.getcorreo()}')";
-            respuesta = nuevaC.EscribirPorComando(consulta);
-            return respuesta;
+            return nuevaC.EscribirPorComando(consulta);
         }
-        public DataTable VerFacturasCompras() //FUNCION  A COMPLETAR
+        public DataTable GetFacturasCompras() //FUNCION  A COMPLETAR
         {
             DataTable respuesta = new DataTable();
             string consulta = "SELECT * FROM FACTURACOMPRA";
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public DataTable VerDetalleFacturaCompraDAL()
+        public DataTable GetDetalleFacturaCompra()
         {
             DataTable respuesta = new DataTable();
             string consulta = "SELECT * FROM DETALLEFACTURACOMPRA";
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public bool VerificarProveedorDAL(Eproveedor proveedor)
+        public bool VerificarProveedor(Eproveedor proveedor)
         {
             DataTable temp = new DataTable();
             string consulta = $"SELECT CUIT_PROV FROM PROVEDOR WHERE CUIT_PROV ={proveedor.getcuit()}"; //se busca proveedor por cuit
@@ -53,21 +44,16 @@ namespace DAL
             }
             return true;    //si no existe true
         }
-        public DataTable ListarOrdenesdeCompras()
-        {
-            DataTable respuesta = new DataTable();
-            SqlParameter[] parameter   = new SqlParameter[0];
-            respuesta = nuevaC.LeerPorStoreProcedure("spListarOrdenCompra", parameter);
-            return respuesta;
-        }
-        public DataTable ListarOrdenesporEstado(int estado)//1 sin aprobar 2 aprobado
+        public DataTable ListarOrdenesdeCompras() => nuevaC.LeerPorStoreProcedure("spListarOrdenCompra");
+
+        public DataTable GetOrdenesporEstado(int estado)//1 sin aprobar 2 aprobado
         {
             DataTable respuesta = new DataTable();
             string consulta = $"Select * FROM ORDENDECOMPRA WHERE ESTADO='{estado}'";
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public DataTable DetalledeUnaOrden(int id)
+        public DataTable GetDetalledeUnaOrden(int id)
         {
             DataTable respuesta = new DataTable();
             string consulta = $"Select * from DETALLEORDENCOMPRA WHERE ID_DETALLEOC='{id}'";
@@ -76,4 +62,3 @@ namespace DAL
         }
     }
 }
-

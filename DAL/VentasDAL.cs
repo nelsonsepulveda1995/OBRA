@@ -6,14 +6,14 @@ namespace DAL
     public class VentasDAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
-        public DataTable VerunClienteDAL(Ecliente _cliente)
+        public DataTable VerunCliente(Ecliente _cliente)
         {
             string coneccion = $"select * from CLIENTES WHERE ID_CLIENTE='{_cliente.getidcliente()}'";
             DataTable respuesta = new DataTable();
             respuesta=nuevaC.LeerPorComando(coneccion);
             return respuesta;
         }
-        public DataTable ListarClientesDAL()
+        public DataTable ListarClientes()
         {
             
             string coneccion = "select * from CLIENTE";
@@ -28,23 +28,23 @@ namespace DAL
             respuesta=nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public DataTable ListarDetalleVentaBLL()
+        public DataTable ListarDetalleVenta()
         {
             DataTable respuesta = new DataTable();
             string consulta = "select* from DETALLEFACTURAVENTA";
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public int CrearClienteDAL(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
+        public int CrearCliente(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
         {
-            if (VerificarClienteDAL(cliente))
+            if (VerificarCliente(cliente))
             {
                 string consulta = $"insert into cliente (DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)VALUES('{cliente.getidcliente()}','{cliente.getnombre()}','{cliente.getdireccion()}','{cliente.getcp()}','{cliente.gettelefono()}','{cliente.getcorreo()}')"; // COMPLETAR
                 return 1;
             }
             return -1;
         }
-        public bool VerificarClienteDAL(Ecliente cliente)
+        public bool VerificarCliente(Ecliente cliente)
         {
             DataTable temp = new DataTable();
             string consulta = $"select * from CLIENTE WHERE DNI={cliente.getidcliente()}";
