@@ -21,15 +21,18 @@ namespace BLL
                 res = Admin.CrearUsuario(usuario);
                 return res;
             }
-
         }
-
-        public int DesabilitarUsuario(Eusuario usuario)
+        public void DesabilitarUsuario(string _idUsuario)
         {
-
-            return 1;
-
+            Admin.DeshabilitarUsuario(_idUsuario);
         }
+        public DataTable MostrarUsuarioHabilitados()
+        {
+            return Admin.MostrarUsuarioHabilitados();
+        }
+            // ED  -  2019 06 20 END
+
+        
         public DataTable BuscarUsuario(Eusuario usuario)
         {
             DataTable respuesta = new DataTable();
