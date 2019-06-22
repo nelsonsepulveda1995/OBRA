@@ -8,6 +8,20 @@ namespace DAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la coneccion
 
+
+
+
+        public DataTable listAllProducts()
+        {
+            DataTable respuesta = new DataTable();
+            string consulta = $"SELECT * FROM PRODUCTO";
+            respuesta = nuevaC.LeerPorComando(consulta);
+
+            Console.WriteLine(respuesta.ToString());
+            return respuesta;
+        }
+
+
         public DataTable ListarProductosconPocoStockDAL(int cantidad)//SE puede usar para filtrar (normalmente se usa con: 0)
         {
             DataTable respuesta = new DataTable();

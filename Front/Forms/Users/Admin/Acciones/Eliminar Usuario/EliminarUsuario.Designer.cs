@@ -31,11 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Boton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
-            this.cbdesabilitar = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.dgw_listahabiltados = new System.Windows.Forms.DataGridView();
-            this.mlrespuesta = new MaterialSkin.Controls.MaterialLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_listahabiltados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +61,6 @@
             this.Boton.TabIndex = 1;
             this.Boton.Text = "desabilitar usuario";
             this.Boton.UseVisualStyleBackColor = true;
-            this.Boton.Click += new System.EventHandler(this.Boton_Click);
             // 
             // BotonCancelar
             // 
@@ -82,13 +78,13 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
-            // cbdesabilitar
+            // comboBox1
             // 
-            this.cbdesabilitar.FormattingEnabled = true;
-            this.cbdesabilitar.Location = new System.Drawing.Point(262, 150);
-            this.cbdesabilitar.Name = "cbdesabilitar";
-            this.cbdesabilitar.Size = new System.Drawing.Size(373, 21);
-            this.cbdesabilitar.TabIndex = 3;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(270, 150);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(306, 21);
+            this.comboBox1.TabIndex = 3;
             // 
             // materialLabel1
             // 
@@ -103,43 +99,19 @@
             this.materialLabel1.TabIndex = 4;
             this.materialLabel1.Text = "Seleccione Usuario";
             // 
-            // dgw_listahabiltados
-            // 
-            this.dgw_listahabiltados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_listahabiltados.Location = new System.Drawing.Point(262, 218);
-            this.dgw_listahabiltados.Name = "dgw_listahabiltados";
-            this.dgw_listahabiltados.Size = new System.Drawing.Size(373, 229);
-            this.dgw_listahabiltados.TabIndex = 5;
-            // 
-            // mlrespuesta
-            // 
-            this.mlrespuesta.AutoSize = true;
-            this.mlrespuesta.Depth = 0;
-            this.mlrespuesta.Font = new System.Drawing.Font("Roboto", 11F);
-            this.mlrespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlrespuesta.Location = new System.Drawing.Point(258, 482);
-            this.mlrespuesta.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mlrespuesta.Name = "mlrespuesta";
-            this.mlrespuesta.Size = new System.Drawing.Size(0, 19);
-            this.mlrespuesta.TabIndex = 6;
-            // 
             // EliminarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
-            this.Controls.Add(this.mlrespuesta);
-            this.Controls.Add(this.dgw_listahabiltados);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.cbdesabilitar);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.Boton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EliminarUsuario";
             this.Text = "EliminarUsuario";
-            this.Load += new System.EventHandler(this.EliminarUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_listahabiltados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,9 +122,7 @@
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton Boton;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
-        private System.Windows.Forms.ComboBox cbdesabilitar;
+        private System.Windows.Forms.ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.DataGridView dgw_listahabiltados;
-        private MaterialSkin.Controls.MaterialLabel mlrespuesta;
     }
 }

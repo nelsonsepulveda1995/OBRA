@@ -70,6 +70,7 @@
             // 
             // dgProductosSinStock
             // 
+            this.dgProductosSinStock.AllowUserToAddRows = false;
             this.dgProductosSinStock.AllowUserToDeleteRows = false;
             this.dgProductosSinStock.AllowUserToOrderColumns = true;
             this.dgProductosSinStock.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
@@ -82,8 +83,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(421, 195);
@@ -124,10 +125,16 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(666, 148);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1661992959,
+            1808227885,
+            5,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(99, 20);
             this.numericUpDown1.TabIndex = 8;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // ProductosSinStock
             // 

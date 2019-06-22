@@ -14,6 +14,18 @@ namespace BLL
         {
             return deposito.ListarProductosconPocoStockDAL(_cantidad);
         }
+
+        public DataTable listarTodosLosProdutos()
+        {
+            return deposito.listAllProducts();
+        }
+
+        public DataTable listarProductosConStockMenorAZero(int StockMenorA)
+        {
+            return deposito.ListarProductosconPocoStockDAL(StockMenorA);
+        }
+
+
         public int CrearOrdenCompraBLL(EordenCompra Orden, List<EDetalleOrdenCompra> listadetalles)
         {
 
