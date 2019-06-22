@@ -10,6 +10,13 @@ namespace BLL
         readonly DepositoDAL deposito = new DepositoDAL();
         ProductoDAL producto = new ProductoDAL();
 
+
+        public int UpdateStockBLL(int ID, decimal dato){
+
+            return deposito.ModficarStock(ID, dato);
+            
+        }
+
         public DataTable ListarProductosconPocoStockBLL(int _cantidad)
         {
             return deposito.ListarProductosconPocoStockDAL(_cantidad);

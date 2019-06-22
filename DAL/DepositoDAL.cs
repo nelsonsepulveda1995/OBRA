@@ -8,6 +8,13 @@ namespace DAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la coneccion
 
+        public int ModficarStock(int id, decimal StockModify)
+        {
+
+            string consulta = $"UPDATE PRODUCTO SET CANTIDAD = {StockModify} WHERE  ID_PROD={id}";
+
+            return nuevaC.EscribirPorComando(consulta);      
+        }
 
 
 
