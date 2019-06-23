@@ -8,5 +8,10 @@ namespace Front.Forms.Users.Gerencia.Acciones
         {
             InitializeComponent();
         }
+
+        private void BotonReporteDeCompras_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
