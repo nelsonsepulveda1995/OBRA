@@ -28,11 +28,13 @@ namespace BLL
         {
             return 1;
         }
-        public int CrearCliente(Ecliente cliente)
+        public string CrearCliente(Ecliente cliente)
         {
-            int respuesta;
-            respuesta= venta.CrearCliente(cliente);
-            return respuesta;
+            switch (venta.GuardarCliente(cliente))
+            {
+                case -1: return "Ya existe un cliente con ese DNI";
+                default: return "Cliente creado correctamente";
+            }
         }
     }
 }

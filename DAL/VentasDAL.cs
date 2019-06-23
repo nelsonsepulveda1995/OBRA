@@ -5,7 +5,7 @@ namespace DAL
 {
     public class VentasDAL
     {
-        Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
+        readonly Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
         public DataTable VerunCliente(Ecliente _cliente)
         {
             string coneccion = $"select * from CLIENTES WHERE ID_CLIENTE='{_cliente.getidcliente()}'";
@@ -35,25 +35,18 @@ namespace DAL
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public int CrearCliente(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
+        public int GuardarCliente(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
         {
-            if (VerificarCliente(cliente))
+            if (!ExisteCliente(cliente.getidcliente()))
             {
-                string consulta = $"insert into cliente (DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)VALUES('{cliente.getidcliente()}','{cliente.getnombre()}','{cliente.getdireccion()}','{cliente.getcp()}','{cliente.gettelefono()}','{cliente.getcorreo()}')"; // COMPLETAR
-                return 1;
+                string consulta = $"INSERT INTO CLIENTE(DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)" +
+                    $"VALUES({cliente.getidcliente()},'{cliente.getnombre()}'" +
+                    $",'{cliente.getdireccion()}','{cliente.getcp()}','" +
+                    $"{cliente.gettelefono()}','{cliente.getcorreo()}')";
+                return nuevaC.EscribirPorComando(consulta);
             }
             return -1;
         }
-        public bool VerificarCliente(Ecliente cliente)
-        {
-            DataTable temp = new DataTable();
-            string consulta = $"select * from CLIENTE WHERE DNI={cliente.getidcliente()}";
-            temp = nuevaC.LeerPorComando(consulta);
-            if (temp.Rows.Count > 0)
-            {
-                return false;   //si ya existe un cliente igual
-            }
-            return true;
-        }
+        public bool ExisteCliente(int DNI) => nuevaC.LeerPorComando($"SELECT * FROM CLIENTE WHERE DNI = {DNI}").Rows.Count > 0;
     }
 }
