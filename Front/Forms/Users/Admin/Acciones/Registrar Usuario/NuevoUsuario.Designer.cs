@@ -33,8 +33,6 @@
             this.apellido = new MaterialSkin.Controls.MaterialLabel();
             this.dni = new MaterialSkin.Controls.MaterialLabel();
             this.apellidoIngresado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.email = new MaterialSkin.Controls.MaterialLabel();
-            this.emailIngresado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.usuario = new MaterialSkin.Controls.MaterialLabel();
             this.usuarioIngresado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tipo = new MaterialSkin.Controls.MaterialLabel();
@@ -45,13 +43,15 @@
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.contraseña = new MaterialSkin.Controls.MaterialLabel();
             this.Contraseñaingresada = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabelEmpresa = new MaterialSkin.Controls.MaterialLabel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // nombreIngresado
             // 
             this.nombreIngresado.Depth = 0;
             this.nombreIngresado.Hint = "";
-            this.nombreIngresado.Location = new System.Drawing.Point(226, 163);
+            this.nombreIngresado.Location = new System.Drawing.Point(241, 163);
             this.nombreIngresado.MaxLength = 32767;
             this.nombreIngresado.MouseState = MaterialSkin.MouseState.HOVER;
             this.nombreIngresado.Name = "nombreIngresado";
@@ -107,7 +107,7 @@
             // 
             this.apellidoIngresado.Depth = 0;
             this.apellidoIngresado.Hint = "";
-            this.apellidoIngresado.Location = new System.Drawing.Point(226, 201);
+            this.apellidoIngresado.Location = new System.Drawing.Point(241, 201);
             this.apellidoIngresado.MaxLength = 32767;
             this.apellidoIngresado.MouseState = MaterialSkin.MouseState.HOVER;
             this.apellidoIngresado.Name = "apellidoIngresado";
@@ -120,43 +120,13 @@
             this.apellidoIngresado.TabStop = false;
             this.apellidoIngresado.UseSystemPasswordChar = false;
             // 
-            // email
-            // 
-            this.email.AutoSize = true;
-            this.email.Depth = 0;
-            this.email.Font = new System.Drawing.Font("Roboto", 11F);
-            this.email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.email.Location = new System.Drawing.Point(121, 247);
-            this.email.MouseState = MaterialSkin.MouseState.HOVER;
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(47, 19);
-            this.email.TabIndex = 5;
-            this.email.Text = "Email";
-            // 
-            // emailIngresado
-            // 
-            this.emailIngresado.Depth = 0;
-            this.emailIngresado.Hint = "";
-            this.emailIngresado.Location = new System.Drawing.Point(226, 243);
-            this.emailIngresado.MaxLength = 32767;
-            this.emailIngresado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.emailIngresado.Name = "emailIngresado";
-            this.emailIngresado.PasswordChar = '\0';
-            this.emailIngresado.SelectedText = "";
-            this.emailIngresado.SelectionLength = 0;
-            this.emailIngresado.SelectionStart = 0;
-            this.emailIngresado.Size = new System.Drawing.Size(276, 23);
-            this.emailIngresado.TabIndex = 6;
-            this.emailIngresado.TabStop = false;
-            this.emailIngresado.UseSystemPasswordChar = false;
-            // 
             // usuario
             // 
             this.usuario.AutoSize = true;
             this.usuario.Depth = 0;
             this.usuario.Font = new System.Drawing.Font("Roboto", 11F);
             this.usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.usuario.Location = new System.Drawing.Point(121, 290);
+            this.usuario.Location = new System.Drawing.Point(120, 241);
             this.usuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(61, 19);
@@ -167,7 +137,7 @@
             // 
             this.usuarioIngresado.Depth = 0;
             this.usuarioIngresado.Hint = "";
-            this.usuarioIngresado.Location = new System.Drawing.Point(226, 286);
+            this.usuarioIngresado.Location = new System.Drawing.Point(240, 237);
             this.usuarioIngresado.MaxLength = 32767;
             this.usuarioIngresado.MouseState = MaterialSkin.MouseState.HOVER;
             this.usuarioIngresado.Name = "usuarioIngresado";
@@ -186,7 +156,7 @@
             this.tipo.Depth = 0;
             this.tipo.Font = new System.Drawing.Font("Roboto", 11F);
             this.tipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tipo.Location = new System.Drawing.Point(121, 374);
+            this.tipo.Location = new System.Drawing.Point(120, 325);
             this.tipo.MouseState = MaterialSkin.MouseState.HOVER;
             this.tipo.Name = "tipo";
             this.tipo.Size = new System.Drawing.Size(39, 19);
@@ -197,10 +167,11 @@
             // 
             this.TipoSeleccionado.BackColor = System.Drawing.SystemColors.Window;
             this.TipoSeleccionado.FormattingEnabled = true;
-            this.TipoSeleccionado.Location = new System.Drawing.Point(226, 375);
+            this.TipoSeleccionado.Location = new System.Drawing.Point(240, 326);
             this.TipoSeleccionado.Name = "TipoSeleccionado";
             this.TipoSeleccionado.Size = new System.Drawing.Size(170, 21);
             this.TipoSeleccionado.TabIndex = 10;
+            this.TipoSeleccionado.SelectedIndexChanged += new System.EventHandler(this.TipoSeleccionado_SelectedIndexChanged);
             // 
             // BotonRegistrar
             // 
@@ -221,7 +192,7 @@
             // dniIngresado
             // 
             this.dniIngresado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dniIngresado.Location = new System.Drawing.Point(226, 119);
+            this.dniIngresado.Location = new System.Drawing.Point(241, 119);
             this.dniIngresado.MaxLength = 8;
             this.dniIngresado.Name = "dniIngresado";
             this.dniIngresado.Size = new System.Drawing.Size(170, 20);
@@ -255,6 +226,7 @@
             this.BotonCancelar.TabIndex = 14;
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
+            this.BotonCancelar.Click += new System.EventHandler(this.BotonCancelar_Click);
             // 
             // contraseña
             // 
@@ -262,7 +234,7 @@
             this.contraseña.Depth = 0;
             this.contraseña.Font = new System.Drawing.Font("Roboto", 11F);
             this.contraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.contraseña.Location = new System.Drawing.Point(124, 328);
+            this.contraseña.Location = new System.Drawing.Point(123, 279);
             this.contraseña.MouseState = MaterialSkin.MouseState.HOVER;
             this.contraseña.Name = "contraseña";
             this.contraseña.Size = new System.Drawing.Size(86, 19);
@@ -274,7 +246,7 @@
             // 
             this.Contraseñaingresada.Depth = 0;
             this.Contraseñaingresada.Hint = "";
-            this.Contraseñaingresada.Location = new System.Drawing.Point(226, 324);
+            this.Contraseñaingresada.Location = new System.Drawing.Point(240, 275);
             this.Contraseñaingresada.MaxLength = 32767;
             this.Contraseñaingresada.MouseState = MaterialSkin.MouseState.HOVER;
             this.Contraseñaingresada.Name = "Contraseñaingresada";
@@ -287,11 +259,35 @@
             this.Contraseñaingresada.TabStop = false;
             this.Contraseñaingresada.UseSystemPasswordChar = false;
             // 
+            // materialLabelEmpresa
+            // 
+            this.materialLabelEmpresa.AutoSize = true;
+            this.materialLabelEmpresa.Depth = 0;
+            this.materialLabelEmpresa.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabelEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabelEmpresa.Location = new System.Drawing.Point(123, 369);
+            this.materialLabelEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabelEmpresa.Name = "materialLabelEmpresa";
+            this.materialLabelEmpresa.Size = new System.Drawing.Size(111, 19);
+            this.materialLabelEmpresa.TabIndex = 17;
+            this.materialLabelEmpresa.Text = "Punto de Venta";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(240, 370);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(170, 21);
+            this.comboBox2.TabIndex = 18;
+            // 
             // NuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 524);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.materialLabelEmpresa);
             this.Controls.Add(this.Contraseñaingresada);
             this.Controls.Add(this.contraseña);
             this.Controls.Add(this.BotonCancelar);
@@ -302,8 +298,6 @@
             this.Controls.Add(this.tipo);
             this.Controls.Add(this.usuarioIngresado);
             this.Controls.Add(this.usuario);
-            this.Controls.Add(this.emailIngresado);
-            this.Controls.Add(this.email);
             this.Controls.Add(this.apellidoIngresado);
             this.Controls.Add(this.dni);
             this.Controls.Add(this.apellido);
@@ -325,8 +319,6 @@
         private MaterialSkin.Controls.MaterialLabel apellido;
         private MaterialSkin.Controls.MaterialLabel dni;
         private MaterialSkin.Controls.MaterialSingleLineTextField apellidoIngresado;
-        private MaterialSkin.Controls.MaterialLabel email;
-        private MaterialSkin.Controls.MaterialSingleLineTextField emailIngresado;
         private MaterialSkin.Controls.MaterialLabel usuario;
         private MaterialSkin.Controls.MaterialSingleLineTextField usuarioIngresado;
         private MaterialSkin.Controls.MaterialLabel tipo;
@@ -337,5 +329,7 @@
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private MaterialSkin.Controls.MaterialLabel contraseña;
         private MaterialSkin.Controls.MaterialSingleLineTextField Contraseñaingresada;
+        private MaterialSkin.Controls.MaterialLabel materialLabelEmpresa;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

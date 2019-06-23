@@ -1,27 +1,46 @@
 ﻿using DAL;
 using Entidad;
+using System;
 using System.Data;
 
 namespace BLL
 {
     public class AdministracionBLL
     {
-        readonly AdministracionDAL Admin = new AdministracionDAL();
+        AdministracionDAL Admin = new AdministracionDAL();
         public int CrearUsuario(Eusuario usuario)  //los medodos de escritura retornan un int
-        {   
-            //si el Id_Usuario existe devuelve un cero
-            if (BuscarUsuario(usuario).Rows.Count > 0) return 0;
-            else return Admin.CrearUsuario(usuario);
-        }
-
-        public DataTable DesabilitarUsuario(string _IdUsuario)
         {
-            return Admin.DeshabilitarUsuario(_IdUsuario);
+            int res = 0;
+            DataTable temporal = new DataTable();
+            temporal = BuscarUsuario(usuario);
+            if (temporal.Rows.Count > 0) //si el Id_Usuario existe devuelve un cero
+            { 
+                return res;
+            }
+            else
+            {
+                res = Admin.CrearUsuario(usuario);
+                return res;
+            }
+
+        }
+        // ED -  2019 06 22
+        public DataTable MostrarUsuarioHabilitados() => Admin.MostrarUsuarioHabilitados();
+        // ED -  2019 06 22 END
+
+        public int DesabilitarUsuario(string usuario)
+        {
+
+            return 1;
         }
         public DataTable BuscarUsuario(Eusuario usuario) => Admin.BuscarUsuario(usuario);
 
-        public DataTable ListasTipoUsuario() =>  Admin.ListarTipoUsuario();
+        public DataTable ListasTipoUsuarioBll() => Admin.ListarTipoUsuario();
 
-        public DataTable ListarUsuariosHabilitados() => Admin.MostrarUsuarioHabilitados();
+        //  ED -  2019 06 22
+        public DataTable ListarPuntosDeVenta() => Admin.ListarPuntosDeVenta();
+
+        public int ModificarUsuario(Eusuario _user) => Admin.ModificarUsuario(_user);
+        //  ED -  2019 06 22 END
     }
 }

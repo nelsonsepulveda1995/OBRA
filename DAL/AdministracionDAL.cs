@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using Entidad;
 
 namespace DAL
@@ -21,6 +22,26 @@ namespace DAL
             return respuesta;
         }
         public DataTable ListarTipoUsuario() => nuevaC.LeerPorStoreProcedure("spListarTipoUsuarios");
+        
+        public DataTable ListarPuntosDeVenta()
+        {
+            DataTable retListaPV = new DataTable();
+            retListaPV = nuevaC.LeerPorStoreProcedure("spListarPuntoDeVenta");
+            return retListaPV;
+        }
+
+        public int ModificarUsuario(Eusuario _user)
+        {
+            SqlParameter[] parametros = new SqlParameter[5];            
+            parametros[0] = nuevaC.CrearParametro("@Unombre", _user.getNombre());
+            parametros[1] = nuevaC.CrearParametro("@Uapellido", _user.getApellido());
+            parametros[2] = nuevaC.CrearParametro("@UidTipo", _user.getIdTipo());
+            parametros[3] = nuevaC.CrearParametro("@UpuntoVenta", _user.getPuntoDeVenta());
+            parametros[4] = nuevaC.CrearParametro("@Uid", _user.getidUsuario()); 
+            int ret = nuevaC.EscribirPorStoreProcedure("spModificarUsuario", parametros);
+            return ret;
+        }
+
 
         public DataTable DeshabilitarUsuario(string idUsuario)
         {

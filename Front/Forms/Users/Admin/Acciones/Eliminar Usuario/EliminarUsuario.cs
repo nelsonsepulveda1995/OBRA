@@ -31,7 +31,7 @@ namespace Front.Forms.Users.Admin.Acciones
         }
         private void MostrarUsuarioHabilitados()
         {
-            gvwListaUsuarios.DataSource = admin.ListarUsuariosHabilitados();
+            gvwListaUsuarios.DataSource = admin.MostrarUsuarioHabilitados();
         }
         // ED  -  2019 06 20 END
     }

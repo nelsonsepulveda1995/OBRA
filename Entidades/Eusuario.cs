@@ -8,7 +8,10 @@
         private int DNI;
         private string Contraseña;
         private int idTipo;
-        private string TipoUsuario;   
+        private string TipoUsuario;
+        //  ED -  2019 06 22
+        private int PuntoDeVenta;
+        //  ED -  2019 06 22 END
 
         #region getters
         public string getidUsuario()
@@ -44,6 +47,11 @@
         public int getIdTipo()
         {
             return this.idTipo;
+        }
+
+        public int getPuntoDeVenta()
+        {
+            return this.PuntoDeVenta;
         }
         #endregion
 
@@ -81,6 +89,11 @@
         public void setIdTipo(int _IdTipo)
         {
             this.idTipo = _IdTipo;
+        }
+
+        public void setPuntoDeVenta(int _PuntoDeVenta)
+        {
+            this.PuntoDeVenta = _PuntoDeVenta;
         }
         #endregion
     }

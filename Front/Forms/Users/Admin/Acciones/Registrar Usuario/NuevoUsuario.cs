@@ -25,7 +25,7 @@ namespace Front.Forms.Users.Admin.Acciones
             }
             else
             {
-                if (dniIngresado.Text.Length == 0 || nombreIngresado.Text.Length == 0 || apellidoIngresado.Text.Length == 0 || emailIngresado.Text.Length == 0 || Contraseñaingresada.Text.Length == 0 || TipoSeleccionado.Text.Length == 0)
+                if (dniIngresado.Text.Length == 0 || nombreIngresado.Text.Length == 0 || apellidoIngresado.Text.Length == 0 || Contraseñaingresada.Text.Length == 0 || TipoSeleccionado.Text.Length == 0)
                 {
                     MessageBox.Show("Compos obligatorios vacios", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -37,11 +37,15 @@ namespace Front.Forms.Users.Admin.Acciones
                     Nuevousuario.setIdUsuario(usuarioIngresado.Text);
                     Nuevousuario.setNombre(nombreIngresado.Text);
                     Nuevousuario.setIdTipo(Convert.ToInt16(TipoSeleccionado.SelectedValue));
+                    //  ED -  2019 06 22
+                    Nuevousuario.setPuntoDeVenta(Convert.ToInt32(comboBox2.SelectedValue));
+                    //  ED -  2019 06 22 END
                     if (admin.CrearUsuario(Nuevousuario) == 0)
                     {
                         MessageBox.Show("No se pudo crear el registro");
                     }
-                    else { MessageBox.Show("Registro creado exitosamente"); }
+                    else { MessageBox.Show("Registro creado exitosamente");
+                    }
                 }
             }
         }
@@ -54,10 +58,28 @@ namespace Front.Forms.Users.Admin.Acciones
         private void NuevoUsuario_Load(object sender, EventArgs e) //no funciona !!!!!
         {
             
-            DataTable tabla= admin.ListasTipoUsuario();
+            DataTable tabla= admin.ListasTipoUsuarioBll();
             TipoSeleccionado.DataSource = tabla;
             TipoSeleccionado.DisplayMember = "descripcion";
             TipoSeleccionado.ValueMember = "id";
+            
+            //  ED -  2019 06 22
+            DataTable tabla2 = admin.ListarPuntosDeVenta();
+            comboBox2.DataSource = tabla2;
+            comboBox2.DisplayMember = "NOMBRE";
+            comboBox2.ValueMember = "CUIT_EMP";
+            //  ED -  2019 06 22 END
+
+        }
+
+        private void TipoSeleccionado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BotonCancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
