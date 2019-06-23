@@ -6,15 +6,15 @@ namespace DAL
 {
     public class VentasDAL
     {
-        Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
-        public DataTable VerunClienteDAL(Ecliente _cliente)
+        readonly Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
+        public DataTable VerunCliente(Ecliente _cliente)
         {
             string coneccion = $"select * from CLIENTES WHERE ID_CLIENTE='{_cliente.getidcliente()}'";
             DataTable respuesta = new DataTable();
             respuesta=nuevaC.LeerPorComando(coneccion);
             return respuesta;
         }
-        public DataTable ListarClientesDAL()
+        public DataTable ListarClientes()
         {
             
             string coneccion = "select * from CLIENTE";
@@ -29,34 +29,28 @@ namespace DAL
             respuesta=nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public DataTable ListarDetalleVentaBLL()
+        public DataTable ListarDetalleVenta()
         {
             DataTable respuesta = new DataTable();
             string consulta = "select* from DETALLEFACTURAVENTA";
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public int CrearClienteDAL(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
+        public int GuardarCliente(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
         {
-            if (VerificarClienteDAL(cliente))
-            {
-                string consulta = $"insert into cliente (DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)VALUES({cliente.getidcliente()},'{cliente.getnombre()}','{cliente.getdireccion()}','{cliente.getcp()}','{cliente.gettelefono()}','{cliente.getcorreo()}')"; 
-                return 1;
+            if (!ExisteCliente(cliente.getidcliente()))
+			{
+				string consulta = $"INSERT INTO CLIENTE(DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)" +
+                    $"VALUES({cliente.getidcliente()},'{cliente.getnombre()}'" +
+                    $",'{cliente.getdireccion()}','{cliente.getcp()}','" +
+                    $"{cliente.gettelefono()}','{cliente.getcorreo()}')";
+                return nuevaC.EscribirPorComando(consulta);
             }
             return -1;
         }
-        public bool VerificarClienteDAL(Ecliente cliente)
-        {
-            DataTable temp = new DataTable();
-            string consulta = $"select * from CLIENTE WHERE DNI={cliente.getidcliente()}";
-            temp = nuevaC.LeerPorComando(consulta);
-            if (temp.Rows.Count > 0)
-            {
-                return false;   //si ya existe un cliente igual
-            }
-            return true;
-        }
-        public int CrearventaDAL(EFacturaVenta factura)
+        public bool ExisteCliente(int DNI) => nuevaC.LeerPorComando($"SELECT * FROM CLIENTE WHERE DNI = {DNI}").Rows.Count > 0;
+	
+	    public int CrearventaDAL(EFacturaVenta factura)
         {
             int respuesta;
             string consulta = $"insert into FACTURAVENTA (ID_MEDIOP,DNI,NOMBREUSUARIO,FECHA)VALUES({factura.Getmediop()},{factura.Getdni()},'{factura.Getnombreusuario()}',CONVERT(date,'{factura.GetFecha()}'))";
@@ -82,5 +76,5 @@ namespace DAL
             }
             else { return 1; }
         }
-    }
+	}
 }

@@ -2,51 +2,57 @@
 using Entidad;
 using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Front.Forms.Users.Ventas.Acciones
 {
     public partial class GestionarClientes : Form
     {
-        VentasBLL venta = new VentasBLL();
+        readonly VentasBLL venta = new VentasBLL();
         public GestionarClientes()
         {
             InitializeComponent();
         }
 
-        private void BotonGestionarClientes_Click(object sender, System.EventArgs e)
+        private void RegistrarCliente_Click(object sender, System.EventArgs e)
+        {
+            if (NoHayDatosVacios())
+            {
+                NuevoCliente();
+            }
+        }
+
+        private void NuevoCliente()
         {
             Ecliente cliente = new Ecliente();
-            if (mldni.Text == " "|| mlcp.Text==""|| mldireccion.Text==" "|| mlnombre.Text == " " || mltelefono.Text == " " ||mlcorreo.Text == " " )
-            {
-                MessageBox.Show("Campos incompletos");
-            }
-            else
-            {
-                cliente.setidcliente(Convert.ToInt32(mldni.Text));
-                cliente.setnombre(mlnombre.Text);
-                cliente.setdireccion(mldireccion.Text);
-                cliente.setcp(mlcp.Text);
-                cliente.settelefono(mltelefono.Text);
-                cliente.setcorreo(mlcorreo.Text);
 
-                int respuesta;
-                respuesta= venta.CrearCliente(cliente);
-                if (respuesta > 0)
+            cliente.setidcliente(Convert.ToInt32(CajaTextoDNI.Text));
+            cliente.setnombre(CajaTextoNombre.Text);
+            cliente.setdireccion(CajaTextoDireccion.Text);
+            cliente.setcp(CajaTextoCP.Text);
+            cliente.settelefono(CajaTextoTelefono.Text);
+            cliente.setcorreo(CajaTextoCorreo.Text);
+
+            Warning.Text = venta.CrearCliente(cliente);
+        }
+
+        private bool NoHayDatosVacios(string value = "CajaTexto")
+        {
+            var CajasDeTexto = Controls.OfType<MaterialSkin.Controls.MaterialSingleLineTextField>().
+            Where(Box => Box.Name.StartsWith(value)).OrderBy(Box => TabIndex);
+
+            foreach (var Caja in CajasDeTexto)
+            {
+                if (string.IsNullOrEmpty(Caja.Text))
                 {
-                    mlrespuesta.Text = "Cliente creado correctamente";
+                    this.ControlDeError.SetError(Caja, "Error");
+                    return false;
                 }
-                else
-                {
-                    if (respuesta == 0)
-                    {
-                        mlrespuesta.Text = "Error Intente Nuevamente";
-                    }
-                    if (respuesta == -1)
-                    {
-                        mlrespuesta.Text = "El cliente que intenta crear ya existe";
-                    }
-                }
+
+                this.ControlDeError.SetError(Caja, null);
             }
+
+            return true;
         }
     }
 }

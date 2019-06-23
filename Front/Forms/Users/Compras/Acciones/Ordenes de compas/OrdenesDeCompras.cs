@@ -7,7 +7,7 @@ namespace Front.Forms.Users.Compras.Acciones
 {
     public partial class OrdenesDeCompras : Form
     {
-        ComprasDominio compras = new ComprasDominio();
+        ComprasBLL compras = new ComprasBLL();
         DepositoBLL deposito = new DepositoBLL();
         public OrdenesDeCompras()
         {
@@ -18,7 +18,7 @@ namespace Front.Forms.Users.Compras.Acciones
         {
             DataTable proveedor = new DataTable();
             DataTable ordenes = new DataTable();
-            proveedor = compras.ListarProveedoresbll();
+            proveedor = compras.ListarProveedores();
             cb_listprovee.DataSource = proveedor;
             cb_listprovee.ValueMember = "CUIT_PROV";
             cb_listprovee.DisplayMember ="NOMBRE";
@@ -32,7 +32,7 @@ namespace Front.Forms.Users.Compras.Acciones
         private void MaterialFlatButton1_Click(object sender, System.EventArgs e)
         {
             DataTable detalles = new DataTable();
-            detalles = compras.DetalledeUnaordenBLL(Convert.ToInt32(cb_listordenes.SelectedItem.ToString())); //corregir combo box
+            detalles = compras.DetalledeUnaorden(Convert.ToInt32(cb_listordenes.SelectedItem.ToString())); //corregir combo box
             dataGridView1.DataSource = detalles;
         }
     }

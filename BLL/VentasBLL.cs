@@ -1,25 +1,20 @@
 ﻿using DAL;
 using Entidad;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BLL
 {
     public class VentasBLL
     {
         VentasDAL venta = new VentasDAL();
-        public DataTable ListarFacturaVentaBLL()
+        public DataTable ListarFacturaVenta()
         {
             DataTable respuesta = new DataTable();
             respuesta = venta.ListarFacturasVentas();
             return respuesta;
         }
-
-        public int CrearVentaBLL(EFacturaVenta factura, List<EDetalleFacturaVenta> lista)
+		
+        public int CrearVenta(EFacturaVenta factura, List<EDetalleFacturaVenta> lista)
+	
         {
             int respuesta;
             
@@ -39,21 +34,23 @@ namespace BLL
             }
             return respuesta;
         }
-        public DataTable BuscarClienteBLL()
+        public DataTable BuscarCliente()
         {
             DataTable x = new DataTable();
             return x = null;
 
         }
-        public int ModificarClienteBLL()
+        public int ModificarCliente()
         {
             return 1;
         }
-        public int CrearCliente(Ecliente cliente)
+        public string CrearCliente(Ecliente cliente)
         {
-            int respuesta;
-            respuesta= venta.CrearClienteDAL(cliente);
-            return respuesta;
+            switch (venta.GuardarCliente(cliente))
+            {
+                case -1: return "Ya existe un cliente con ese DNI";
+                default: return "Cliente creado correctamente";
+            }
         }
     }
 }

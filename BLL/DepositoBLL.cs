@@ -9,17 +9,16 @@ namespace BLL
     {
         readonly DepositoDAL deposito = new DepositoDAL();
         ProductoDAL producto = new ProductoDAL();
-
-
-        public int UpdateStockBLL(int ID, decimal dato){
+		
+       public int UpdateStockBLL(int ID, decimal dato){
 
             return deposito.ModficarStock(ID, dato);
             
         }
-
-        public DataTable ListarProductosconPocoStockBLL(int _cantidad)
-        {
-            return deposito.ListarProductosconPocoStockDAL(_cantidad);
+		
+		public DataTable ListarProductosconPocoStock(int _cantidad)
+		{
+            return deposito.GetProductosConPocoStock(_cantidad);
         }
 
         public DataTable listarTodosLosProdutos()
@@ -37,7 +36,7 @@ namespace BLL
         {
 
             int respuesta;
-            respuesta = deposito.CrearOrdenCompraDAL(Orden);
+            respuesta = deposito.GuardarOrdenCompra(Orden);
             if (respuesta == 0)
             {
                 return -1;    //error en crear la orden
@@ -57,7 +56,7 @@ namespace BLL
         public int CrearDetalleOrdenCompraBLL(EDetalleOrdenCompra detalle)
         {
             int respuesta;
-            respuesta = deposito.CrearDetalleOrdenCompraDAL(detalle);
+            respuesta = deposito.GuardarDetalleOrdenCompra(detalle);
             return respuesta;
         }
         public DataTable VerunproductoBLL(int ID_PRODUCTO)

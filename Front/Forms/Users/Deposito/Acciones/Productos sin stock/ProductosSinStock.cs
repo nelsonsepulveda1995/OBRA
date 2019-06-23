@@ -16,14 +16,14 @@ namespace Front.Forms.Users.Deposito.Acciones
         private void BotonMostrarStock_Click(object sender, System.EventArgs e)
         {
             DataTable productos = new DataTable();
-            productos = deposito.ListarProductosconPocoStockBLL(0);
+            productos = deposito.ListarProductosconPocoStock(0);
             dgProductosSinStock.DataSource =productos;
         }
 
         private void MaterialRaisedButton1_Click(object sender, System.EventArgs e)
         {
             DataTable productos = new DataTable();
-            productos = deposito.ListarProductosconPocoStockBLL(Convert.ToInt32(numericUpDown1.Value));
+            productos = deposito.ListarProductosconPocoStock(Convert.ToInt32(numericUpDown1.Value));
             dataGridView1.DataSource = productos;
         }
 

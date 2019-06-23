@@ -15,8 +15,7 @@ namespace DAL
          */
         private void Conectar()
         {
-            strCadenaDeConexion = "Data Source=JJMADEOW10\\SQLEXPRESS;Initial Catalog=Corralon;Integrated Security=true";
-
+			strCadenaDeConexion = "Server=.\\SQLEXPRESS;DataBase= Corralon; integrated security=true";
             //Instanció un objeto del tipo SqlConnection
             objConexion = new SqlConnection();
             objConexion.ConnectionString = strCadenaDeConexion;

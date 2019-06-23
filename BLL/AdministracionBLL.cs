@@ -6,42 +6,22 @@ namespace BLL
 {
     public class AdministracionBLL
     {
-        AdministracionDAL Admin = new AdministracionDAL();
+        readonly AdministracionDAL Admin = new AdministracionDAL();
         public int CrearUsuario(Eusuario usuario)  //los medodos de escritura retornan un int
-        {
-            int res = 0;
-            DataTable temporal = new DataTable();
-            temporal = BuscarUsuario(usuario);
-            if (temporal.Rows.Count > 0) //si el Id_Usuario existe devuelve un cero
-            { 
-                return res;
-            }
-            else
-            {
-                res = Admin.CrearUsuario(usuario);
-                return res;
-            }
-
+        {   
+            //si el Id_Usuario existe devuelve un cero
+            if (BuscarUsuario(usuario).Rows.Count > 0) return 0;
+            else return Admin.CrearUsuario(usuario);
         }
 
-        public int DesabilitarUsuario(Eusuario usuario)
+        public DataTable DesabilitarUsuario(string _IdUsuario)
         {
-
-            return 1;
-
+            return Admin.DeshabilitarUsuario(_IdUsuario);
         }
-        public DataTable BuscarUsuario(Eusuario usuario)
-        {
-            DataTable respuesta = new DataTable();
-            respuesta = Admin.BuscarUsuario(usuario);
-            return respuesta;
-        }
+        public DataTable BuscarUsuario(Eusuario usuario) => Admin.BuscarUsuario(usuario);
 
-        public DataTable ListasTipoUsuarioBll()
-        {
-            DataTable temporal = new DataTable();
-            temporal = Admin.ListarTipoUsuario();
-            return temporal;
-        }
+        public DataTable ListasTipoUsuario() =>  Admin.ListarTipoUsuario();
+
+        public DataTable ListarUsuariosHabilitados() => Admin.MostrarUsuarioHabilitados();
     }
 }

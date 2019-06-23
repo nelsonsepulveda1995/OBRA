@@ -7,7 +7,7 @@ namespace Front.Forms.Users.Compras.Acciones
 {
     public partial class GestionarProvedores : Form
     {
-        ComprasDominio compras = new ComprasDominio();
+        ComprasBLL compras = new ComprasBLL();
         public GestionarProvedores()
         {
             InitializeComponent();

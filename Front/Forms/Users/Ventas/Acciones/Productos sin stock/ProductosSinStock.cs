@@ -13,7 +13,7 @@ namespace Front.Forms.Users.Ventas.Acciones
 
         private void BotonMostrarStock_Click(object sender, System.EventArgs e)
         {
-            dataGridView1.DataSource = deposito.ListarProductosconPocoStockBLL(0);
+            dataGridView1.DataSource = deposito.ListarProductosconPocoStock(0);
         }
     }
 }

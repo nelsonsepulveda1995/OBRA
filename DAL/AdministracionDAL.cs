@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using Entidad;
 
 namespace DAL
 {
     public class AdministracionDAL
     {
-        Conexion nuevaC = new Conexion();   //llamar esta instancia para la coneccion
+        readonly Conexion nuevaC = new Conexion();   //llamar esta instancia para la coneccion
 
         //buscador de usuario (solo debuelve el nombre mas adelante se puede usar para buscar todos sus datos)
         public DataTable BuscarUsuario(Eusuario usuario)
         {
-            
             String consulta = $"select ID_USUARIO FROM USUARIO WHERE ID_USUARIO='{usuario.getidUsuario()}'";
-            _ = new DataTable();
-            DataTable respuesta = nuevaC.LeerPorComando(consulta);
-            return respuesta;
+            return nuevaC.LeerPorComando(consulta);
         }
         public int CrearUsuario(Eusuario usuario) //crea un nuevo usuario
         {
@@ -24,12 +20,14 @@ namespace DAL
             int respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
-        public DataTable ListarTipoUsuario()
+        public DataTable ListarTipoUsuario() => nuevaC.LeerPorStoreProcedure("spListarTipoUsuarios");
+        // ED  -  2019 06 20
+        public DataTable DeshabilitarUsuario(string idUsuario)
         {
-            DataTable respuesta = new DataTable();
-            SqlParameter[] parametros = new SqlParameter[0];
-            respuesta= nuevaC.LeerPorStoreProcedure("spListarTipoUsuarios",parametros);
-            return respuesta;
+            return nuevaC.LeerPorStoreProcedure("spDeshabilitarUsuario", nuevaC.CrearParametro("@Usuario", idUsuario));
         }
+
+        public DataTable MostrarUsuarioHabilitados() => nuevaC.LeerPorStoreProcedure("spMostrarUsuarioHabilitados");
+        // ED  -  2019 06 20 END
     }
 }

@@ -4,45 +4,32 @@ using System.Data;
 
 namespace BLL
 {
-    public class ComprasDominio
+    public class ComprasBLL
     {
         ProductoDAL producto = new ProductoDAL();
-        ComprasDAL compras = new ComprasDAL();
+        readonly ComprasDAL comprasDAL = new ComprasDAL();
         public int CrearCompra()
         {
 
             return 1;
         }
-        public DataTable VerCompras()
-        {
-            DataTable respuesta = new DataTable();
-            respuesta = compras.VerFacturasCompras();
-            return respuesta = null;
-        }
-        public DataTable VerDetalleComprasBLL()
-        {
-            DataTable respuesta = new DataTable();
-            respuesta = compras.VerDetalleFacturaCompraDAL();
-            return respuesta = null;
-        }
+        public DataTable VerCompras() => comprasDAL.GetFacturasCompras();
+
+        public DataTable VerDetalleCompras() => comprasDAL.GetDetalleFacturaCompra();
 
         public int CrearProveedor(Eproveedor proveedor)
         {
-            if (compras.VerificarProveedorDAL(proveedor))
+            if (comprasDAL.VerificarProveedor(proveedor))
             {
                 int temp;
-                temp = compras.CrearProveedor(proveedor); //si la consulta devuelve 0 es que no escribio en la base
+                temp = comprasDAL.GuardarProveedor(proveedor); //si la consulta devuelve 0 es que no escribio en la base
                 return temp;
             }
             return -1; //solo si el proveedor existe y tira un false en el if 
         }
 
-        public DataTable ListarProveedoresbll()
-        {
-            DataTable respuesta = new DataTable();
-            respuesta = compras.ListarProveedor();
-            return respuesta;
-        }
+        public DataTable ListarProveedores() => comprasDAL.GetProveedores();
+
         public int DesabilitarProveedor()
         {
             return 1;
@@ -52,18 +39,18 @@ namespace BLL
         {
             return 1;
         }
-        public DataTable CrearRemitoBLL()           //COMPLETAR
+        public DataTable CrearRemito()           //COMPLETAR
         {
             DataTable respuesta = new DataTable();
             return respuesta;
         }
-        public DataTable CrearDetalleRemitoBLL()    //COMPLETAR
+        public DataTable CrearDetalleRemito()    //COMPLETAR
         {
             DataTable respuesta = new DataTable();
             return respuesta;
         }
-        public DataTable ListarOrdenesdeCompraporEstado(int estado) => compras.ListarOrdenesporEstado(estado);
+        public DataTable ListarOrdenesdeCompraporEstado(int estado) => comprasDAL.GetOrdenesporEstado(estado);
 
-        public DataTable DetalledeUnaordenBLL(int id) => compras.DetalledeUnaOrden(id);
+        public DataTable DetalledeUnaorden(int id) => comprasDAL.GetDetalledeUnaOrden(id);
     }
 }
