@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Entidad;
 using System.Data;
 
 namespace BLL
@@ -6,10 +7,8 @@ namespace BLL
     public class ProductoBLL
     {
         ProductoDAL productoDAL = new ProductoDAL();
-        public int CrearProducto()
-        {
-            return 1;
-        }
+
+        public int CrearProductoBLL(Eproducto _producto) => productoDAL.SETProductoDAL(_producto);
 
         public DataTable ListarProductos() => productoDAL.GetListaProductos();
 
