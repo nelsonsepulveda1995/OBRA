@@ -32,9 +32,9 @@
             this.BotonRecepcionarPedido = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +64,7 @@
             this.BotonRecepcionarPedido.TabIndex = 1;
             this.BotonRecepcionarPedido.Text = "Cargar el  producto al stock";
             this.BotonRecepcionarPedido.UseVisualStyleBackColor = true;
+            this.BotonRecepcionarPedido.Click += new System.EventHandler(this.BotonRecepcionarPedido_Click);
             // 
             // BotonCancelar
             // 
@@ -88,14 +89,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(261, 21);
             this.comboBox1.TabIndex = 3;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(639, 147);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown1.TabIndex = 4;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // materialLabel1
             // 
@@ -123,6 +117,20 @@
             this.materialLabel2.TabIndex = 6;
             this.materialLabel2.Text = "Cantidad";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(639, 147);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown1.TabIndex = 4;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
+            // 
             // RecepcionDePedidos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -149,8 +157,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton BotonRecepcionarPedido;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

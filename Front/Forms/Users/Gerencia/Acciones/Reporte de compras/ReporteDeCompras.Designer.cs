@@ -59,6 +59,7 @@
             this.BotonReporteDeCompras.TabIndex = 1;
             this.BotonReporteDeCompras.Text = "Generar reporte";
             this.BotonReporteDeCompras.UseVisualStyleBackColor = true;
+            this.BotonReporteDeCompras.Click += new System.EventHandler(this.BotonReporteDeCompras_Click);
             // 
             // BotonCancelar
             // 

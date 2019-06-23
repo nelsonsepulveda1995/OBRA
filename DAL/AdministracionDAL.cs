@@ -31,22 +31,5 @@ namespace DAL
             respuesta= nuevaC.LeerPorStoreProcedure("spListarTipoUsuarios",parametros);
             return respuesta;
         }
-
-        // ED  -  2019 06 20
-        public DataTable DeshabilitarUsuario(string _idUsuario)
-        {
-            DataTable respuesta = new DataTable();
-            SqlParameter[] parameters = new SqlParameter[1];
-            parameters[0] = nuevaC.CrearParametro("@Usuario", _idUsuario);
-            respuesta = nuevaC.LeerPorStoreProcedure("spDeshabilitarUsuario", parameters);
-            return respuesta;
-        }
-        public DataTable MostrarUsuarioHabilitados()
-        {
-            DataTable ret = new DataTable();
-            ret = nuevaC.LeerPorStoreProcedure("spMostrarUsuarioHabilitados");
-            return ret;
-        }
-        // ED  -  2019 06 20 END
     }
 }

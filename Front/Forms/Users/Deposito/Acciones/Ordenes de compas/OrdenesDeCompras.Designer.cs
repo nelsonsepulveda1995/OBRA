@@ -30,15 +30,17 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.BotonCrearOrdenCompra = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.ProductoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.numupdow_cantidad = new System.Windows.Forms.NumericUpDown();
             this.cblistaproducto = new System.Windows.Forms.ComboBox();
             this.Agregar = new MaterialSkin.Controls.MaterialFlatButton();
             this.Vaciar = new MaterialSkin.Controls.MaterialFlatButton();
-            this.tb_vistacarrito = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numupdow_cantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,22 +70,6 @@
             this.BotonCrearOrdenCompra.Text = "Crear Orden de Compras";
             this.BotonCrearOrdenCompra.UseVisualStyleBackColor = true;
             this.BotonCrearOrdenCompra.Click += new System.EventHandler(this.BotonCrearOrdenCompra_Click);
-            // 
-            // BotonCancelar
-            // 
-            this.BotonCancelar.AutoSize = true;
-            this.BotonCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BotonCancelar.Depth = 0;
-            this.BotonCancelar.Icon = null;
-            this.BotonCancelar.Location = new System.Drawing.Point(395, 482);
-            this.BotonCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.BotonCancelar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BotonCancelar.Name = "BotonCancelar";
-            this.BotonCancelar.Primary = false;
-            this.BotonCancelar.Size = new System.Drawing.Size(91, 36);
-            this.BotonCancelar.TabIndex = 2;
-            this.BotonCancelar.Text = "Cancelar";
-            this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
             // ProductoLabel
             // 
@@ -147,14 +133,6 @@
             this.Vaciar.UseVisualStyleBackColor = true;
             this.Vaciar.Click += new System.EventHandler(this.VaciarCarrito_Click);
             // 
-            // tb_vistacarrito
-            // 
-            this.tb_vistacarrito.Location = new System.Drawing.Point(280, 237);
-            this.tb_vistacarrito.Multiline = true;
-            this.tb_vistacarrito.Name = "tb_vistacarrito";
-            this.tb_vistacarrito.Size = new System.Drawing.Size(206, 213);
-            this.tb_vistacarrito.TabIndex = 13;
-            // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
@@ -168,19 +146,45 @@
             this.materialLabel1.TabIndex = 14;
             this.materialLabel1.Text = "Carrito";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dataGridView1.Location = new System.Drawing.Point(252, 237);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(242, 214);
+            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Producto";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Cantidad";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // OrdenesDeCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.tb_vistacarrito);
             this.Controls.Add(this.Vaciar);
             this.Controls.Add(this.Agregar);
             this.Controls.Add(this.cblistaproducto);
             this.Controls.Add(this.numupdow_cantidad);
             this.Controls.Add(this.ProductoLabel);
-            this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonCrearOrdenCompra);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -188,6 +192,7 @@
             this.Text = "EliminarUsuario";
             this.Load += new System.EventHandler(this.OrdenesDeCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numupdow_cantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,13 +202,14 @@
 
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton BotonCrearOrdenCompra;
-        private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private MaterialSkin.Controls.MaterialLabel ProductoLabel;
         private System.Windows.Forms.NumericUpDown numupdow_cantidad;
         private System.Windows.Forms.ComboBox cblistaproducto;
         private MaterialSkin.Controls.MaterialFlatButton Agregar;
         private MaterialSkin.Controls.MaterialFlatButton Vaciar;
-        private System.Windows.Forms.TextBox tb_vistacarrito;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

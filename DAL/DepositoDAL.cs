@@ -8,6 +8,27 @@ namespace DAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la coneccion
 
+        public int ModficarStock(int id, decimal StockModify)
+        {
+
+            string consulta = $"UPDATE PRODUCTO SET CANTIDAD = {StockModify} WHERE  ID_PROD={id}";
+
+            return nuevaC.EscribirPorComando(consulta);      
+        }
+
+
+
+        public DataTable listAllProducts()
+        {
+            DataTable respuesta = new DataTable();
+            string consulta = $"SELECT * FROM PRODUCTO";
+            respuesta = nuevaC.LeerPorComando(consulta);
+
+            Console.WriteLine(respuesta.ToString());
+            return respuesta;
+        }
+
+
         public DataTable ListarProductosconPocoStockDAL(int cantidad)//SE puede usar para filtrar (normalmente se usa con: 0)
         {
             DataTable respuesta = new DataTable();
