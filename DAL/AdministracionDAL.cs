@@ -21,13 +21,12 @@ namespace DAL
             return respuesta;
         }
         public DataTable ListarTipoUsuario() => nuevaC.LeerPorStoreProcedure("spListarTipoUsuarios");
-        // ED  -  2019 06 20
+
         public DataTable DeshabilitarUsuario(string idUsuario)
         {
             return nuevaC.LeerPorStoreProcedure("spDeshabilitarUsuario", nuevaC.CrearParametro("@Usuario", idUsuario));
         }
 
         public DataTable MostrarUsuarioHabilitados() => nuevaC.LeerPorStoreProcedure("spMostrarUsuarioHabilitados");
-        // ED  -  2019 06 20 END
     }
 }

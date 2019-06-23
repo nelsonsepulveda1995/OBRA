@@ -14,7 +14,7 @@ namespace Front.Forms.Users.Deposito.Acciones
             InitializeComponent();
             comboBox1.ValueMember = "ID_PROD";
             comboBox1.DisplayMember ="DESCRIPCION";
-            comboBox1.DataSource = a.listarTodosLosProdutos();
+            comboBox1.DataSource = a.ListarTodosLosProdutos();
 
         
 

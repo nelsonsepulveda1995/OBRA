@@ -18,7 +18,7 @@ namespace Front.Forms.Users.Deposito.Acciones
             
             
 
-           dataGridView1.DataSource = a.listarTodosLosProdutos();
+           dataGridView1.DataSource = a.ListarTodosLosProdutos();
             
 
 

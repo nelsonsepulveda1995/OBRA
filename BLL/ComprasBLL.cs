@@ -19,11 +19,10 @@ namespace BLL
 
         public int CrearProveedor(Eproveedor proveedor)
         {
-            if (comprasDAL.VerificarProveedor(proveedor))
+            if (comprasDAL.ExisteProvedor(proveedor.getcuit()))
             {
-                int temp;
-                temp = comprasDAL.GuardarProveedor(proveedor); //si la consulta devuelve 0 es que no escribio en la base
-                return temp;
+                //si la consulta devuelve 0 es que no escribio en la base
+                return comprasDAL.GuardarProveedor(proveedor);
             }
             return -1; //solo si el proveedor existe y tira un false en el if 
         }

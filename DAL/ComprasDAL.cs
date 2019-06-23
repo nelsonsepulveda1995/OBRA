@@ -33,16 +33,10 @@ namespace DAL
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public bool VerificarProveedor(Eproveedor proveedor)
+        public bool ExisteProvedor(int cuit) 
         {
-            DataTable temp = new DataTable();
-            string consulta = $"SELECT CUIT_PROV FROM PROVEDOR WHERE CUIT_PROV ={proveedor.getcuit()}"; //se busca proveedor por cuit
-            temp = nuevaC.LeerPorComando(consulta);
-            if (temp.Rows.Count > 0)
-            {
-                return false;    // si existe no se puede crear de nuevo
-            }
-            return true;    //si no existe true
+            string consulta = $"SELECT CUIT_PROV FROM PROVEDOR WHERE CUIT_PROV ={cuit}";
+            return nuevaC.LeerPorComando(consulta).Rows.Count > 0;
         }
         public DataTable ListarOrdenesdeCompras() => nuevaC.LeerPorStoreProcedure("spListarOrdenCompra");
 

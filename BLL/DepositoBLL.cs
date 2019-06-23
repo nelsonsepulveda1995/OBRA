@@ -8,33 +8,21 @@ namespace BLL
     public class DepositoBLL
     {
         readonly DepositoDAL deposito = new DepositoDAL();
-        ProductoDAL producto = new ProductoDAL();
+        readonly ProductoDAL producto = new ProductoDAL();
 		
-       public int UpdateStockBLL(int ID, decimal dato){
-
-            return deposito.ModficarStock(ID, dato);
-            
-        }
+        public int UpdateStockBLL(int ID, decimal dato) => deposito.ModficarStock(ID, dato);
 		
-		public DataTable ListarProductosconPocoStock(int _cantidad)
-		{
-            return deposito.GetProductosConPocoStock(_cantidad);
-        }
+		public DataTable ListarProductosconPocoStock(int cantidad) => deposito.GetProductosConPocoStock(cantidad);
 
-        public DataTable listarTodosLosProdutos()
+        public DataTable ListarTodosLosProdutos() => producto.GetListaProductos();
+
+        public DataTable ListarProductosConStockMenorAZero(int StockMenorA)
         {
-            return deposito.listAllProducts();
+            return deposito.GetProductosConPocoStock(StockMenorA);
         }
-
-        public DataTable listarProductosConStockMenorAZero(int StockMenorA)
-        {
-            return deposito.ListarProductosconPocoStockDAL(StockMenorA);
-        }
-
 
         public int CrearOrdenCompraBLL(EordenCompra Orden, List<EDetalleOrdenCompra> listadetalles)
         {
-
             int respuesta;
             respuesta = deposito.GuardarOrdenCompra(Orden);
             if (respuesta == 0)
@@ -45,7 +33,7 @@ namespace BLL
             foreach (EDetalleOrdenCompra detalle in listadetalles)
             {
                 detalle.Setid_Compras(id); //carga la fk de orden de compra  en el detalle
-                if (CrearDetalleOrdenCompraBLL(detalle) == 0)
+                if (CrearDetalleOrdenCompra(detalle) == 0)
                 {
                     return -2;   //error  en crear el detalle de compra
                 }
@@ -53,18 +41,12 @@ namespace BLL
             return respuesta;
         }
 
-        public int CrearDetalleOrdenCompraBLL(EDetalleOrdenCompra detalle)
+        public int CrearDetalleOrdenCompra(EDetalleOrdenCompra detalle)
         {
             int respuesta;
             respuesta = deposito.GuardarDetalleOrdenCompra(detalle);
             return respuesta;
         }
-        public DataTable VerunproductoBLL(int ID_PRODUCTO)
-        {
-            DataTable respuesta = new DataTable();
-            respuesta = producto.GetProducto(ID_PRODUCTO);
-            return respuesta;
-        }
-
+        public DataTable VerunproductoBLL(int ID) => producto.GetProducto(ID);
     }
 }

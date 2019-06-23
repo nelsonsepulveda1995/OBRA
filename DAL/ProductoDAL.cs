@@ -7,10 +7,8 @@ namespace DAL
     public class ProductoDAL
     {
         readonly Conexion nuevaC = new Conexion(); //llamar a esta instancia para a conexion
-        public DataTable GetListaProductos() //listar todos los productos
-        {
-            return nuevaC.LeerPorStoreProcedure("spListarProductos");
-        }
+        public DataTable GetListaProductos() => nuevaC.LeerPorStoreProcedure("spListarProductos");
+     
         public DataTable GetProducto(int ID) //Trae todos los datos de un producto (puede servir para calcular el precio total o verificar stock)
         {
             SqlParameter parametro = nuevaC.CrearParametro("@idProducto", ID);
@@ -21,13 +19,6 @@ namespace DAL
             SqlParameter parametro = nuevaC.CrearParametro("@idProducto", ID);
             return Convert.ToInt32(nuevaC.LeerPorStoreProcedure("uspGetProducto", parametro).Rows[0]["CANTIDAD"]);
         }
-        public DataTable GetMediosdePago()
-        {
-            DataTable respuesta = new DataTable();
-            SqlParameter[] parametros = new SqlParameter[0];
-            respuesta = nuevaC.LeerPorStoreProcedure("spListarMedioDePago", parametros);
-            return respuesta;
-        }
-
+        public DataTable GetMediosdePago() => nuevaC.LeerPorStoreProcedure("spListarMedioDePago");
     }
 }

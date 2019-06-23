@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using Entidad;
 
 namespace DAL
@@ -7,46 +8,28 @@ namespace DAL
     public class VentasDAL
     {
         readonly Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
-        public DataTable VerunCliente(Ecliente _cliente)
-        {
-            string coneccion = $"select * from CLIENTES WHERE ID_CLIENTE='{_cliente.getidcliente()}'";
-            DataTable respuesta = new DataTable();
-            respuesta=nuevaC.LeerPorComando(coneccion);
-            return respuesta;
-        }
-        public DataTable ListarClientes()
-        {
-            
-            string coneccion = "select * from CLIENTE";
-            DataTable respuesta = new DataTable();
-            respuesta = nuevaC.LeerPorComando(coneccion);
-            return respuesta;
-        }
-        public DataTable ListarFacturasVentas()
-        {
-            DataTable respuesta = new DataTable();
-            string consulta = "select* from FACTURAVENTA";
-            respuesta=nuevaC.LeerPorComando(consulta);
-            return respuesta;
-        }
-        public DataTable ListarDetalleVenta()
-        {
-            DataTable respuesta = new DataTable();
-            string consulta = "select* from DETALLEFACTURAVENTA";
-            respuesta = nuevaC.LeerPorComando(consulta);
-            return respuesta;
-        }
+
+        public DataTable ListarClientes() => nuevaC.LeerPorComando("select * from CLIENTE");
+        public DataTable ListarFacturasVentas() => nuevaC.LeerPorComando("select* from FACTURAVENTA");
+        public DataTable ListarDetalleVenta() => nuevaC.LeerPorComando("select* from DETALLEFACTURAVENTA");
+
         public int GuardarCliente(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
         {
             if (!ExisteCliente(cliente.getidcliente()))
 			{
-				string consulta = $"INSERT INTO CLIENTE(DNI,NOMBRE,DIRECCION,CODIGOPOSTAL,TELEFONO,CORREOELECTRONICO)" +
-                    $"VALUES({cliente.getidcliente()},'{cliente.getnombre()}'" +
-                    $",'{cliente.getdireccion()}','{cliente.getcp()}','" +
-                    $"{cliente.gettelefono()}','{cliente.getcorreo()}')";
-                return nuevaC.EscribirPorComando(consulta);
+                SqlParameter[] ParametrosCliente = new SqlParameter[]{
+
+                    nuevaC.CrearParametro("@DNI", cliente.getidcliente()),
+                    nuevaC.CrearParametro("@Nombre", cliente.getnombre()),
+                    nuevaC.CrearParametro("@Direccion", cliente.getdireccion()),
+                    nuevaC.CrearParametro("@CP", cliente.getcp()),
+                    nuevaC.CrearParametro("@Telefono", cliente.gettelefono()),
+                    nuevaC.CrearParametro("@Correo", cliente.getcorreo()),
+                };
+
+                return nuevaC.EscribirPorStoreProcedure("uspAgregarCliente", ParametrosCliente);
             }
-            return -1;
+            else return -1;
         }
         public bool ExisteCliente(int DNI) => nuevaC.LeerPorComando($"SELECT * FROM CLIENTE WHERE DNI = {DNI}").Rows.Count > 0;
 	

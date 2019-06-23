@@ -20,7 +20,7 @@ namespace Front.Forms.Users.Ventas.Acciones
 
         private void CrearVenta_Load(object sender, System.EventArgs e)
         {
-            cbclientes.DataSource = ventas.BuscarClienteBLL();
+            cbclientes.DataSource = ventas.BuscarCliente();
             cbclientes.ValueMember = "DNI";
             cbclientes.DisplayMember = "DNI";
 
@@ -50,7 +50,7 @@ namespace Front.Forms.Users.Ventas.Acciones
 
             //CARGAR DETALLE !!!!
 
-            int respuesta = ventas.CrearVentaBLL(factura, listadetalle);
+            int respuesta = ventas.CrearVenta(factura, listadetalle);
 
             if (respuesta > 0) {
                 MessageBox.Show("Factura creada exitosamente");
@@ -59,7 +59,6 @@ namespace Front.Forms.Users.Ventas.Acciones
             {
                 MessageBox.Show("Error al crear la factura");
             }
-
         }
     }
 }

@@ -10,29 +10,14 @@ namespace DAL
 
 		public int ModficarStock(int id, decimal StockModify)
         {
-
             string consulta = $"UPDATE PRODUCTO SET CANTIDAD = {StockModify} WHERE  ID_PROD={id}";
-
             return nuevaC.EscribirPorComando(consulta);      
         }
 
-        public DataTable listAllProducts()
-        {
-            DataTable respuesta = new DataTable();
-            string consulta = $"SELECT * FROM PRODUCTO";
-            respuesta = nuevaC.LeerPorComando(consulta);
+        public DataTable ListAllProducts() => nuevaC.LeerPorComando($"SELECT * FROM PRODUCTO");
 
-            Console.WriteLine(respuesta.ToString());
-            return respuesta;
-        }
-	
-		public DataTable GetProductosConPocoStock(int cantidad)//SE puede usar para filtrar (normalmente se usa con: 0)	 
-        {
-            DataTable respuesta = new DataTable();
-            string consulta = $"SELECT * FROM PRODUCTO WHERE CANTIDAD<={cantidad}";
-            respuesta = nuevaC.LeerPorComando(consulta);
-            return respuesta;
-        }
+        //SE puede usar para filtrar (normalmente se usa con: 0)	
+        public DataTable GetProductosConPocoStock(int cantidad) => nuevaC.LeerPorComando($"SELECT * FROM PRODUCTO WHERE CANTIDAD<={cantidad}");
         public int GuardarOrdenCompra(EordenCompra Orden)
         {
             int respuesta;
@@ -44,7 +29,8 @@ namespace DAL
         public int GuardarDetalleOrdenCompra(EDetalleOrdenCompra detalle)
         {
             int respuesta;
-            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (ID_OCOMPRA,ID_PROD,CANT,PRECIOXUNIDAD) VALUES ({detalle.get_idOCompras()},{detalle.get_idProducto()},{detalle.getCantidad()},CONVERT(decimal,{detalle.getPrecio()}))";
+            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (ID_OCOMPRA,ID_PROD,CANT,PRECIOXUNIDAD) " +
+                              $"VALUES ({detalle.get_idOCompras()},{detalle.get_idProducto()},{detalle.getCantidad()},CONVERT(decimal,{detalle.getPrecio()}))";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }

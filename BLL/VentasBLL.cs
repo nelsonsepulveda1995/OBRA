@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Entidad;
+using System.Collections.Generic;
 using System.Data;
 namespace BLL
 {
@@ -14,7 +15,6 @@ namespace BLL
         }
 		
         public int CrearVenta(EFacturaVenta factura, List<EDetalleFacturaVenta> lista)
-	
         {
             int respuesta;
             

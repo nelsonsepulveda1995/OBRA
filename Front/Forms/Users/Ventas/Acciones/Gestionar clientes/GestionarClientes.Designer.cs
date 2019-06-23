@@ -120,7 +120,7 @@
             this.CajaTextoDNI.SelectionLength = 0;
             this.CajaTextoDNI.SelectionStart = 0;
             this.CajaTextoDNI.Size = new System.Drawing.Size(154, 23);
-            this.CajaTextoDNI.TabIndex = 4;
+            this.CajaTextoDNI.TabIndex = 1;
             this.CajaTextoDNI.TabStop = false;
             this.CajaTextoDNI.UseSystemPasswordChar = false;
             // 
@@ -189,7 +189,7 @@
             this.CajaTextoDireccion.SelectionLength = 0;
             this.CajaTextoDireccion.SelectionStart = 0;
             this.CajaTextoDireccion.Size = new System.Drawing.Size(246, 23);
-            this.CajaTextoDireccion.TabIndex = 9;
+            this.CajaTextoDireccion.TabIndex = 3;
             this.CajaTextoDireccion.TabStop = false;
             this.CajaTextoDireccion.UseSystemPasswordChar = false;
             // 
@@ -206,7 +206,7 @@
             this.CajaTextoNombre.SelectionLength = 0;
             this.CajaTextoNombre.SelectionStart = 0;
             this.CajaTextoNombre.Size = new System.Drawing.Size(214, 23);
-            this.CajaTextoNombre.TabIndex = 10;
+            this.CajaTextoNombre.TabIndex = 2;
             this.CajaTextoNombre.TabStop = false;
             this.CajaTextoNombre.UseSystemPasswordChar = false;
             // 
@@ -223,7 +223,7 @@
             this.CajaTextoCP.SelectionLength = 0;
             this.CajaTextoCP.SelectionStart = 0;
             this.CajaTextoCP.Size = new System.Drawing.Size(72, 23);
-            this.CajaTextoCP.TabIndex = 11;
+            this.CajaTextoCP.TabIndex = 4;
             this.CajaTextoCP.TabStop = false;
             this.CajaTextoCP.UseSystemPasswordChar = false;
             // 
@@ -240,7 +240,7 @@
             this.CajaTextoCorreo.SelectionLength = 0;
             this.CajaTextoCorreo.SelectionStart = 0;
             this.CajaTextoCorreo.Size = new System.Drawing.Size(246, 23);
-            this.CajaTextoCorreo.TabIndex = 12;
+            this.CajaTextoCorreo.TabIndex = 6;
             this.CajaTextoCorreo.TabStop = false;
             this.CajaTextoCorreo.UseSystemPasswordChar = false;
             // 
@@ -270,7 +270,7 @@
             this.CajaTextoTelefono.SelectionLength = 0;
             this.CajaTextoTelefono.SelectionStart = 0;
             this.CajaTextoTelefono.Size = new System.Drawing.Size(154, 23);
-            this.CajaTextoTelefono.TabIndex = 14;
+            this.CajaTextoTelefono.TabIndex = 5;
             this.CajaTextoTelefono.TabStop = false;
             this.CajaTextoTelefono.UseSystemPasswordChar = false;
             // 
