@@ -6,9 +6,6 @@ namespace DAL
     {
         readonly Conexion nuevaC = new Conexion();
         public DataTable VentasporVendedorDAL() => nuevaC.LeerPorStoreProcedure("VENTASxUSUARIO");
-        public DataTable ProductomasVendidoDAL()
-        {
-            return nuevaC.LeerPorStoreProcedure("uspProductosMasVendidos");
-        }
+        public DataTable ProductomasVendidoDAL() => nuevaC.LeerPorStoreProcedure("uspProductosMasVendidos");
     }
 }
