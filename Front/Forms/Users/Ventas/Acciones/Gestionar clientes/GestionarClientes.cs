@@ -16,7 +16,7 @@ namespace Front.Forms.Users.Ventas.Acciones
 
         private void RegistrarCliente_Click(object sender, System.EventArgs e)
         {
-            if (NoHayDatosVacios())
+            if (NoHayDatosVacios() && (textApellido.Text != ""))
             {
                 NuevoCliente();
             }
@@ -28,6 +28,9 @@ namespace Front.Forms.Users.Ventas.Acciones
 
             cliente.setidcliente(Convert.ToInt32(CajaTextoDNI.Text));
             cliente.setnombre(CajaTextoNombre.Text);
+            // ED  -  2019 06 23
+            cliente.setapellido(textApellido.Text);
+            // ED  -  2019 06 23 END
             cliente.setdireccion(CajaTextoDireccion.Text);
             cliente.setcp(CajaTextoCP.Text);
             cliente.settelefono(CajaTextoTelefono.Text);

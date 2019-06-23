@@ -21,6 +21,7 @@ namespace DAL
 
                     nuevaC.CrearParametro("@DNI", cliente.getidcliente()),
                     nuevaC.CrearParametro("@Nombre", cliente.getnombre()),
+                    nuevaC.CrearParametro("@Apellido", cliente.getapellido()),
                     nuevaC.CrearParametro("@Direccion", cliente.getdireccion()),
                     nuevaC.CrearParametro("@CP", cliente.getcp()),
                     nuevaC.CrearParametro("@Telefono", cliente.gettelefono()),
