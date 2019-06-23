@@ -31,21 +31,32 @@ namespace Front.Forms.Users.Admin.Acciones
                 }
                 else
                 {
-                    Nuevousuario.setApellido(apellidoIngresado.Text);
-                    Nuevousuario.setDNI(Convert.ToInt32(dniIngresado.Text));
-                    Nuevousuario.setContraseña(Contraseñaingresada.Text);
-                    Nuevousuario.setIdUsuario(usuarioIngresado.Text);
-                    Nuevousuario.setNombre(nombreIngresado.Text);
-                    Nuevousuario.setIdTipo(Convert.ToInt16(TipoSeleccionado.SelectedValue));
-                    //  ED -  2019 06 22
-                    Nuevousuario.setPuntoDeVenta(Convert.ToInt32(comboBox2.SelectedValue));
-                    //  ED -  2019 06 22 END
-                    if (admin.CrearUsuario(Nuevousuario) == 0)
+                    try
                     {
-                        MessageBox.Show("No se pudo crear el registro");
+                        Nuevousuario.setDNI(Convert.ToInt32(dniIngresado.Text));
+                        Nuevousuario.setApellido(apellidoIngresado.Text);
+                        Nuevousuario.setDNI(Convert.ToInt32(dniIngresado.Text));
+                        Nuevousuario.setContraseña(Contraseñaingresada.Text);
+                        Nuevousuario.setIdUsuario(usuarioIngresado.Text);
+                        Nuevousuario.setNombre(nombreIngresado.Text);
+                        Nuevousuario.setIdTipo(Convert.ToInt16(TipoSeleccionado.SelectedValue));
+                        //  ED -  2019 06 22
+                        Nuevousuario.setPuntoDeVenta(Convert.ToInt32(comboBox2.SelectedValue));
+                        //  ED -  2019 06 22 END
+                        if (admin.CrearUsuario(Nuevousuario) == 0)
+                        {
+                            MessageBox.Show("No se pudo crear el registro");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registro creado exitosamente");
+                            Limpiar();
+                        }
                     }
-                    else { MessageBox.Show("Registro creado exitosamente");
-                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Los datos no son correctos : ");
+                    }                                                            
                 }
             }
         }
@@ -69,6 +80,17 @@ namespace Front.Forms.Users.Admin.Acciones
             comboBox2.DisplayMember = "NOMBRE";
             comboBox2.ValueMember = "CUIT_EMP";
             //  ED -  2019 06 22 END
+
+        }
+
+        private void Limpiar()
+        {
+            dniIngresado.Text = "";
+            apellidoIngresado.Text = "";
+            dniIngresado.Text = "";
+            Contraseñaingresada.Text = "";
+            usuarioIngresado.Text = "";
+            nombreIngresado.Text = "";
 
         }
 
