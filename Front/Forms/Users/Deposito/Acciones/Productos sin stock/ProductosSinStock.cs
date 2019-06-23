@@ -26,5 +26,10 @@ namespace Front.Forms.Users.Deposito.Acciones
             productos = deposito.ListarProductosconPocoStock(Convert.ToInt32(numericUpDown1.Value));
             dataGridView1.DataSource = productos;
         }
+
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

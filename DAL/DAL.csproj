@@ -44,6 +44,7 @@
     <Compile Include="AdministracionDAL.cs" />
     <Compile Include="ConnectiontoSql.cs" />
     <Compile Include="DepositoDAL.cs" />
+    <Compile Include="GerenteDAL.cs" />
     <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComprasDAL.cs" />

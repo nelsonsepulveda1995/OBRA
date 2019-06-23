@@ -32,13 +32,15 @@
             this.BotonConfirmar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.cbclientes = new System.Windows.Forms.ComboBox();
+            this.cbproducto = new System.Windows.Forms.ComboBox();
+            this.dodcantidad = new System.Windows.Forms.DomainUpDown();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbcarrito = new System.Windows.Forms.TextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.cbmediodepago = new System.Windows.Forms.ComboBox();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // Titulo
@@ -63,10 +65,11 @@
             this.BotonConfirmar.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonConfirmar.Name = "BotonConfirmar";
             this.BotonConfirmar.Primary = true;
-            this.BotonConfirmar.Size = new System.Drawing.Size(99, 36);
+            this.BotonConfirmar.Size = new System.Drawing.Size(146, 36);
             this.BotonConfirmar.TabIndex = 1;
-            this.BotonConfirmar.Text = "Confirmar";
+            this.BotonConfirmar.Text = "Confirmar Venta";
             this.BotonConfirmar.UseVisualStyleBackColor = true;
+            this.BotonConfirmar.Click += new System.EventHandler(this.BotonConfirmar_Click);
             // 
             // BotonCancelar
             // 
@@ -97,29 +100,29 @@
             this.materialLabel1.TabIndex = 3;
             this.materialLabel1.Text = "Cliente";
             // 
-            // comboBox1
+            // cbclientes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(265, 144);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbclientes.FormattingEnabled = true;
+            this.cbclientes.Location = new System.Drawing.Point(265, 144);
+            this.cbclientes.Name = "cbclientes";
+            this.cbclientes.Size = new System.Drawing.Size(161, 21);
+            this.cbclientes.TabIndex = 5;
             // 
-            // comboBox2
+            // cbproducto
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(264, 208);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(162, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbproducto.FormattingEnabled = true;
+            this.cbproducto.Location = new System.Drawing.Point(264, 208);
+            this.cbproducto.Name = "cbproducto";
+            this.cbproducto.Size = new System.Drawing.Size(162, 21);
+            this.cbproducto.TabIndex = 6;
             // 
-            // domainUpDown1
+            // dodcantidad
             // 
-            this.domainUpDown1.Location = new System.Drawing.Point(264, 281);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(162, 20);
-            this.domainUpDown1.TabIndex = 7;
-            this.domainUpDown1.Text = "domainUpDown1";
+            this.dodcantidad.Location = new System.Drawing.Point(264, 281);
+            this.dodcantidad.Name = "dodcantidad";
+            this.dodcantidad.Size = new System.Drawing.Size(162, 20);
+            this.dodcantidad.TabIndex = 7;
+            this.dodcantidad.Text = "domainUpDown1";
             // 
             // materialLabel2
             // 
@@ -147,13 +150,13 @@
             this.materialLabel3.TabIndex = 9;
             this.materialLabel3.Text = "Producto";
             // 
-            // textBox1
+            // tbcarrito
             // 
-            this.textBox1.Location = new System.Drawing.Point(525, 166);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 271);
-            this.textBox1.TabIndex = 10;
+            this.tbcarrito.Location = new System.Drawing.Point(525, 166);
+            this.tbcarrito.Multiline = true;
+            this.tbcarrito.Name = "tbcarrito";
+            this.tbcarrito.Size = new System.Drawing.Size(199, 271);
+            this.tbcarrito.TabIndex = 10;
             // 
             // materialLabel4
             // 
@@ -168,18 +171,41 @@
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Carrito";
             // 
+            // cbmediodepago
+            // 
+            this.cbmediodepago.FormattingEnabled = true;
+            this.cbmediodepago.Location = new System.Drawing.Point(264, 350);
+            this.cbmediodepago.Name = "cbmediodepago";
+            this.cbmediodepago.Size = new System.Drawing.Size(162, 21);
+            this.cbmediodepago.TabIndex = 12;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(105, 352);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(108, 19);
+            this.materialLabel5.TabIndex = 13;
+            this.materialLabel5.Text = "Medio de pago";
+            // 
             // CrearVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.materialLabel5);
+            this.Controls.Add(this.cbmediodepago);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbcarrito);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.domainUpDown1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dodcantidad);
+            this.Controls.Add(this.cbproducto);
+            this.Controls.Add(this.cbclientes);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonConfirmar);
@@ -187,6 +213,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrearVenta";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.CrearVenta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,12 +225,14 @@
         private MaterialSkin.Controls.MaterialRaisedButton BotonConfirmar;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.ComboBox cbclientes;
+        private System.Windows.Forms.ComboBox cbproducto;
+        private System.Windows.Forms.DomainUpDown dodcantidad;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbcarrito;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.ComboBox cbmediodepago;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
     }
 }

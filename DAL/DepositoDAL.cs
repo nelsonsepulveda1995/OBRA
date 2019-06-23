@@ -8,7 +8,25 @@ namespace DAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la coneccion
 
-        public DataTable GetProductosConPocoStock(int cantidad)//SE puede usar para filtrar (normalmente se usa con: 0)
+		public int ModficarStock(int id, decimal StockModify)
+        {
+
+            string consulta = $"UPDATE PRODUCTO SET CANTIDAD = {StockModify} WHERE  ID_PROD={id}";
+
+            return nuevaC.EscribirPorComando(consulta);      
+        }
+
+        public DataTable listAllProducts()
+        {
+            DataTable respuesta = new DataTable();
+            string consulta = $"SELECT * FROM PRODUCTO";
+            respuesta = nuevaC.LeerPorComando(consulta);
+
+            Console.WriteLine(respuesta.ToString());
+            return respuesta;
+        }
+	
+		public DataTable GetProductosConPocoStock(int cantidad)//SE puede usar para filtrar (normalmente se usa con: 0)	 
         {
             DataTable respuesta = new DataTable();
             string consulta = $"SELECT * FROM PRODUCTO WHERE CANTIDAD<={cantidad}";
@@ -19,14 +37,14 @@ namespace DAL
         {
             int respuesta;
             DateTime fec = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            string consulta = $"INSERT ORDENDECOMPRA(NOMBREUSUARIO,FECHA,ESTADO)VALUES('{Orden.Getid_usuario()}',{Convert.ToDateTime(Orden.GetFecha().ToShortDateString())}',{Orden.Getestado()})"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
+            string consulta = $"INSERT INTO ORDENDECOMPRA(NOMBREUSUARIO,FECHA,ESTADO)VALUES('{Orden.Getid_usuario()}','{Orden.GetFecha()}',{Orden.Getestado()})"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
         public int GuardarDetalleOrdenCompra(EDetalleOrdenCompra detalle)
         {
             int respuesta;
-            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (id_ocompra,id_prod,cant,precioxunidad)VALUES('{detalle.get_idOCompras()}','{detalle.get_idProducto()}','{detalle.getCantidad()}','{detalle.getPrecio()}')";
+            string consulta = $"INSERT INTO DETALLEORDENCOMPRA (ID_OCOMPRA,ID_PROD,CANT,PRECIOXUNIDAD) VALUES ({detalle.get_idOCompras()},{detalle.get_idProducto()},{detalle.getCantidad()},CONVERT(decimal,{detalle.getPrecio()}))";
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
