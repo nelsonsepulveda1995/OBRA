@@ -28,7 +28,7 @@ namespace Front.Forms.Users.Ventas.Acciones
             cbproducto.ValueMember = "ID_PROD";
             cbproducto.DisplayMember = "DESCRIPCION";
 
-            cbmediodepago.DataSource = producto.ListarMediodePagoBLL();
+            cbmediodepago.DataSource = producto.ListarMediodePago();
             cbmediodepago.ValueMember = "ID_MEDIOP";
             cbmediodepago.DisplayMember = "DESCRIPCION";
         }

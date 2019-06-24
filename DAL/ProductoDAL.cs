@@ -8,7 +8,7 @@ namespace DAL
     public class ProductoDAL
     {
         readonly Conexion nuevaC = new Conexion(); //llamar a esta instancia para a conexion
-        public DataTable GetListaProductos() => nuevaC.LeerPorStoreProcedure("spListarProductos");
+        public DataTable GetListaProductos() => nuevaC.LeerPorStoreProcedure("uspListarProductos");
      
         public DataTable GetProducto(int ID) //Trae todos los datos de un producto (puede servir para calcular el precio total o verificar stock)
         {
