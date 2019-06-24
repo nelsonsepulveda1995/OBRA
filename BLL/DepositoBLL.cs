@@ -9,7 +9,13 @@ namespace BLL
     {
         readonly DepositoDAL deposito = new DepositoDAL();
         readonly ProductoDAL producto = new ProductoDAL();
-		
+
+        public DataTable ConsultarEstadoOrdenDeCompraBLL(int id_OCOMPRA= 0)
+        {
+            return deposito.ConsultarEstadoOrdenDeCompraDAL(id_OCOMPRA);
+        }
+
+
         public int UpdateStockBLL(int ID, decimal dato) => deposito.ModficarStock(ID, dato);
 		
 		public DataTable ListarProductosconPocoStock(int cantidad) => deposito.GetProductosConPocoStock(cantidad);

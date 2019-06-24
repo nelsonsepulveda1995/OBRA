@@ -44,7 +44,6 @@ namespace Front.Forms.Users.Deposito.Acciones
             string aux = cantidadUpdated.ToString();
             result = aux.Split(',');
 
-            MessageBox.Show($"{result[0]} Separador. {result.Length}");
 
 
 

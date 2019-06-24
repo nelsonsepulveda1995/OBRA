@@ -8,6 +8,27 @@ namespace DAL
     {
         Conexion nuevaC = new Conexion(); //llamar a esta instancia para la coneccion
 
+
+
+        public DataTable ConsultarEstadoOrdenDeCompraDAL(int id_OCOMPRA = 0)
+        {
+            string consulta;
+
+            DataTable respuesta;
+            if (id_OCOMPRA != 0)
+            {
+                consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA where id_OCOMPRA = {id_OCOMPRA};";
+            }
+            else
+            {
+                consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
+
+            }
+
+            respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
+        }
+
 		public int ModficarStock(int id, decimal StockModify)
         {
             string consulta = $"UPDATE PRODUCTO SET CANTIDAD = {StockModify} WHERE  ID_PROD={id}";

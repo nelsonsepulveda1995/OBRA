@@ -98,6 +98,7 @@
             this.cblistaproducto.Name = "cblistaproducto";
             this.cblistaproducto.Size = new System.Drawing.Size(228, 21);
             this.cblistaproducto.TabIndex = 10;
+            this.cblistaproducto.SelectedIndexChanged += new System.EventHandler(this.Cblistaproducto_SelectedIndexChanged);
             // 
             // Agregar
             // 

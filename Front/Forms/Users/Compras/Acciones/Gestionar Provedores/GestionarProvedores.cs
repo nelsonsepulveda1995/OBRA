@@ -41,5 +41,10 @@ namespace Front.Forms.Users.Compras.Acciones
                 }
             }
         }
+
+        private void GestionarProvedores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
