@@ -47,7 +47,7 @@
             this.BotonReporteDeCompras.Primary = false;
             this.BotonReporteDeCompras.Size = new System.Drawing.Size(184, 36);
             this.BotonReporteDeCompras.TabIndex = 15;
-            this.BotonReporteDeCompras.Text = "Reporte de compras";
+            this.BotonReporteDeCompras.Text = "Producto mas Vendido";
             this.BotonReporteDeCompras.UseVisualStyleBackColor = true;
             this.BotonReporteDeCompras.Click += new System.EventHandler(this.BotonReporteDeCompras_Click);
             // 
@@ -66,7 +66,7 @@
             this.BotonReporteDeVentas.Primary = false;
             this.BotonReporteDeVentas.Size = new System.Drawing.Size(184, 36);
             this.BotonReporteDeVentas.TabIndex = 14;
-            this.BotonReporteDeVentas.Text = "Reportes de ventas";
+            this.BotonReporteDeVentas.Text = "Ventas por usuario";
             this.BotonReporteDeVentas.UseVisualStyleBackColor = true;
             this.BotonReporteDeVentas.Click += new System.EventHandler(this.BotonReporteDeVentas_Click);
             // 

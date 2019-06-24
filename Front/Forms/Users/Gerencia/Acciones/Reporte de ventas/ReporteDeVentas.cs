@@ -1,12 +1,19 @@
-﻿using System.Windows.Forms;
+﻿using BLL;
+using System.Windows.Forms;
 
 namespace Front.Forms.Users.Gerencia.Acciones
 {
-    public partial class ReporteDeVentas : Form
+    public partial class VentasporUsuario : Form
     {
-        public ReporteDeVentas()
+        GerenteBLL gerente = new GerenteBLL();
+        public VentasporUsuario()
         {
             InitializeComponent();
+        }
+
+        private void BotonReporteDeVentas_Click(object sender, System.EventArgs e)
+        {
+            dataGridView1.DataSource = gerente.GetVentasporUsuarioBLL();
         }
     }
 }

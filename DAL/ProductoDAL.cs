@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidad;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -20,5 +21,11 @@ namespace DAL
             return Convert.ToInt32(nuevaC.LeerPorStoreProcedure("uspGetProducto", parametro).Rows[0]["CANTIDAD"]);
         }
         public DataTable GetMediosdePago() => nuevaC.LeerPorStoreProcedure("spListarMedioDePago");
+
+        public int SETProductoDAL(Eproducto _producto) //crea un nuevo producto sin importal el id que crea la BD
+        {
+            string consulta = $"INSERT INTO PRODUCTO(DESCIPCION,PRECIO,CANT)VALUES('{_producto.GetDescripcion()}',CONVERT(DECIMAL,{_producto.GetPrecio()}),{_producto.GetStock()})";
+            return nuevaC.EscribirPorComando(consulta);
+        }
     }
 }
