@@ -12,11 +12,16 @@ namespace Entidad
         private string nombreusuario;
         private string fecha;
         private int mediop;
+        private decimal Ptotal;
 
         #region setters
         public void Setmodiop(int _medio)
         {
             mediop = _medio;
+        }
+        public void setPtotal(decimal _Ptotal)
+        {
+            Ptotal = _Ptotal;
         }
         public void Setdni(int _dni)
         {
@@ -36,6 +41,10 @@ namespace Entidad
         public int Getmediop()
         {
             return mediop;
+        }
+        public decimal getPtotal()
+        {
+            return Ptotal;
         }
         public int Getdni()
         {

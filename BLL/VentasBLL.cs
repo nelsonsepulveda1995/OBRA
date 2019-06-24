@@ -17,7 +17,14 @@ namespace BLL
         public int CrearVenta(EFacturaVenta factura, List<EDetalleFacturaVenta> lista)
         {
             int respuesta;
-            
+            decimal Ptotal = 0;
+
+            foreach (EDetalleFacturaVenta detalle in lista) //revisa la lista
+            {
+                Ptotal += detalle.GetPrecio();
+            }
+            factura.setPtotal(Ptotal);
+
             respuesta = venta.CrearventaDAL(factura); //crea la factura
             int id =venta.UltimoIdFacturaVentaDAL(); //busca el id de la ultima factura
             if (respuesta == 0)
@@ -37,7 +44,8 @@ namespace BLL
         public DataTable BuscarCliente()
         {
             DataTable x = new DataTable();
-            return x = null;
+            x = venta.ListarClientes();
+            return x;
 
         }
         public int ModificarCliente()
