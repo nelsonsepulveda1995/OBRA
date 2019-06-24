@@ -15,5 +15,10 @@ namespace Front.Forms.Users.Ventas.Acciones
         {
             dataGridView1.DataSource = producto.ListarProductos();
         }
+
+        private void ListaDeProductos_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

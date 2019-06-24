@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Boton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.gvwListaUsuarios = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gvwListaUsuarios)).BeginInit();
@@ -81,14 +80,6 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(298, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(306, 21);
-            this.comboBox1.TabIndex = 3;
-            // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
@@ -117,7 +108,6 @@
             this.ClientSize = new System.Drawing.Size(790, 557);
             this.Controls.Add(this.gvwListaUsuarios);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.Boton);
             this.Controls.Add(this.label1);
@@ -136,7 +126,6 @@
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton Boton;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
-        private System.Windows.Forms.ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.DataGridView gvwListaUsuarios;
     }

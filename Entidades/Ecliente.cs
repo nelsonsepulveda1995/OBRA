@@ -3,6 +3,9 @@
     public class Ecliente
     {
         private string Nombre;
+        //ED  -  2019 06 23 
+        private string Apellido;
+        //ED  -  2019 06 23 END
         private string direccion;
         private int id_cliente;
         private string telefono;
@@ -13,6 +16,10 @@
         public string getnombre()
         {
             return this.Nombre;
+        }
+        public string getapellido()
+        {
+            return this.Apellido;
         }
         public string getdireccion()
         {
@@ -41,6 +48,10 @@
         public void setnombre(string _nombre)
         {
             Nombre = _nombre;
+        }
+        public void setapellido(string _apellido)
+        {
+            Apellido = _apellido;
         }
         public void setdireccion(string _direccion)
         {

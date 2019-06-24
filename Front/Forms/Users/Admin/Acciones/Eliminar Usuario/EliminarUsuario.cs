@@ -15,7 +15,7 @@ namespace Front.Forms.Users.Admin.Acciones
         {
             if (gvwListaUsuarios.SelectedRows.Count > 0)
             {
-                string idUsuario = gvwListaUsuarios.CurrentRow.Cells["ID_USUARIO"].Value.ToString();
+                string idUsuario = gvwListaUsuarios.CurrentRow.Cells["NOMBREUSUARIO"].Value.ToString();
                 admin.DesabilitarUsuario(idUsuario);
                 MessageBox.Show("Eliminado correctamente");
                 MostrarUsuarioHabilitados();
