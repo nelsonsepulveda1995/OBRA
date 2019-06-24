@@ -2,14 +2,12 @@
 using BLL;
 using Entidad;
 using System;
-using System.Collections.Generic;
 using System.Data;
 
 namespace Front.Forms.Users.Admin.Acciones
 {
     public partial class ModificarUsuario : Form
     {
-
         // ED  -  2019 06 22
         AdministracionBLL admin = new AdministracionBLL();
         Eusuario user = new Eusuario();
@@ -18,16 +16,6 @@ namespace Front.Forms.Users.Admin.Acciones
         public ModificarUsuario()
         {
             InitializeComponent();
-        }
-
-        private void MaterialLabelEmpresa_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void NombreIngresado_Click(object sender, System.EventArgs e)
-        {
-
         }
         // ED  -  2019 06 22
         private void ModificarUsuario_Load(object sender, System.EventArgs e)
@@ -64,7 +52,6 @@ namespace Front.Forms.Users.Admin.Acciones
 
         private void BtnGuardar_Click(object sender, System.EventArgs e)
         {
-
             if (editar)
             {
                 if (nombreIngresado.Text.Length == 0 || apellidoIngresado.Text.Length == 0)
@@ -96,9 +83,7 @@ namespace Front.Forms.Users.Admin.Acciones
             else
             {
                 MessageBox.Show("Seleccione un registro y precione modificar antes de guardar");
-            }
-
-                                      
+            }                          
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

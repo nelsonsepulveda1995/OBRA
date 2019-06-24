@@ -46,17 +46,22 @@
             // 
             // gvwListaUsuarios
             // 
+            this.gvwListaUsuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.gvwListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvwListaUsuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gvwListaUsuarios.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.gvwListaUsuarios.Location = new System.Drawing.Point(51, 72);
             this.gvwListaUsuarios.Name = "gvwListaUsuarios";
-            this.gvwListaUsuarios.Size = new System.Drawing.Size(405, 426);
+            this.gvwListaUsuarios.ReadOnly = true;
+            this.gvwListaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvwListaUsuarios.Size = new System.Drawing.Size(767, 190);
             this.gvwListaUsuarios.TabIndex = 2;
             // 
             // apellidoIngresado
             // 
             this.apellidoIngresado.Depth = 0;
             this.apellidoIngresado.Hint = "";
-            this.apellidoIngresado.Location = new System.Drawing.Point(605, 106);
+            this.apellidoIngresado.Location = new System.Drawing.Point(180, 357);
             this.apellidoIngresado.MaxLength = 32767;
             this.apellidoIngresado.MouseState = MaterialSkin.MouseState.HOVER;
             this.apellidoIngresado.Name = "apellidoIngresado";
@@ -75,7 +80,7 @@
             this.apellido.Depth = 0;
             this.apellido.Font = new System.Drawing.Font("Roboto", 11F);
             this.apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.apellido.Location = new System.Drawing.Point(482, 110);
+            this.apellido.Location = new System.Drawing.Point(57, 361);
             this.apellido.MouseState = MaterialSkin.MouseState.HOVER;
             this.apellido.Name = "apellido";
             this.apellido.Size = new System.Drawing.Size(64, 19);
@@ -88,7 +93,7 @@
             this.nombre.Depth = 0;
             this.nombre.Font = new System.Drawing.Font("Roboto", 11F);
             this.nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.nombre.Location = new System.Drawing.Point(482, 72);
+            this.nombre.Location = new System.Drawing.Point(57, 323);
             this.nombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(63, 19);
@@ -99,7 +104,7 @@
             // 
             this.nombreIngresado.Depth = 0;
             this.nombreIngresado.Hint = "";
-            this.nombreIngresado.Location = new System.Drawing.Point(605, 68);
+            this.nombreIngresado.Location = new System.Drawing.Point(180, 319);
             this.nombreIngresado.MaxLength = 32767;
             this.nombreIngresado.MouseState = MaterialSkin.MouseState.HOVER;
             this.nombreIngresado.Name = "nombreIngresado";
@@ -111,13 +116,12 @@
             this.nombreIngresado.TabIndex = 7;
             this.nombreIngresado.TabStop = false;
             this.nombreIngresado.UseSystemPasswordChar = false;
-            this.nombreIngresado.Click += new System.EventHandler(this.NombreIngresado_Click);
             // 
             // cboxPuntoV
             // 
             this.cboxPuntoV.BackColor = System.Drawing.SystemColors.Window;
             this.cboxPuntoV.FormattingEnabled = true;
-            this.cboxPuntoV.Location = new System.Drawing.Point(605, 191);
+            this.cboxPuntoV.Location = new System.Drawing.Point(180, 442);
             this.cboxPuntoV.Name = "cboxPuntoV";
             this.cboxPuntoV.Size = new System.Drawing.Size(222, 21);
             this.cboxPuntoV.TabIndex = 22;
@@ -128,19 +132,18 @@
             this.materialLabelEmpresa.Depth = 0;
             this.materialLabelEmpresa.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabelEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabelEmpresa.Location = new System.Drawing.Point(482, 193);
+            this.materialLabelEmpresa.Location = new System.Drawing.Point(57, 444);
             this.materialLabelEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabelEmpresa.Name = "materialLabelEmpresa";
             this.materialLabelEmpresa.Size = new System.Drawing.Size(111, 19);
             this.materialLabelEmpresa.TabIndex = 21;
             this.materialLabelEmpresa.Text = "Punto de Venta";
-            this.materialLabelEmpresa.Click += new System.EventHandler(this.MaterialLabelEmpresa_Click);
             // 
             // TipoSeleccionado
             // 
             this.TipoSeleccionado.BackColor = System.Drawing.SystemColors.Window;
             this.TipoSeleccionado.FormattingEnabled = true;
-            this.TipoSeleccionado.Location = new System.Drawing.Point(605, 146);
+            this.TipoSeleccionado.Location = new System.Drawing.Point(180, 397);
             this.TipoSeleccionado.Name = "TipoSeleccionado";
             this.TipoSeleccionado.Size = new System.Drawing.Size(222, 21);
             this.TipoSeleccionado.TabIndex = 20;
@@ -151,7 +154,7 @@
             this.tipo.Depth = 0;
             this.tipo.Font = new System.Drawing.Font("Roboto", 11F);
             this.tipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tipo.Location = new System.Drawing.Point(482, 148);
+            this.tipo.Location = new System.Drawing.Point(57, 399);
             this.tipo.MouseState = MaterialSkin.MouseState.HOVER;
             this.tipo.Name = "tipo";
             this.tipo.Size = new System.Drawing.Size(39, 19);
@@ -181,7 +184,7 @@
             this.btnModificar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnModificar.Depth = 0;
             this.btnModificar.Icon = null;
-            this.btnModificar.Location = new System.Drawing.Point(486, 231);
+            this.btnModificar.Location = new System.Drawing.Point(725, 277);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
@@ -222,8 +225,8 @@
             // 
             // ModificarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(846, 520);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnGuardar);

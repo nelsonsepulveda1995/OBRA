@@ -40,7 +40,7 @@ namespace BLL
         //  ED -  2019 06 22
         public DataTable ListarPuntosDeVenta() => Admin.ListarPuntosDeVenta();
 
-        public int ModificarUsuario(Eusuario _user) => Admin.ModificarUsuario(_user);
+        public int ModificarUsuario(Eusuario user) => Admin.ModificarUsuario(user);
         //  ED -  2019 06 22 END
     }
 }

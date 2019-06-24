@@ -86,7 +86,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(63, 152);
+            this.materialLabel1.Location = new System.Drawing.Point(78, 141);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(139, 19);
@@ -95,10 +95,12 @@
             // 
             // gvwListaUsuarios
             // 
+            this.gvwListaUsuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.gvwListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvwListaUsuarios.Location = new System.Drawing.Point(208, 152);
+            this.gvwListaUsuarios.Location = new System.Drawing.Point(82, 173);
             this.gvwListaUsuarios.Name = "gvwListaUsuarios";
-            this.gvwListaUsuarios.Size = new System.Drawing.Size(504, 321);
+            this.gvwListaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvwListaUsuarios.Size = new System.Drawing.Size(630, 185);
             this.gvwListaUsuarios.TabIndex = 5;
             // 
             // EliminarUsuario
