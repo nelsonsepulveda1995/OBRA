@@ -38,6 +38,9 @@
             this.cb_listprovee = new System.Windows.Forms.ComboBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +70,7 @@
             this.BotonOrdenarCompras.TabIndex = 1;
             this.BotonOrdenarCompras.Text = "Confirmar Orden de Compra";
             this.BotonOrdenarCompras.UseVisualStyleBackColor = true;
+            this.BotonOrdenarCompras.Click += new System.EventHandler(this.BotonOrdenarCompras_Click);
             // 
             // BotonCancelar
             // 
@@ -158,11 +162,39 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.Column3,
+            this.Column1});
             this.dataGridView1.Location = new System.Drawing.Point(267, 196);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(392, 189);
             this.dataGridView1.TabIndex = 12;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "DESCRIPCION";
+            this.Column2.HeaderText = "Descripccion";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "CANT";
+            this.Column3.HeaderText = "Cantidad";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "PRECIOXUNIDAD";
+            this.Column1.HeaderText = "Precio unitario";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // OrdenesDeCompras
             // 
@@ -201,5 +233,8 @@
         private System.Windows.Forms.ComboBox cb_listprovee;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

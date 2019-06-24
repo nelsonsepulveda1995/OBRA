@@ -8,6 +8,14 @@ namespace BLL
     {
         ProductoDAL producto = new ProductoDAL();
         readonly ComprasDAL comprasDAL = new ComprasDAL();
+
+        public int cambiarEstadoOrdenDecompraBLL(int id, int estado)
+        {
+            return comprasDAL.CambiarEstadoOrdenDeCompra(id, estado);
+        }
+
+
+
         public int CrearCompra()
         {
 
@@ -19,7 +27,7 @@ namespace BLL
 
         public int CrearProveedor(Eproveedor proveedor)
         {
-            if (comprasDAL.ExisteProvedor(proveedor.getcuit()))
+            if (comprasDAL.ExisteProvedor(proveedor.getcuit())!=null)
             {
                 //si la consulta devuelve 0 es que no escribio en la base
                 return comprasDAL.GuardarProveedor(proveedor);

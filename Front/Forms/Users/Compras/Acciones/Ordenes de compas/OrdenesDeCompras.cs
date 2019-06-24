@@ -31,9 +31,27 @@ namespace Front.Forms.Users.Compras.Acciones
 
         private void MaterialFlatButton1_Click(object sender, System.EventArgs e)
         {
+
+            MessageBox.Show(cb_listordenes.SelectedValue.ToString());
             DataTable detalles = new DataTable();
-            detalles = compras.DetalledeUnaorden(Convert.ToInt32(cb_listordenes.SelectedItem.ToString())); //corregir combo box
+            detalles = compras.DetalledeUnaorden(Convert.ToInt32(cb_listordenes.SelectedValue)); //corregir combo box
             dataGridView1.DataSource = detalles;
+        }
+
+        private void BotonOrdenarCompras_Click(object sender, EventArgs e)
+        {
+            if (compras.cambiarEstadoOrdenDecompraBLL(Convert.ToInt32(cb_listordenes.SelectedValue), 2) == 0)
+            {
+                MessageBox.Show("Error Al confirmar la orden.");
+            }
+            else
+            {
+                MessageBox.Show("Orden Confirmada.");
+
+            }
+
+
+
         }
     }
 }
