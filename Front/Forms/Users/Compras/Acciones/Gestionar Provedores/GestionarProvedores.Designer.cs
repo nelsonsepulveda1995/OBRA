@@ -272,6 +272,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionarProvedores";
             this.Text = "GestionarProvedores";
+            this.Load += new System.EventHandler(this.GestionarProvedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

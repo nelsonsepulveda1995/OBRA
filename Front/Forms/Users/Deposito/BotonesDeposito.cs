@@ -28,5 +28,10 @@ namespace Front.Forms.Users.Deposito
         {
             Main.AtenderAccion<Acciones.ListaDeProductos>(this);
         }
+
+        private void BotonEstadoOrdenDeCompra_Click(object sender, System.EventArgs e)
+        {
+            Main.AtenderAccion<Acciones.EstadoOrdenDeCompra>(this);
+        }
     }
 }

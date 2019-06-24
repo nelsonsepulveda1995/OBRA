@@ -87,6 +87,9 @@ namespace Front.Forms.Users.Deposito.Acciones
         {
         }
 
-      
+        private void Cblistaproducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
