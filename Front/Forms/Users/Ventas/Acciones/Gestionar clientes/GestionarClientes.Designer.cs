@@ -47,6 +47,8 @@
             this.CajaTextoTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Warning = new MaterialSkin.Controls.MaterialLabel();
             this.ControlDeError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textApellido = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.labelApellido = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ControlDeError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,7 +132,7 @@
             this.LabelCorreo.Depth = 0;
             this.LabelCorreo.Font = new System.Drawing.Font("Roboto", 11F);
             this.LabelCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LabelCorreo.Location = new System.Drawing.Point(73, 393);
+            this.LabelCorreo.Location = new System.Drawing.Point(73, 420);
             this.LabelCorreo.MouseState = MaterialSkin.MouseState.HOVER;
             this.LabelCorreo.Name = "LabelCorreo";
             this.LabelCorreo.Size = new System.Drawing.Size(136, 19);
@@ -143,7 +145,7 @@
             this.LabelCP.Depth = 0;
             this.LabelCP.Font = new System.Drawing.Font("Roboto", 11F);
             this.LabelCP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LabelCP.Location = new System.Drawing.Point(73, 279);
+            this.LabelCP.Location = new System.Drawing.Point(73, 306);
             this.LabelCP.MouseState = MaterialSkin.MouseState.HOVER;
             this.LabelCP.Name = "LabelCP";
             this.LabelCP.Size = new System.Drawing.Size(28, 19);
@@ -169,7 +171,7 @@
             this.LabelDireccion.Depth = 0;
             this.LabelDireccion.Font = new System.Drawing.Font("Roboto", 11F);
             this.LabelDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LabelDireccion.Location = new System.Drawing.Point(73, 227);
+            this.LabelDireccion.Location = new System.Drawing.Point(73, 254);
             this.LabelDireccion.MouseState = MaterialSkin.MouseState.HOVER;
             this.LabelDireccion.Name = "LabelDireccion";
             this.LabelDireccion.Size = new System.Drawing.Size(73, 19);
@@ -180,7 +182,7 @@
             // 
             this.CajaTextoDireccion.Depth = 0;
             this.CajaTextoDireccion.Hint = "";
-            this.CajaTextoDireccion.Location = new System.Drawing.Point(237, 223);
+            this.CajaTextoDireccion.Location = new System.Drawing.Point(237, 250);
             this.CajaTextoDireccion.MaxLength = 32767;
             this.CajaTextoDireccion.MouseState = MaterialSkin.MouseState.HOVER;
             this.CajaTextoDireccion.Name = "CajaTextoDireccion";
@@ -214,7 +216,7 @@
             // 
             this.CajaTextoCP.Depth = 0;
             this.CajaTextoCP.Hint = "";
-            this.CajaTextoCP.Location = new System.Drawing.Point(237, 275);
+            this.CajaTextoCP.Location = new System.Drawing.Point(237, 302);
             this.CajaTextoCP.MaxLength = 32767;
             this.CajaTextoCP.MouseState = MaterialSkin.MouseState.HOVER;
             this.CajaTextoCP.Name = "CajaTextoCP";
@@ -231,7 +233,7 @@
             // 
             this.CajaTextoCorreo.Depth = 0;
             this.CajaTextoCorreo.Hint = "";
-            this.CajaTextoCorreo.Location = new System.Drawing.Point(237, 389);
+            this.CajaTextoCorreo.Location = new System.Drawing.Point(237, 416);
             this.CajaTextoCorreo.MaxLength = 32767;
             this.CajaTextoCorreo.MouseState = MaterialSkin.MouseState.HOVER;
             this.CajaTextoCorreo.Name = "CajaTextoCorreo";
@@ -250,7 +252,7 @@
             this.LabelTelefono.Depth = 0;
             this.LabelTelefono.Font = new System.Drawing.Font("Roboto", 11F);
             this.LabelTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LabelTelefono.Location = new System.Drawing.Point(73, 337);
+            this.LabelTelefono.Location = new System.Drawing.Point(73, 364);
             this.LabelTelefono.MouseState = MaterialSkin.MouseState.HOVER;
             this.LabelTelefono.Name = "LabelTelefono";
             this.LabelTelefono.Size = new System.Drawing.Size(69, 19);
@@ -261,7 +263,7 @@
             // 
             this.CajaTextoTelefono.Depth = 0;
             this.CajaTextoTelefono.Hint = "";
-            this.CajaTextoTelefono.Location = new System.Drawing.Point(237, 333);
+            this.CajaTextoTelefono.Location = new System.Drawing.Point(237, 360);
             this.CajaTextoTelefono.MaxLength = 32767;
             this.CajaTextoTelefono.MouseState = MaterialSkin.MouseState.HOVER;
             this.CajaTextoTelefono.Name = "CajaTextoTelefono";
@@ -291,11 +293,43 @@
             this.ControlDeError.ContainerControl = this;
             this.ControlDeError.Icon = ((System.Drawing.Icon)(resources.GetObject("ControlDeError.Icon")));
             // 
+            // textApellido
+            // 
+            this.textApellido.Depth = 0;
+            this.textApellido.Hint = "";
+            this.textApellido.Location = new System.Drawing.Point(237, 213);
+            this.textApellido.MaxLength = 32767;
+            this.textApellido.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textApellido.Name = "textApellido";
+            this.textApellido.PasswordChar = '\0';
+            this.textApellido.SelectedText = "";
+            this.textApellido.SelectionLength = 0;
+            this.textApellido.SelectionStart = 0;
+            this.textApellido.Size = new System.Drawing.Size(214, 23);
+            this.textApellido.TabIndex = 16;
+            this.textApellido.TabStop = false;
+            this.textApellido.UseSystemPasswordChar = false;
+            // 
+            // labelApellido
+            // 
+            this.labelApellido.AutoSize = true;
+            this.labelApellido.Depth = 0;
+            this.labelApellido.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelApellido.Location = new System.Drawing.Point(73, 217);
+            this.labelApellido.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelApellido.Name = "labelApellido";
+            this.labelApellido.Size = new System.Drawing.Size(64, 19);
+            this.labelApellido.TabIndex = 17;
+            this.labelApellido.Text = "Apellido";
+            // 
             // GestionarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.textApellido);
+            this.Controls.Add(this.labelApellido);
             this.Controls.Add(this.Warning);
             this.Controls.Add(this.CajaTextoTelefono);
             this.Controls.Add(this.LabelTelefono);
@@ -340,5 +374,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField CajaTextoTelefono;
         private MaterialSkin.Controls.MaterialLabel Warning;
         private System.Windows.Forms.ErrorProvider ControlDeError;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textApellido;
+        private MaterialSkin.Controls.MaterialLabel labelApellido;
     }
 }

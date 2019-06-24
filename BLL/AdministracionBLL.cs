@@ -28,10 +28,10 @@ namespace BLL
         public DataTable MostrarUsuarioHabilitados() => Admin.MostrarUsuarioHabilitados();
         // ED -  2019 06 22 END
 
-        public int DesabilitarUsuario(string usuario)
+        public DataTable DesabilitarUsuario(string _idUsuario)
         {
 
-            return 1;
+            return Admin.DeshabilitarUsuario(_idUsuario);
         }
         public DataTable BuscarUsuario(Eusuario usuario) => Admin.BuscarUsuario(usuario);
 

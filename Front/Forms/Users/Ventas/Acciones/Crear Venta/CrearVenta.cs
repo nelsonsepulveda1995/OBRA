@@ -28,37 +28,62 @@ namespace Front.Forms.Users.Ventas.Acciones
             cbproducto.ValueMember = "ID_PROD";
             cbproducto.DisplayMember = "DESCRIPCION";
 
-            cbmediodepago.DataSource = producto.ListarMediodePagoBLL();
+            cbmediodepago.DataSource = producto.ListarMediodePago();
             cbmediodepago.ValueMember = "ID_MEDIOP";
             cbmediodepago.DisplayMember = "DESCRIPCION";
         }
 
         private void BotonConfirmar_Click(object sender, System.EventArgs e)
         {
-            EFacturaVenta factura = new EFacturaVenta();
+            EFacturaVenta facturaV = new EFacturaVenta();
             EDetalleFacturaVenta detalle = new EDetalleFacturaVenta();//falta cargar datos al detalle
 
-            factura.Setdni(Convert.ToInt32(cbclientes.SelectedValue));
-            factura.Setnombreusuario(usuario.GetUsuarioName().Trim('@'));
+            facturaV.Setdni(Convert.ToInt32(cbclientes.SelectedValue));
+            facturaV.Setnombreusuario(usuario.GetUsuarioName().Trim('@'));
             int dia, mes, año;
             dia = DateTime.Today.Day;
             mes = DateTime.Today.Month;
             año = DateTime.Today.Year;
-            string fecha = $"{dia}-{mes}-{año}";
-            factura.SetFecha(fecha);
-            factura.Setmodiop(Convert.ToInt32(cbmediodepago.SelectedValue));
+            string fecha = $"{año}-{mes}-{dia}";
+            facturaV.SetFecha(fecha);
+            facturaV.Setmodiop(Convert.ToInt32(cbmediodepago.SelectedValue));
 
-            //CARGAR DETALLE !!!!
-
-            int respuesta = ventas.CrearVenta(factura, listadetalle);
-
-            if (respuesta > 0) {
-                MessageBox.Show("Factura creada exitosamente");
+            if (listadetalle.Count == 0) //revisa si la lista tiene objetos
+            {
+                MessageBox.Show("Carrito vacio !!!");
             }
             else
             {
-                MessageBox.Show("Error al crear la factura");
+                if (ventas.CrearVenta(facturaV, listadetalle) == 0)
+                {
+
+                    MessageBox.Show("Error al crear la factura");
+
+                }
+                else
+                {
+                    MessageBox.Show("Factura creada exitosamente");
+                }
             }
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            EDetalleFacturaVenta eDetalleFacturaVenta = new EDetalleFacturaVenta();// instancia de entidad producto
+
+            eDetalleFacturaVenta.SetIdProd(Convert.ToInt16(cbproducto.SelectedValue)); //guarda el producto que agrego al carrito
+            eDetalleFacturaVenta.SetCant(Convert.ToInt16(numupdow_cantidad.Value));
+            eDetalleFacturaVenta.SetPrecio(Convert.ToDecimal((producto.VerunProducto(eDetalleFacturaVenta.GetIdProd())).Rows[0]["PRECIO"]));
+
+            listadetalle.Add(eDetalleFacturaVenta);
+
+            dataGridView1.Rows.Add(cbproducto.Text, eDetalleFacturaVenta.GetCant());
+        }
+
+        private void Vaciar_Click(object sender, EventArgs e)
+        {
+            listadetalle.Clear();
+            dataGridView1.Rows.Clear();
         }
     }
 }

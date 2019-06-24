@@ -39,5 +39,10 @@ namespace Front.Forms.Users.Compras
         {
             Main.AtenderAccion<Acciones.EstadoOrdenDeCompra>(this);
         }
+
+        private void BotonCrearProducto_Click(object sender, EventArgs e)
+        {
+            Main.AtenderAccion<Compras.Acciones.CrearProducto>(this);
+        }
     }
 }
