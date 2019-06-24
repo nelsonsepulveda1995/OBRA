@@ -33,6 +33,7 @@
             this.BotonProvedores = new MaterialSkin.Controls.MaterialFlatButton();
             this.BotonListaDeProductos = new MaterialSkin.Controls.MaterialFlatButton();
             this.BotonRemitos = new MaterialSkin.Controls.MaterialFlatButton();
+            this.BotonCrearProducto = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // FacturasDeCompras
@@ -130,12 +131,32 @@
             this.BotonRemitos.UseVisualStyleBackColor = true;
             this.BotonRemitos.Click += new System.EventHandler(this.BotonRemitos_Click);
             // 
+            // BotonCrearProducto
+            // 
+            this.BotonCrearProducto.AutoSize = true;
+            this.BotonCrearProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BotonCrearProducto.Depth = 0;
+            this.BotonCrearProducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BotonCrearProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BotonCrearProducto.Icon = null;
+            this.BotonCrearProducto.Location = new System.Drawing.Point(0, 180);
+            this.BotonCrearProducto.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BotonCrearProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BotonCrearProducto.Name = "BotonCrearProducto";
+            this.BotonCrearProducto.Primary = false;
+            this.BotonCrearProducto.Size = new System.Drawing.Size(188, 36);
+            this.BotonCrearProducto.TabIndex = 17;
+            this.BotonCrearProducto.Text = "Crear Producto";
+            this.BotonCrearProducto.UseVisualStyleBackColor = true;
+            this.BotonCrearProducto.Click += new System.EventHandler(this.BotonCrearProducto_Click);
+            // 
             // BotonesCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(188, 549);
+            this.Controls.Add(this.BotonCrearProducto);
             this.Controls.Add(this.BotonListaDeProductos);
             this.Controls.Add(this.BotonRemitos);
             this.Controls.Add(this.FacturasDeCompras);
@@ -156,5 +177,6 @@
         private MaterialSkin.Controls.MaterialFlatButton BotonProvedores;
         private MaterialSkin.Controls.MaterialFlatButton BotonListaDeProductos;
         private MaterialSkin.Controls.MaterialFlatButton BotonRemitos;
+        private MaterialSkin.Controls.MaterialFlatButton BotonCrearProducto;
     }
 }

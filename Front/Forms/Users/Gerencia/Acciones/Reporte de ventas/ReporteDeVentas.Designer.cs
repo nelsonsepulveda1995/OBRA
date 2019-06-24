@@ -1,6 +1,6 @@
 ﻿namespace Front.Forms.Users.Gerencia.Acciones
 {
-    partial class ReporteDeVentas
+    partial class VentasporUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,8 @@
             this.Titulo = new System.Windows.Forms.Label();
             this.BotonReporteDeVentas = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Titulo
@@ -41,9 +43,9 @@
             this.Titulo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.Titulo.Location = new System.Drawing.Point(62, 49);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(214, 30);
+            this.Titulo.Size = new System.Drawing.Size(230, 30);
             this.Titulo.TabIndex = 0;
-            this.Titulo.Text = "REPORTE DE VENTAS";
+            this.Titulo.Text = "VENTAS POR USUARIO";
             // 
             // BotonReporteDeVentas
             // 
@@ -59,6 +61,7 @@
             this.BotonReporteDeVentas.TabIndex = 1;
             this.BotonReporteDeVentas.Text = "GENERAR REPORTE";
             this.BotonReporteDeVentas.UseVisualStyleBackColor = true;
+            this.BotonReporteDeVentas.Click += new System.EventHandler(this.BotonReporteDeVentas_Click);
             // 
             // BotonCancelar
             // 
@@ -76,17 +79,27 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(128, 150);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(525, 283);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // ReporteDeVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonReporteDeVentas);
             this.Controls.Add(this.Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteDeVentas";
             this.Text = "ReporteDeVentas";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,5 +110,6 @@
         private System.Windows.Forms.Label Titulo;
         private MaterialSkin.Controls.MaterialRaisedButton BotonReporteDeVentas;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

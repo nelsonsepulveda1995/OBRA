@@ -17,7 +17,7 @@ namespace Front.Forms.Users.Gerencia
 
         private void BotonReporteDeVentas_Click(object sender, EventArgs e)
         {
-            Main.AtenderAccion<Acciones.ReporteDeVentas>(this);
+            Main.AtenderAccion<Acciones.VentasporUsuario>(this);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DAL;
+using DAL;
+using Entidad;
 using System.Data;
 
 namespace BLL
@@ -7,11 +8,9 @@ namespace BLL
     {
         ProductoDAL productoDAL = new ProductoDAL();
         VentasDAL VentasDAL = new VentasDAL();
-        public int CrearProducto()
-        {
-            return 1;
-        }
 
+        public int CrearProductoBLL(Eproducto _producto) => productoDAL.SETProductoDAL(_producto);
+      
         public DataTable ListarProductos() => productoDAL.GetListaProductos();
 
         public int CargarStock()
@@ -19,6 +18,7 @@ namespace BLL
             return 1;
         }
         public bool VerificarStockProducto(int ID) => productoDAL.GetStockProducto(ID) > 0;
+
 
         public DataTable ListarMediodePagoBLL()
         {
@@ -28,6 +28,9 @@ namespace BLL
             return respuesta;
             // ED  -  2019 06 23 END
         }
+
+        public DataTable ListarMediodePago() => productoDAL.GetMediosdePago();
+
         public DataTable VerunProducto(int id)
         {
             return productoDAL.GetProducto(id);

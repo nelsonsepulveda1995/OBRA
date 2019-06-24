@@ -31,6 +31,8 @@
             this.Titulo = new System.Windows.Forms.Label();
             this.BotonReporteDeCompras = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Titulo
@@ -41,9 +43,9 @@
             this.Titulo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.Titulo.Location = new System.Drawing.Point(62, 49);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(236, 30);
+            this.Titulo.Size = new System.Drawing.Size(271, 30);
             this.Titulo.TabIndex = 0;
-            this.Titulo.Text = "REPORTE DE COMPRAS";
+            this.Titulo.Text = "PRODUCTO MAS VENDIDO";
             // 
             // BotonReporteDeCompras
             // 
@@ -77,17 +79,27 @@
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(144, 169);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(470, 254);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // ReporteDeCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonReporteDeCompras);
             this.Controls.Add(this.Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteDeCompras";
             this.Text = "Reporte de compras";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Label Titulo;
         private MaterialSkin.Controls.MaterialRaisedButton BotonReporteDeCompras;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
