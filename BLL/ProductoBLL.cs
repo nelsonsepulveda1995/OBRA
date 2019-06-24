@@ -6,6 +6,7 @@ namespace BLL
     public class ProductoBLL
     {
         ProductoDAL productoDAL = new ProductoDAL();
+        VentasDAL VentasDAL = new VentasDAL();
         public int CrearProducto()
         {
             return 1;
@@ -21,8 +22,11 @@ namespace BLL
 
         public DataTable ListarMediodePagoBLL()
         {
+            // ED  -  2019 06 23
             DataTable respuesta = new DataTable();
+            respuesta = VentasDAL.ListarMedioP();
             return respuesta;
+            // ED  -  2019 06 23 END
         }
         public DataTable VerunProducto(int id)
         {
