@@ -27,12 +27,17 @@ namespace Front.Forms.Users.Compras
 
         private void BotonRemitos_Click(object sender, EventArgs e)
         {
-            Main.AtenderAccion<Compras.Acciones.GestionarRemitos>(this);
+            Main.AtenderAccion<Acciones.GestionarRemitos>(this);
         }
 
         private void BotonListaDeProductos_Click(object sender, EventArgs e)
         {
-            Main.AtenderAccion<Compras.Acciones.ListaDeProductos>(this);
+            Main.AtenderAccion<Acciones.ListaDeProductos>(this);
+        }
+
+        private void BotonEstadoOrdenDeCompra_Click(object sender, EventArgs e)
+        {
+            Main.AtenderAccion<Acciones.EstadoOrdenDeCompra>(this);
         }
     }
 }

@@ -9,6 +9,28 @@ namespace DAL
         public DataTable GetProveedores() => nuevaC.LeerPorStoreProcedure("spListarProvedores");
 
 
+        public DataTable ConsultarEstadoOrdenDeCompraDAL(int id_OCOMPRA=0)
+        {
+            string consulta;
+
+            DataTable respuesta;
+            if (id_OCOMPRA != 0)
+            {
+                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA where id_OCOMPRA = {id_OCOMPRA};";
+            }
+            else
+            {
+                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
+
+            }
+
+            respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
+
+        }
+
+
+
         public int CambiarEstadoOrdenDeCompra(int id,int estado)
         {
             string consulta = $"update ORDENDECOMPRA set estado ={estado} where ID_OCOMPRA = {id};";

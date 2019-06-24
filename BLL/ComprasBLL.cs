@@ -15,6 +15,11 @@ namespace BLL
         }
 
 
+        public DataTable ConsultarEstadoOrdenDeCompraBLL(int id_OCOMPRA=0)
+        {
+            return comprasDAL.ConsultarEstadoOrdenDeCompraDAL(id_OCOMPRA);
+        }
+
 
         public int CrearCompra()
         {
