@@ -132,7 +132,7 @@
             this.BotonRemitos.UseVisualStyleBackColor = true;
             this.BotonRemitos.Click += new System.EventHandler(this.BotonRemitos_Click);
             // 
-            // EstadoOrdenDeCompra
+            // BotonEstadoOrdenDeCompra
             // 
             this.BotonEstadoOrdenDeCompra.AutoSize = true;
             this.BotonEstadoOrdenDeCompra.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -140,17 +140,17 @@
             this.BotonEstadoOrdenDeCompra.Dock = System.Windows.Forms.DockStyle.Top;
             this.BotonEstadoOrdenDeCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BotonEstadoOrdenDeCompra.Icon = null;
-            this.BotonEstadoOrdenDeCompra.Location = new System.Drawing.Point(0, 180);
+            this.BotonEstadoOrdenDeCompra.Location = new System.Drawing.Point(0, 216);
             this.BotonEstadoOrdenDeCompra.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BotonEstadoOrdenDeCompra.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BotonEstadoOrdenDeCompra.Name = "EstadoOrdenDeCompra";
+            this.BotonEstadoOrdenDeCompra.Name = "BotonEstadoOrdenDeCompra";
             this.BotonEstadoOrdenDeCompra.Primary = false;
             this.BotonEstadoOrdenDeCompra.Size = new System.Drawing.Size(188, 36);
             this.BotonEstadoOrdenDeCompra.TabIndex = 17;
-            this.BotonEstadoOrdenDeCompra.Text = "Estado de Ordenes de Compra";
+            this.BotonEstadoOrdenDeCompra.Text = "Estado de Ordenes ";
             this.BotonEstadoOrdenDeCompra.UseVisualStyleBackColor = true;
             this.BotonEstadoOrdenDeCompra.Click += new System.EventHandler(this.BotonEstadoOrdenDeCompra_Click);
-  
+            // 
             // BotonCrearProducto
             // 
             this.BotonCrearProducto.AutoSize = true;
@@ -168,7 +168,7 @@
             this.BotonCrearProducto.TabIndex = 17;
             this.BotonCrearProducto.Text = "Crear Producto";
             this.BotonCrearProducto.UseVisualStyleBackColor = true;
-            this.BotonCrearProducto.Click += new System.EventHandler(this.BotonCrearProducto_Click);  
+            this.BotonCrearProducto.Click += new System.EventHandler(this.BotonCrearProducto_Click);
             // 
             // BotonesCompras
             // 
