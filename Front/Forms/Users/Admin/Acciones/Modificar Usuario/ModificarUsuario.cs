@@ -35,7 +35,7 @@ namespace Front.Forms.Users.Admin.Acciones
                 nombreIngresado.Text = gvwListaUsuarios.CurrentRow.Cells["NOMBRE"].Value.ToString();
                 apellidoIngresado.Text = gvwListaUsuarios.CurrentRow.Cells["APELLIDO"].Value.ToString();                                
 
-                DataTable tabla = admin.ListasTipoUsuarioBll();
+                DataTable tabla = admin.ListasTipoUsuario();
                 TipoSeleccionado.DataSource = tabla;
                 TipoSeleccionado.DisplayMember = "descripcion";
                 TipoSeleccionado.ValueMember = "id";                

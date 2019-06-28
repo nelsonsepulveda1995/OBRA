@@ -8,7 +8,6 @@ namespace DAL
     {
         private SqlConnection objConexion;
         private string strCadenaDeConexion = "";
-
         /* -------------------- private void Conectar() ------------ 
          * Este metodo como indica su nombre... me permite conectarme con la 
          * base de datos (en este caso, SqlServer) 
@@ -17,11 +16,12 @@ namespace DAL
         {
 			strCadenaDeConexion = "Server=.\\SQLEXPRESS;DataBase= Corralon; integrated security=true";
             //Instanció un objeto del tipo SqlConnection
-            objConexion = new SqlConnection();
-            objConexion.ConnectionString = strCadenaDeConexion;
+            objConexion = new SqlConnection
+            {
+                ConnectionString = strCadenaDeConexion
+            };
             objConexion.Open();
         }
-
         /* -------------------- private void Desconectar() ------------ 
          * Este metodo como indica su nombre... me permite desconectarme de la
          * base de datos (en este caso, SqlServer)
@@ -57,10 +57,12 @@ namespace DAL
                 }
 
                 //Instancio un adaptador con el parametro SqlCommand
-                var objAdaptador = new SqlDataAdapter(objComando);
+                using (var objAdaptador = new SqlDataAdapter(objComando))
+                {
 
-                //Lleno la tabla, el objeto unaTabla con el adaptador
-                objAdaptador.Fill(unaTabla);
+                    //Lleno la tabla, el objeto unaTabla con el adaptador
+                    objAdaptador.Fill(unaTabla);
+                }
             }
             catch (Exception)
             {
@@ -100,10 +102,11 @@ namespace DAL
                 }
 
                 //Instancio un adaptador con el parametro SqlCommand
-                var objAdaptador = new SqlDataAdapter(objComando);
-
-                //Lleno la tabla, el objeto unaTabla con el adaptador
-                objAdaptador.Fill(unaTabla);
+                using (var objAdaptador = new SqlDataAdapter(objComando))
+                {
+                    //Lleno la tabla, el objeto unaTabla con el adaptador
+                    objAdaptador.Fill(unaTabla);
+                }
             }
             catch (Exception)
             {
@@ -137,10 +140,11 @@ namespace DAL
                 objComando.Connection = this.objConexion;
 
                 //Instancio un adaptador con el parametro SqlCommand
-                var objAdaptador = new SqlDataAdapter(objComando);
-
-                //Lleno la tabla, el objeto unaTabla con el adaptador
-                objAdaptador.Fill(unaTabla);
+                using (var objAdaptador = new SqlDataAdapter(objComando))
+                {
+                    //Lleno la tabla, el objeto unaTabla con el adaptador
+                    objAdaptador.Fill(unaTabla);
+                }
             }
             catch (Exception)
             {
@@ -175,17 +179,15 @@ namespace DAL
                 objComando.CommandText = pComando;
 
                 //Instancio un adaptador con el parametro SqlCommand
-                var objAdaptador = new SqlDataAdapter(objComando);
-
-                //Lleno la tabla, el objeto unaTabla con el adaptador
-                objAdaptador.Fill(unaTabla);
-
+                using (var objAdaptador = new SqlDataAdapter(objComando))
+                {    //Lleno la tabla, el objeto unaTabla con el adaptador
+                    objAdaptador.Fill(unaTabla);
+                }
             }
             catch
             {
                 //Como hay error... por el motivo que sea asigno el resultado a null
                 unaTabla = null;
-
                 throw;
             }
             finally
@@ -202,29 +204,30 @@ namespace DAL
             int filasAfectadas = 0;
 
             //Instancio un objeto del tipo SqlCommand
-            var objComando = new SqlCommand();
-
-            //Me conecto...
-            this.Conectar();
-
-            try
+            using (var objComando = new SqlCommand())
             {
-                objComando.CommandText = pTexto;
-                objComando.CommandType = CommandType.Text;
-                objComando.Connection = this.objConexion;
+                //Me conecto...
+                this.Conectar();
 
-                //El método ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
-                filasAfectadas = objComando.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                filasAfectadas = -1;
-                throw;
-            }
-            finally
-            {
-                //Me desconecto
-                this.Desconectar();
+                try
+                {
+                    objComando.CommandText = pTexto;
+                    objComando.CommandType = CommandType.Text;
+                    objComando.Connection = this.objConexion;
+
+                    //El método ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
+                    filasAfectadas = objComando.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    filasAfectadas = -1;
+                    throw;
+                }
+                finally
+                {
+                    //Me desconecto
+                    this.Desconectar();
+                }
             }
             return filasAfectadas;
         }
@@ -235,38 +238,39 @@ namespace DAL
             int filasAfectadas = 0;
 
             //Instancio un objeto del tipo SqlCommand
-            var objComando = new SqlCommand();
-
-            //Me conecto...
-            this.Conectar();
-
-            try
+            using (var objComando = new SqlCommand())
             {
-                objComando.CommandText = pTexto;
-                objComando.CommandType = CommandType.StoredProcedure;
-                objComando.Connection = this.objConexion;
+                //Me conecto...
+                this.Conectar();
 
-                if (pParametrosSql.Length > 0)
+                try
                 {
-                    objComando.Parameters.AddRange(pParametrosSql);
-                    //El método ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
-                    filasAfectadas = objComando.ExecuteNonQuery();
+                    objComando.CommandText = pTexto;
+                    objComando.CommandType = CommandType.StoredProcedure;
+                    objComando.Connection = this.objConexion;
+
+                    if (pParametrosSql.Length > 0)
+                    {
+                        objComando.Parameters.AddRange(pParametrosSql);
+                        //El método ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
+                        filasAfectadas = objComando.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        //retorno -1 porque la lista de parametros Sql tiene 0 ítems...
+                        filasAfectadas = -1;
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    //retorno -1 porque la lista de parametros Sql tiene 0 ítems...
                     filasAfectadas = -1;
+                    throw;
                 }
-            }
-            catch (Exception)
-            {
-                filasAfectadas = -1;
-                throw;
-            }
-            finally
-            {
-                //Me desconecto
-                this.Desconectar();
+                finally
+                {
+                    //Me desconecto
+                    this.Desconectar();
+                }
             }
             return filasAfectadas;
         }

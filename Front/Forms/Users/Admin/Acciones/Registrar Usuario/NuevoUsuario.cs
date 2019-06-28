@@ -69,7 +69,7 @@ namespace Front.Forms.Users.Admin.Acciones
         private void NuevoUsuario_Load(object sender, EventArgs e) //no funciona !!!!!
         {
             
-            DataTable tabla= admin.ListasTipoUsuarioBll();
+            DataTable tabla= admin.ListasTipoUsuario();
             TipoSeleccionado.DataSource = tabla;
             TipoSeleccionado.DisplayMember = "descripcion";
             TipoSeleccionado.ValueMember = "id";
