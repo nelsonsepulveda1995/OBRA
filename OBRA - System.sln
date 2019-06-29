@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidad", "Entidades\Entidad.csproj", "{E7217AF6-7BCB-4294-BF89-FF7C0146EC20}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OBRA Setup", "OBRA\OBRA.vdproj", "{235462A5-7F5D-4F75-A31F-D0A15064F8C2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,8 +33,6 @@ Global
 		{E7217AF6-7BCB-4294-BF89-FF7C0146EC20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7217AF6-7BCB-4294-BF89-FF7C0146EC20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7217AF6-7BCB-4294-BF89-FF7C0146EC20}.Release|Any CPU.Build.0 = Release|Any CPU
-		{235462A5-7F5D-4F75-A31F-D0A15064F8C2}.Debug|Any CPU.ActiveCfg = Debug
-		{235462A5-7F5D-4F75-A31F-D0A15064F8C2}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

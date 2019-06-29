@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -54,7 +55,7 @@ namespace DAL
             string consulta = $"INSERT INTO PROVEDOR(CUIT_PROV,NOMBRE,DIRECCION,TELEFONO,CORREOELECTRONICO)VALUES({_proveedor.getcuit()},'{_proveedor.getnoombre()}','{_proveedor.getdireccion()}',{_proveedor.gettelefono()},'{_proveedor.getcorreo()}')";
             return nuevaC.EscribirPorComando(consulta);
         }
-        public DataTable GetFacturasCompras() //FUNCION  A COMPLETAR
+        public DataTable GetFacturasCompras() 
         {
             DataTable respuesta = new DataTable();
             string consulta = "SELECT * FROM FACTURACOMPRA";
@@ -89,6 +90,14 @@ namespace DAL
 
 
             respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
+        }
+        public int GetUltimoIdFacturaCompra(int id)
+        {
+            int respuesta;
+            string consulta = "SELECT TOP(1) ID_FACTURACOMPRA FROM FACTURACOMPRA ORDER BY ID_FACTURACOMPRA DESC"; //REVISAR COHERENCIA CON LA BD
+            DataTable temp = nuevaC.LeerPorComando(consulta);
+            respuesta =Convert.ToInt32( temp.Rows[0]["ID_FACTURACOMPRA"]); //revisar coherencia con BD
             return respuesta;
         }
     }
