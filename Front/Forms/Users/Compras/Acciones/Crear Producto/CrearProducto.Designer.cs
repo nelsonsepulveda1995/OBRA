@@ -144,6 +144,11 @@
             // nud_catidad
             // 
             this.nud_catidad.Location = new System.Drawing.Point(298, 264);
+            this.nud_catidad.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.nud_catidad.Name = "nud_catidad";
             this.nud_catidad.Size = new System.Drawing.Size(105, 20);
             this.nud_catidad.TabIndex = 9;

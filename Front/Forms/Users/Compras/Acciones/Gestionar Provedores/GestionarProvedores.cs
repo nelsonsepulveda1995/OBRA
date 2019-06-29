@@ -22,26 +22,37 @@ namespace Front.Forms.Users.Compras.Acciones
 
             else
             {
+                int error=0;
                 Eproveedor proveedor = new Eproveedor();
                 proveedor.setcorreo(mlcorreo.Text);
-                proveedor.setcuit(Convert.ToInt32(mlcuit.Text));
+                try
+                {
+                    proveedor.setcuit(Convert.ToInt32(mlcuit.Text)); //SI SE INGRESAN LETRAS ERROR PASA A SER 1
+                }
+                catch
+                {
+                    MessageBox.Show("Error al introducir el CUIT"); 
+                    error = 1;
+                }
                 proveedor.setdireccion(mldireccion.Text);
                 proveedor.setnombre(mlnombre.Text);
                 proveedor.settelefono(Convert.ToInt32(mltelefono.Text)); //revisar si es string o int en la BD
 
                 int respuesta;
-                respuesta = compras.CrearProveedor(proveedor);
-                if (respuesta > 0)
+                if (error == 0)
                 {
-                    mlrespuesta.Text = "Proveedor Creado Exitosamente";
-                }
-                else
-                {
-                    mlrespuesta.Text = "Error Intente crearlo nuevamente";
+                    respuesta = compras.CrearProveedor(proveedor);
+                    if (respuesta > 0)
+                    {
+                        mlrespuesta.Text = "Proveedor Creado Exitosamente";
+                    }
+                    else
+                    {
+                        mlrespuesta.Text = "Error Intente crearlo nuevamente";
+                    }
                 }
             }
         }
-
         private void GestionarProvedores_Load(object sender, EventArgs e)
         {
 
