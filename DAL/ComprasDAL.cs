@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using System.Collections.Generic;
 using System.Data;
 
 namespace DAL
@@ -7,7 +8,6 @@ namespace DAL
     {
         Conexion nuevaC = new Conexion(); //llamar esta instancia para la coneccion
         public DataTable GetProveedores() => nuevaC.LeerPorStoreProcedure("spListarProvedores");
-
 
         public DataTable ConsultarEstadoOrdenDeCompraDAL(int id_OCOMPRA=0)
         {
@@ -20,7 +20,7 @@ namespace DAL
             }
             else
             {
-                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
+                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; 
 
             }
 
@@ -37,14 +37,16 @@ namespace DAL
             return nuevaC.EscribirPorComando(consulta);
         }
 
-
-
-
-        public int CrearCompra()//Cambiar Variables para Crear Compras
+        public int CrearFacturaCompra(EFacturaCompra factura)
         {
-            int respuesta = 1;
-
-
+            string consulta = $"INSERT TO FACTURADECOMPRA()VALUES()";// !!!!!!!!COMPLETAR Y REVISAR COHERENCIA CON BD !!!!!!!!!!!
+            int respuesta=nuevaC.EscribirPorComando(consulta);
+            return respuesta;
+        }
+        public int CrearDetalleFacturaCompra(EdetalleFacturaCompra detalle)
+        {
+            string consulta = $"INSERT TO DETALLEFACTURACOMPRA()VALUES()";// !!!!!!!!COMPLETAR Y REVISAR COHERENCIA CON BD!!!!!!!!!!!
+            int respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
         public int GuardarProveedor(Eproveedor _proveedor)
