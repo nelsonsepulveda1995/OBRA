@@ -1,4 +1,6 @@
 ﻿using Entidad;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace DAL
@@ -7,7 +9,6 @@ namespace DAL
     {
         Conexion nuevaC = new Conexion(); //llamar esta instancia para la coneccion
         public DataTable GetProveedores() => nuevaC.LeerPorStoreProcedure("spListarProvedores");
-
 
         public DataTable ConsultarEstadoOrdenDeCompraDAL(int id_OCOMPRA=0)
         {
@@ -20,7 +21,7 @@ namespace DAL
             }
             else
             {
-                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
+                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; 
 
             }
 
@@ -37,14 +38,16 @@ namespace DAL
             return nuevaC.EscribirPorComando(consulta);
         }
 
-
-
-
-        public int CrearCompra()//Cambiar Variables para Crear Compras
+        public int CrearFacturaCompra(EFacturaCompra factura)
         {
-            int respuesta = 1;
-
-
+            string consulta = $"INSERT TO FACTURADECOMPRA()VALUES()";// !!!!!!!!COMPLETAR Y REVISAR COHERENCIA CON BD !!!!!!!!!!!
+            int respuesta=nuevaC.EscribirPorComando(consulta);
+            return respuesta;
+        }
+        public int CrearDetalleFacturaCompra(EdetalleFacturaCompra detalle)
+        {
+            string consulta = $"INSERT TO DETALLEFACTURACOMPRA()VALUES()";// !!!!!!!!COMPLETAR Y REVISAR COHERENCIA CON BD!!!!!!!!!!!
+            int respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
         }
         public int GuardarProveedor(Eproveedor _proveedor)
@@ -52,7 +55,7 @@ namespace DAL
             string consulta = $"INSERT INTO PROVEDOR(CUIT_PROV,NOMBRE,DIRECCION,TELEFONO,CORREOELECTRONICO)VALUES({_proveedor.getcuit()},'{_proveedor.getnoombre()}','{_proveedor.getdireccion()}',{_proveedor.gettelefono()},'{_proveedor.getcorreo()}')";
             return nuevaC.EscribirPorComando(consulta);
         }
-        public DataTable GetFacturasCompras() //FUNCION  A COMPLETAR
+        public DataTable GetFacturasCompras() 
         {
             DataTable respuesta = new DataTable();
             string consulta = "SELECT * FROM FACTURACOMPRA";
@@ -84,9 +87,15 @@ namespace DAL
         {
             DataTable respuesta = new DataTable();
             string consulta = $"SELECT [PRODUCTO].[DESCRIPCION],[DETALLEORDENCOMPRA].[CANT], [DETALLEORDENCOMPRA].[PRECIOXUNIDAD] FROM [DETALLEORDENCOMPRA]INNER JOIN [PRODUCTO] ON [DETALLEORDENCOMPRA].[ID_PROD]=[PRODUCTO].[ID_PROD] and DETALLEORDENCOMPRA.ID_OCOMPRA= {id} ORDER BY [DETALLEORDENCOMPRA].[ID_PROD];";
-
-
             respuesta = nuevaC.LeerPorComando(consulta);
+            return respuesta;
+        }
+        public int GetUltimoIdFacturaCompra()
+        {
+            int respuesta;
+            string consulta = "SELECT TOP(1) ID_FACTURACOMPRA FROM FACTURACOMPRA ORDER BY ID_FACTURACOMPRA DESC"; //REVISAR COHERENCIA CON LA BD
+            DataTable temp = nuevaC.LeerPorComando(consulta);
+            respuesta =Convert.ToInt32( temp.Rows[0]["ID_FACTURACOMPRA"]); //revisar coherencia con BD
             return respuesta;
         }
     }

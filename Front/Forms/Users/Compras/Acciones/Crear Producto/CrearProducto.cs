@@ -22,12 +22,19 @@ namespace Front.Forms.Users.Compras.Acciones
         {
             Eproducto eproducto = new Eproducto();
             eproducto.SetDescripcion(sl_descripcion.Text);
-            eproducto.SetPrecio(Convert.ToDecimal(tb_precio.Text));
+            try
+            {
+                eproducto.SetPrecio(Convert.ToDecimal(tb_precio.Text));
+            }
+            catch
+            {
+                MessageBox.Show("Ingrese el precio nuevamente (utilize la ',' para separar decimales)");
+            }
             eproducto.SetStock(Convert.ToInt32(nud_catidad.Value));
 
             if (sl_descripcion.Text == " " || tb_precio.Text == " ")
             {
-                ML_RESPUESTA.Text = "Campos imcompletos";
+                ML_RESPUESTA.Text = "Campos incompletos";
             }
             else
             {
