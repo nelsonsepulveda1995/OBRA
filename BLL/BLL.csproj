@@ -45,6 +45,7 @@
     <Compile Include="Cache\UserCache.cs" />
     <Compile Include="DepositoBLL.cs" />
     <Compile Include="GerenteBLL.cs" />
+    <Compile Include="ConexionBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComprasBLL.cs" />
     <Compile Include="ProductoBLL.cs" />

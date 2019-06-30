@@ -10,10 +10,11 @@ namespace DAL
         Conexion nuevaC = new Conexion(); //llamar esta instancia para la conexion
         public bool Login(ref Eusuario usuario)
         {
-            
-            SqlParameter[] parametros = new SqlParameter[2];
-            parametros[0] = nuevaC.CrearParametro("@idUsuario", usuario.getidUsuario());
-            parametros[1] = nuevaC.CrearParametro("@Contrasenia", usuario.getContraseña());
+            SqlParameter[] parametros = new SqlParameter[] {
+
+                nuevaC.CrearParametro("@idUsuario", usuario.getidUsuario()),
+                nuevaC.CrearParametro("@Contrasenia", usuario.getContraseña())
+            };
             DataTable user = nuevaC.LeerPorStoreProcedure("spGetLoginUsuario", parametros);
 
             if (user.Rows.Count > 0)

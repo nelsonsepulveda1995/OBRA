@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 using BLL;
-using DAL;
 using Entidad;
 
 namespace Front.Forms.Users.Deposito.Acciones

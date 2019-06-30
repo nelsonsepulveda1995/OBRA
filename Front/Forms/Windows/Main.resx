@@ -117,30 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="PanelContenedor.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelFormularios.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Titulo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LogoGray.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BotonMaximizarVentana.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAN5JREFUOE/t
-        k80KAVEYhidG7LDwv5KSDSuyVu7BQpSUBffnhmxkIZSt8Xx6zTHZnMVslKee8r3vNzPN5AS/RRRFfdzI
-        BYaqYsgauNbOCquqklAM8IFnecS26hiy+cfODQ/49WBbXOJVoxfsj9BoKXIQpn7DGZ40esH++zNVFDkI
-        c9jR6A3X9PTzT9rwceu40OgF+wXcYUaRw26GF41esD9Eo6nIQZj6H9vO6B2ncqwqAXkeJ9qx1zXqqh2E
-        NbSD/sZOQFd1DNn21Tr2qr6hDLEsi4oTkGc/dkqKf4YgeAJzxyPVPMGq/wAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="BotonMinimizarVentana.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACtJREFUOE9j
-        GAWjYFiD////ZwHxVTJxFtQYBAAJoikiBWMaOApGwfABDAwAq1F4le+wTcUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="BotonCerrarVentana.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAKZJREFUOE/t
-        lEEKwkAQBPctYp5kznpO/D+KsHZLzYLEmAzRkxYMLL09RRLQ8qfUWnccF1nsqtBpLpoj0SzqnOjuiV6j
-        Qq+5agaiCbob6fRE73GRhZGo4Yy7dbLACyw2qc9kOVngRQQWbZMFFmhuzDaZkcRPFsLJN02B7PGazNM3
-        TaHFM4L2mj6T5aRaCNmBqKEsJ1VxVhbobp1Uha/89D735/ALlHIHwJ/+3RoUWbUAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="LogoGray.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAigAAAHyCAYAAADBQDVRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
@@ -908,6 +897,83 @@
         SUVORK5CYII=
 </value>
   </data>
+  <metadata name="PanelLateral.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelComandos.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelInferior.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Configuracion.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BotonCerrarSesion.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelUsuario.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Perfil.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Tipo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Usuario.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Nombre.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FotoPerfil.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BarraVentanaMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BotonRestaurarVentana.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BotonMaximizarVentana.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BotonMaximizarVentana.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAN5JREFUOE/t
+        k80KAVEYhidG7LDwv5KSDSuyVu7BQpSUBffnhmxkIZSt8Xx6zTHZnMVslKee8r3vNzPN5AS/RRRFfdzI
+        BYaqYsgauNbOCquqklAM8IFnecS26hiy+cfODQ/49WBbXOJVoxfsj9BoKXIQpn7DGZ40esH++zNVFDkI
+        c9jR6A3X9PTzT9rwceu40OgF+wXcYUaRw26GF41esD9Eo6nIQZj6H9vO6B2ncqwqAXkeJ9qx1zXqqh2E
+        NbSD/sZOQFd1DNn21Tr2qr6hDLEsi4oTkGc/dkqKf4YgeAJzxyPVPMGq/wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="BotonMinimizarVentana.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BotonMinimizarVentana.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACtJREFUOE9j
+        GAWjYFiD////ZwHxVTJxFtQYBAAJoikiBWMaOApGwfABDAwAq1F4le+wTcUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="BotonCerrarVentana.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BotonCerrarVentana.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAKZJREFUOE/t
+        lEEKwkAQBPctYp5kznpO/D+KsHZLzYLEmAzRkxYMLL09RRLQ8qfUWnccF1nsqtBpLpoj0SzqnOjuiV6j
+        Qq+5agaiCbob6fRE73GRhZGo4Yy7dbLACyw2qc9kOVngRQQWbZMFFmhuzDaZkcRPFsLJN02B7PGazNM3
+        TaHFM4L2mj6T5aRaCNmBqKEsJ1VxVhbobp1Uha/89D735/ALlHIHwJ/+3RoUWbUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="Logo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEATUwAAAEAIAAoXwAAFgAAACgAAABNAAAAmAAAAAEAIAAAAAAAcFsAAOoWAADqFgAAAAAAAAAA

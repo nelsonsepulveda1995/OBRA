@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,20 +7,16 @@ namespace DAL
 {
     public class Conexion
     {
-        private SqlConnection objConexion;
-        private string strCadenaDeConexion = "";
+        static readonly string key = "Front.Properties.Settings.ObraDB";
+        SqlConnection objConexion;
+
         /* -------------------- private void Conectar() ------------ 
          * Este metodo como indica su nombre... me permite conectarme con la 
          * base de datos (en este caso, SqlServer) 
          */
         private void Conectar()
         {
-			strCadenaDeConexion = "Server=.\\SQLEXPRESS;DataBase= Corralon; integrated security=true";
-            //Instanció un objeto del tipo SqlConnection
-            objConexion = new SqlConnection
-            {
-                ConnectionString = strCadenaDeConexion
-            };
+            objConexion = new SqlConnection(ConfigurationManager.ConnectionStrings[key].ConnectionString);
             objConexion.Open();
         }
         /* -------------------- private void Desconectar() ------------ 
@@ -40,29 +37,31 @@ namespace DAL
 
             //Instancio un objeto del tipo SqlCommand
             var objComando = new SqlCommand();
-
             //Me conecto...
-            this.Conectar();
+            Conectar();
 
             try
             {
-                objComando.CommandText = pNombreStoreProcedure;
-                objComando.CommandType = CommandType.StoredProcedure;
-                objComando.Connection = this.objConexion;
-
-                if (pParametrosSql != null)
+                using (objComando)
                 {
-                    //Lleno los SqlParameters a la lista de parametros
-                    objComando.Parameters.AddRange(pParametrosSql);
+                    objComando.CommandText = pNombreStoreProcedure;
+                    objComando.CommandType = CommandType.StoredProcedure;
+                    objComando.Connection = this.objConexion;
+
+                    if (pParametrosSql != null)
+                    {
+                        //Lleno los SqlParameters a la lista de parametros
+                        objComando.Parameters.AddRange(pParametrosSql);
+                    }
                 }
 
                 //Instancio un adaptador con el parametro SqlCommand
                 using (var objAdaptador = new SqlDataAdapter(objComando))
                 {
-
                     //Lleno la tabla, el objeto unaTabla con el adaptador
                     objAdaptador.Fill(unaTabla);
                 }
+
             }
             catch (Exception)
             {
@@ -84,40 +83,43 @@ namespace DAL
             var unaTabla = new DataTable();
 
             //Instancio un objeto del tipo SqlCommand
-            var objComando = new SqlCommand();
-
-            //Me conecto...
-            this.Conectar();
-
-            try
+            using (var objComando = new SqlCommand())
             {
-                objComando.CommandText = pNombreStoreProcedure;
-                objComando.CommandType = CommandType.StoredProcedure;
-                objComando.Connection = this.objConexion;
 
-                if (pParametrosSql != null)
+                //Me conecto...
+                this.Conectar();
+
+                try
                 {
-                    //Lleno los SqlParameters a la lista de parametros
-                    objComando.Parameters.Add(pParametrosSql);
-                }
+                    objComando.CommandText = pNombreStoreProcedure;
+                    objComando.CommandType = CommandType.StoredProcedure;
+                    objComando.Connection = this.objConexion;
 
-                //Instancio un adaptador con el parametro SqlCommand
-                using (var objAdaptador = new SqlDataAdapter(objComando))
-                {
-                    //Lleno la tabla, el objeto unaTabla con el adaptador
-                    objAdaptador.Fill(unaTabla);
+                    if (pParametrosSql != null)
+                    {
+                        //Lleno los SqlParameters a la lista de parametros
+                        objComando.Parameters.Add(pParametrosSql);
+                    }
+
+                    //Instancio un adaptador con el parametro SqlCommand
+                    using (var objAdaptador = new SqlDataAdapter(objComando))
+                    {
+                        //Lleno la tabla, el objeto unaTabla con el adaptador
+                        objAdaptador.Fill(unaTabla);
+                    }
+
                 }
-            }
-            catch (Exception)
-            {
-                //Como hay error... por el motivo que sea asigno el resultado a null
-                unaTabla = null;
-                throw;
-            }
-            finally
-            {
-                //Pase lo que pase me desconecto
-                this.Desconectar();
+                catch (Exception)
+                {
+                    //Como hay error... por el motivo que sea asigno el resultado a null
+                    unaTabla = null;
+                    throw;
+                }
+                finally
+                {
+                    //Pase lo que pase me desconecto
+                    this.Desconectar();
+                }
             }
             return unaTabla;
         }
@@ -140,11 +142,11 @@ namespace DAL
                 objComando.Connection = this.objConexion;
 
                 //Instancio un adaptador con el parametro SqlCommand
-                using (var objAdaptador = new SqlDataAdapter(objComando))
-                {
+                var objAdaptador = new SqlDataAdapter(objComando);
+                
                     //Lleno la tabla, el objeto unaTabla con el adaptador
                     objAdaptador.Fill(unaTabla);
-                }
+                
             }
             catch (Exception)
             {
@@ -179,10 +181,10 @@ namespace DAL
                 objComando.CommandText = pComando;
 
                 //Instancio un adaptador con el parametro SqlCommand
-                using (var objAdaptador = new SqlDataAdapter(objComando))
-                {    //Lleno la tabla, el objeto unaTabla con el adaptador
+                var objAdaptador = new SqlDataAdapter(objComando);
+                   //Lleno la tabla, el objeto unaTabla con el adaptador
                     objAdaptador.Fill(unaTabla);
-                }
+                
             }
             catch
             {
@@ -206,6 +208,7 @@ namespace DAL
             //Instancio un objeto del tipo SqlCommand
             using (var objComando = new SqlCommand())
             {
+
                 //Me conecto...
                 this.Conectar();
 
@@ -229,6 +232,7 @@ namespace DAL
                     this.Desconectar();
                 }
             }
+
             return filasAfectadas;
         }
 
@@ -238,8 +242,8 @@ namespace DAL
             int filasAfectadas = 0;
 
             //Instancio un objeto del tipo SqlCommand
-            using (var objComando = new SqlCommand())
-            {
+            var objComando = new SqlCommand();
+            
                 //Me conecto...
                 this.Conectar();
 
@@ -271,7 +275,7 @@ namespace DAL
                     //Me desconecto
                     this.Desconectar();
                 }
-            }
+            
             return filasAfectadas;
         }
 

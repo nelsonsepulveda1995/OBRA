@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Front.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -244,6 +247,12 @@
     <Compile Include="Forms\Users\Usuario\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Windows\Otros\DataBaseConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Windows\Otros\DataBaseConfig.Designer.cs">
+      <DependentUpon>DataBaseConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Windows\Otros\Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +261,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="Forms\Users\Admin\Acciones\Eliminar Usuario\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +352,9 @@
     <EmbeddedResource Include="Forms\Users\Usuario\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Windows\Otros\DataBaseConfig.resx">
+      <DependentUpon>DataBaseConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Windows\Otros\Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -431,10 +444,6 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{bb095c91-5b42-406a-99b6-a4e16fb97c85}</Project>
       <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{54E15090-6F21-4018-B315-E9D721BCC78E}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidad.csproj">
       <Project>{e7217af6-7bcb-4294-bf89-ff7c0146ec20}</Project>
