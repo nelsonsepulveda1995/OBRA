@@ -68,7 +68,7 @@ namespace Front.Forms.Users.Compras.Acciones
                    //revisar coherencia con bd y completar COMPRASDAL    
             }
 
-            compras.CrearFacturaCompra(factura,listadetalle,factura.GetidOrden(),2)
+            compras.CrearFacturaCompra(factura, listadetalle, factura.GetidOrden(), 2);
 
         }
     }
