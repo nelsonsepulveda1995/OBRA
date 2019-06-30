@@ -87,12 +87,10 @@ namespace DAL
         {
             DataTable respuesta = new DataTable();
             string consulta = $"SELECT [PRODUCTO].[DESCRIPCION],[DETALLEORDENCOMPRA].[CANT], [DETALLEORDENCOMPRA].[PRECIOXUNIDAD] FROM [DETALLEORDENCOMPRA]INNER JOIN [PRODUCTO] ON [DETALLEORDENCOMPRA].[ID_PROD]=[PRODUCTO].[ID_PROD] and DETALLEORDENCOMPRA.ID_OCOMPRA= {id} ORDER BY [DETALLEORDENCOMPRA].[ID_PROD];";
-
-
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }
-        public int GetUltimoIdFacturaCompra(int id)
+        public int GetUltimoIdFacturaCompra()
         {
             int respuesta;
             string consulta = "SELECT TOP(1) ID_FACTURACOMPRA FROM FACTURACOMPRA ORDER BY ID_FACTURACOMPRA DESC"; //REVISAR COHERENCIA CON LA BD

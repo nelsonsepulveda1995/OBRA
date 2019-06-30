@@ -22,21 +22,27 @@ namespace BLL
         }
 
 
-        public int CrearFacturaCompra(EFacturaCompra factura, List<EdetalleFacturaCompra> listadetalle, int OrdenCompra)
+        public int CrearFacturaCompra(EFacturaCompra factura, List<EdetalleFacturaCompra> listadetalle, int OrdenCompra,int estado) //Logica creada revisar parametros dentro de la funcion
         {
             int respuesta=comprasDAL.CrearFacturaCompra(factura) ;
             if (respuesta > 0)
             {
+                int idfacuturadecompra=comprasDAL.GetUltimoIdFacturaCompra();
                 foreach (EdetalleFacturaCompra detalle in listadetalle)
                 {
-                    int temp = comprasDAL.CrearDetalleFacturaCompra(detalle);
-                    if (temp == 0)
+                    detalle.SetIdFacturaC(idfacuturadecompra);
+                }
+
+                foreach (EdetalleFacturaCompra detalle in listadetalle)
+                {
+                int temp = comprasDAL.CrearDetalleFacturaCompra(detalle);
+                if (temp == 0)
                     {
                         return -3;
                     }
                 }
             }
-            comprasDAL.CambiarEstadoOrdenDeCompra(OrdenCompra, 23);//revisar que numero es "orden aceptada"
+            comprasDAL.CambiarEstadoOrdenDeCompra(OrdenCompra,estado);//revisar que numero es "orden aceptada"
             return 1; //1 significa que todo se escribio sin problemas
         }
         public DataTable VerCompras() => comprasDAL.GetFacturasCompras();

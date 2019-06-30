@@ -8,11 +8,16 @@ namespace Entidad
 {
     public class EdetalleFacturaCompra  //revisar coherenca con BD
     {
+        private int id_facturaC;
         private int id_prod;
         private decimal precio;
         private int cantidad;
 
         #region Setters
+        public void SetIdFacturaC(int id)
+        {
+            id_facturaC = id;
+        }
         public void SetIdDProd(int id)
         {
             id_prod = id;
@@ -28,6 +33,10 @@ namespace Entidad
         #endregion
 
         #region Getters
+        public int GetIdFacturaC()
+        {
+            return id_facturaC;
+        }
         public int GetIdProd()
         {
             return id_prod;
