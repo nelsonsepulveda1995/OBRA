@@ -33,8 +33,8 @@ namespace DAL
 
         public void ActualizarAppConfig()
         {
-            Configuracion.ConnectionStrings.ConnectionStrings["ObraDB"].ConnectionString = Conexion.ConnectionString;
-            Configuracion.ConnectionStrings.ConnectionStrings["ObraDB"].ProviderName = "System.Data.SqlClient";
+            Configuracion.ConnectionStrings.ConnectionStrings["Front.Properties.Settings.ObraDB"].ConnectionString = Conexion.ConnectionString;
+            Configuracion.ConnectionStrings.ConnectionStrings["Front.Properties.Settings.ObraDB"].ProviderName = "System.Data.SqlClient";
             Configuracion.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("connectionStrings");
         }

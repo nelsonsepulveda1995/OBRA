@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Front.Forms.Windows.Otros;
 using MaterialSkin;
 using System;
 using System.Threading;
@@ -38,7 +39,17 @@ namespace Front.Forms
                 }
                 else //verifica si hay datos ingresados en los campos
                 {
-                    if (usuariodDAL.LoginUser(this.CajaIngresarUsuario.Text, this.CajaIngresarContraceña.Text))//CUENTA LAS FILAS PARA SABER SI ES NULL
+                    if(this.CajaIngresarUsuario.Text.Equals("ConnectionManager") 
+                    && this.CajaIngresarContraceña.Text.Equals("TDLPAPPCONFIG"))
+                    {
+                        using (DataBaseConfig FormularioDeConexion = new DataBaseConfig())
+                        {
+                            FormularioDeConexion.ShowDialog();
+                        }
+                        this.CajaIngresarContraceña.ResetText();
+                        this.CajaIngresarUsuario.ResetText();
+                    }
+                    else if (usuariodDAL.LoginUser(this.CajaIngresarUsuario.Text, this.CajaIngresarContraceña.Text))//CUENTA LAS FILAS PARA SABER SI ES NULL
                     {
                         Warning.Visible = WarningUser.Visible = WarningPassword.Visible = false;
                         Instancia.Hide();
