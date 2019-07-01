@@ -48,6 +48,7 @@ namespace Front.Forms
                         }
                         this.CajaIngresarContraceña.ResetText();
                         this.CajaIngresarUsuario.ResetText();
+                        this.CajaIngresarUsuario.Focus();
                     }
                     else if (usuariodDAL.LoginUser(this.CajaIngresarUsuario.Text, this.CajaIngresarContraceña.Text))//CUENTA LAS FILAS PARA SABER SI ES NULL
                     {

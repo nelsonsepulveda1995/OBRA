@@ -33,6 +33,9 @@ namespace Front.Forms.Windows.Otros
             if (coneccion.EsConectable())
             {
                 coneccion.GuardarConfiguracion();
+                MessageBox.Show("La coneccion fue exitosa y los cambios se han guardado.",
+                                "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
