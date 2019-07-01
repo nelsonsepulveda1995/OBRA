@@ -1,6 +1,7 @@
 ﻿using Entidad;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace DAL
 {
@@ -15,15 +16,16 @@ namespace DAL
             string consulta;
 
             DataTable respuesta;
-            if (id_OCOMPRA != 0)
+            consulta= $"SELECT ID_OCOMPRA,NOMBREUSUARIO,ESTADO_OP.DESCRIPCION,FECHA,TOTAL FROM ORDENDECOMPRA INNER JOIN ESTADO_OP ON ORDENDECOMPRA.ID_ESTADO = ESTADO_OP.ID_ESTADO";
+            /*if (id_OCOMPRA != 0)
             {
-                consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA where id_OCOMPRA = {id_OCOMPRA};";
+                consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ID_ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA where id_OCOMPRA = {id_OCOMPRA};";
             }
             else
             {
-                consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
+                consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ID_ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
 
-            }
+            }*/
 
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
@@ -39,14 +41,22 @@ namespace DAL
 
         //SE puede usar para filtrar (normalmente se usa con: 0)	
         public DataTable GetProductosConPocoStock(int cantidad) => nuevaC.LeerPorComando($"SELECT * FROM PRODUCTO WHERE CANTIDAD<={cantidad}");
+
         public int GuardarOrdenCompra(EordenCompra Orden)
         {
-            int respuesta;
-            DateTime fec = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            string consulta = $"INSERT INTO ORDENDECOMPRA(NOMBREUSUARIO,FECHA,ESTADO)VALUES('{Orden.Getid_usuario()}','{Orden.GetFecha()}',{Orden.Getestado()})"; //error al pasar la fecha (12/5/2019 00:00:00) da error al leer los '0' 
-            respuesta = nuevaC.EscribirPorComando(consulta);
-            return respuesta;
-        }
+        // ED  -  2019 - 06 - 30
+        decimal amount = Orden.GetPtotal();
+        int amountI = Convert.ToInt32(amount);
+        string str = amountI.ToString();            
+                  		
+        int respuesta;
+        DateTime fec = Convert.ToDateTime(DateTime.Now.ToShortDateString());        
+        string consulta = $"INSERT INTO ORDENDECOMPRA(NOMBREUSUARIO,FECHA,ID_ESTADO,TOTAL)VALUES('{Orden.Getid_usuario()}','{Orden.GetFecha()}','{Orden.Getestado()}','{str}')";
+        respuesta = nuevaC.EscribirPorComando(consulta);
+        return respuesta;   
+        // ED  -  2019 - 06  - 30 END;
+        }               
+
         public int GuardarDetalleOrdenCompra(EDetalleOrdenCompra detalle)
         {
             int respuesta;

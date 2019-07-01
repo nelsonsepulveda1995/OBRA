@@ -30,6 +30,13 @@ namespace BLL
         public int CrearOrdenCompraBLL(EordenCompra Orden, List<EDetalleOrdenCompra> listadetalles)
         {
             int respuesta;
+            decimal pTotal = 0;
+            foreach (EDetalleOrdenCompra detalle in listadetalles)
+            {
+                decimal pParcial = (detalle.getPrecio() * detalle.getCantidad());
+                pTotal = pTotal + pParcial;
+            }
+            Orden.SetPtotal(pTotal);
             respuesta = deposito.GuardarOrdenCompra(Orden);
             if (respuesta == 0)
             {

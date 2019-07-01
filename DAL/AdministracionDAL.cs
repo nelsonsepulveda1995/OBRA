@@ -26,7 +26,9 @@ namespace DAL
         public DataTable ListarPuntosDeVenta()
         {
             DataTable retListaPV = new DataTable();
-            retListaPV = nuevaC.LeerPorStoreProcedure("spListarPuntoDeVenta");
+            //  ED  -  2019 06 30
+            retListaPV = nuevaC.LeerPorStoreProcedure("spListarEmpresas");
+            //  ED  -  2019 06 30 END
             return retListaPV;
         }
 

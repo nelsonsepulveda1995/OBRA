@@ -18,10 +18,12 @@ namespace BLL
         {
             int respuesta;
             decimal Ptotal = 0;
+            decimal Pparcial = 0;
 
             foreach (EDetalleFacturaVenta detalle in lista) //revisa la lista
             {
-                Ptotal += detalle.GetPrecio();
+                Pparcial += (detalle.GetPrecio() * detalle.GetCant());
+                Ptotal = Ptotal + Pparcial;
             }
             factura.setPtotal(Ptotal);
 

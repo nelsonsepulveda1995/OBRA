@@ -15,15 +15,16 @@ namespace DAL
             string consulta;
 
             DataTable respuesta;
-            if (id_OCOMPRA != 0)
+            consulta= $"SELECT ID_OCOMPRA,NOMBREUSUARIO,ESTADO_OP.DESCRIPCION,FECHA,TOTAL FROM ORDENDECOMPRA INNER JOIN ESTADO_OP ON ORDENDECOMPRA.ID_ESTADO = ESTADO_OP.ID_ESTADO";
+            /*if (id_OCOMPRA != 0)
             {
-                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA where id_OCOMPRA = {id_OCOMPRA};";
+                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ID_ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA where id_OCOMPRA = {id_OCOMPRA};";
             }
             else
             {
-                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; 
+                 consulta = $"select ID_OCOMPRA, NOMBREUSUARIO, FECHA, ID_ESTADO = CASE ESTADO  WHEN 1 THEN 'INICIADA'  WHEN 2 THEN 'AUTORIZADA'end  from ORDENDECOMPRA;"; 
 
-            }
+            }*/
 
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
@@ -34,7 +35,7 @@ namespace DAL
 
         public int CambiarEstadoOrdenDeCompra(int id,int estado)
         {
-            string consulta = $"update ORDENDECOMPRA set estado ={estado} where ID_OCOMPRA = {id};";
+            string consulta = $"update ORDENDECOMPRA set ID_ESTADO ={estado} where ID_OCOMPRA = {id};";
             return nuevaC.EscribirPorComando(consulta);
         }
 
@@ -79,7 +80,7 @@ namespace DAL
         public DataTable GetOrdenesporEstado(int estado)//1 sin aprobar 2 aprobado
         {
             DataTable respuesta = new DataTable();
-            string consulta = $"Select * FROM ORDENDECOMPRA WHERE ESTADO='{estado}'";
+            string consulta = $"Select * FROM ORDENDECOMPRA WHERE ID_ESTADO='{estado}'";
             respuesta = nuevaC.LeerPorComando(consulta);
             return respuesta;
         }

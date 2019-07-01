@@ -39,7 +39,8 @@ namespace Front.Forms.Users.Admin.Acciones
                         Nuevousuario.setContraseña(Contraseñaingresada.Text);
                         Nuevousuario.setIdUsuario(usuarioIngresado.Text);
                         Nuevousuario.setNombre(nombreIngresado.Text);
-                        Nuevousuario.setIdTipo(Convert.ToInt16(TipoSeleccionado.SelectedValue));
+                        Nuevousuario.setIdTipo(Convert.ToInt16(TipoSeleccionado.SelectedValue));                        
+
                         //  ED -  2019 06 22
                         Nuevousuario.setPuntoDeVenta(Convert.ToInt32(comboBox2.SelectedValue));
                         //  ED -  2019 06 22 END
@@ -55,7 +56,7 @@ namespace Front.Forms.Users.Admin.Acciones
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Los datos no son correctos : ");
+                        MessageBox.Show("Los datos no son correctos : " + ex.Message);
                     }                                                            
                 }
             }

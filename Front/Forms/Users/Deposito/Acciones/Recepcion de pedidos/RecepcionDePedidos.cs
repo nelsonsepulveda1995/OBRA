@@ -15,13 +15,7 @@ namespace Front.Forms.Users.Deposito.Acciones
             comboBox1.ValueMember = "ID_PROD";
             comboBox1.DisplayMember ="DESCRIPCION";
             comboBox1.DataSource = a.ListarTodosLosProdutos();
-
-        
-
-
-
-
-            
+                    
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, System.EventArgs e)

@@ -12,6 +12,7 @@ namespace Front.Forms.Users.Ventas.Acciones
         ProductoBLL producto = new ProductoBLL();
         List<EDetalleFacturaVenta> listadetalle = new List<EDetalleFacturaVenta>();
         UsuarioBLL usuario = new UsuarioBLL();
+        EFacturaVenta facturaV = new EFacturaVenta();
 
         public CrearVenta()
         {
@@ -34,9 +35,7 @@ namespace Front.Forms.Users.Ventas.Acciones
         }
 
         private void BotonConfirmar_Click(object sender, System.EventArgs e)
-        {
-            EFacturaVenta facturaV = new EFacturaVenta();
-            EDetalleFacturaVenta detalle = new EDetalleFacturaVenta();//falta cargar datos al detalle
+        {            
 
             facturaV.Setdni(Convert.ToInt32(cbclientes.SelectedValue));
             facturaV.Setnombreusuario(usuario.GetUsuarioName().Trim('@'));
@@ -73,11 +72,12 @@ namespace Front.Forms.Users.Ventas.Acciones
 
             eDetalleFacturaVenta.SetIdProd(Convert.ToInt16(cbproducto.SelectedValue)); //guarda el producto que agrego al carrito
             eDetalleFacturaVenta.SetCant(Convert.ToInt16(numupdow_cantidad.Value));
-            eDetalleFacturaVenta.SetPrecio(Convert.ToDecimal((producto.VerunProducto(eDetalleFacturaVenta.GetIdProd())).Rows[0]["PRECIO"]));
+            eDetalleFacturaVenta.SetPrecio(Convert.ToDecimal((producto.VerunProducto(eDetalleFacturaVenta.GetIdProd())).Rows[0]["PRECIO"]));           
 
             listadetalle.Add(eDetalleFacturaVenta);
 
             dataGridView1.Rows.Add(cbproducto.Text, eDetalleFacturaVenta.GetCant());
+                       
         }
 
         private void Vaciar_Click(object sender, EventArgs e)
