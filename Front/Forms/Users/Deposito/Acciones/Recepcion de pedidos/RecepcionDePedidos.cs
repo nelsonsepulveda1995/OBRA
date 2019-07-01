@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using BLL;
 
 namespace Front.Forms.Users.Deposito.Acciones
@@ -30,8 +31,9 @@ namespace Front.Forms.Users.Deposito.Acciones
 
         private void BotonRecepcionarPedido_Click(object sender, System.EventArgs e)
         {
-
-            id_Produc = comboBox1.SelectedIndex + 1;
+            //  ED  -  2019 07 01
+            id_Produc = Convert.ToInt32(comboBox1.SelectedValue);
+            //  ED  -  2019 07 01 END
             cantidadUpdated = numericUpDown1.Value;
             string [] result;
             string aux = cantidadUpdated.ToString();
