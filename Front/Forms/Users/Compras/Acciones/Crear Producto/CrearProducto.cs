@@ -18,31 +18,46 @@ namespace Front.Forms.Users.Compras.Acciones
 
         }
 
-        private void BotonFacturasDeCompras_Click(object sender, System.EventArgs e)
+        private void btnCrearPrducto_Click(object sender, System.EventArgs e)
         {
             Eproducto eproducto = new Eproducto();
-            eproducto.SetDescripcion(sl_descripcion.Text);
-            try
+            eproducto.SetDescripcion(sl_descripcion.Text);            
+            // ED  -  2019 07 01
+            Boolean existe = producto.CheckExist(eproducto.GetDescripcion());
+            if (existe)
             {
-                eproducto.SetPrecio(Convert.ToDecimal(tb_precio.Text));
-            }
-            catch
-            {
-                MessageBox.Show("Ingrese el precio nuevamente (utilize la ',' para separar decimales)");
-            }
-            eproducto.SetStock(Convert.ToInt32(nud_catidad.Value));
-
-            if (sl_descripcion.Text == " " || tb_precio.Text == " ")
-            {
-                ML_RESPUESTA.Text = "Campos incompletos";
-            }
+                ML_RESPUESTA.Text = "El producto ya existe";
+            }            
             else
             {
-                int respuesta = producto.CrearProductoBLL(eproducto);
-                if (respuesta < 0) { ML_RESPUESTA.Text = "Producto creado correctamete"; }
+                try
+                {                    
 
-                else { ML_RESPUESTA.Text = "Error al Crear el Producto"; }
+                    if (tb_precio.Text.Contains("."))
+                    {
+                        tb_precio.Text = tb_precio.Text.Replace(".", ",");
+                    }
+                    eproducto.SetPrecio(Convert.ToDecimal(tb_precio.Text));
+                }
+                catch
+                {
+                    MessageBox.Show("Ingrese el precio nuevamente (utilize la ',' para separar decimales)");
+                }
+                eproducto.SetStock(Convert.ToInt32(nud_catidad.Value));
+
+                if (sl_descripcion.Text == " " || tb_precio.Text == " ")
+                {
+                    ML_RESPUESTA.Text = "Campos incompletos";
+                }
+                else
+                {
+                    int respuesta = producto.CrearProductoBLL(eproducto);
+                    if (respuesta > 0) { ML_RESPUESTA.Text = "Producto creado correctamete"; }
+
+                    else { ML_RESPUESTA.Text = "Error al Crear el Producto"; }
+                }
             }
+            // ED  -  2019 07 01 END
         }
     }
 }

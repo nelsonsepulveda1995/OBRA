@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Entidad;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -16,17 +17,21 @@ namespace BLL
         }
 
 
-        public DataTable ConsultarEstadoOrdenDeCompraBLL(int id_OCOMPRA=0)
+        public DataTable ConsultarEstadoOrdenDeCompraBLL()
         {
-            return comprasDAL.ConsultarEstadoOrdenDeCompraDAL(id_OCOMPRA);
+            //  ED  -  2019 07 01
+            return comprasDAL.ConsultarEstadoOrdenDeCompraDAL();
+            //  ED  -  2019 07 01 END
         }
 
 
-        public int CrearFacturaCompra(EFacturaCompra factura, List<EdetalleFacturaCompra> listadetalle, int OrdenCompra,int estado) //Logica creada revisar parametros dentro de la funcion
+        public int CrearFacturaCompra(EFacturaCompra factura, List<EdetalleFacturaCompra> listadetalle) 
         {
-            int respuesta=comprasDAL.CrearFacturaCompra(factura) ;
+            //  ED  -  2019 07 01
+            int respuesta =comprasDAL.CrearFacturaCompra(factura) ;
             if (respuesta > 0)
             {
+                comprasDAL.CambiarEstadoOrdenDeCompra(factura.GetidOrden(), 2);
                 int idfacuturadecompra=comprasDAL.GetUltimoIdFacturaCompra();
                 foreach (EdetalleFacturaCompra detalle in listadetalle)
                 {
@@ -35,16 +40,39 @@ namespace BLL
 
                 foreach (EdetalleFacturaCompra detalle in listadetalle)
                 {
-                int temp = comprasDAL.CrearDetalleFacturaCompra(detalle);
-                if (temp == 0)
-                    {
-                        return -3;
-                    }
+                    int temp = comprasDAL.CrearDetalleFacturaCompra(detalle);
+                    if (temp == 0)
+                        {
+                            return -3;
+                        }
                 }
             }
-            comprasDAL.CambiarEstadoOrdenDeCompra(OrdenCompra,estado);//revisar que numero es "orden aceptada"
+            //  ED  -  2019 07 01            
             return 1; //1 significa que todo se escribio sin problemas
         }
+        //  ED  -  2019 07 01
+        public decimal TotalOC(int idOC)
+        {
+            return comprasDAL.TotalOC(idOC);
+        }
+        
+        public DataTable ListarDetalleFC(string idFacturaCompra)
+        {
+            return comprasDAL.ListarDetalleFC(idFacturaCompra);
+        }
+
+        
+        public bool CheckProveedor(Eproveedor proveedor)
+        {
+            return comprasDAL.CheckProveedor(proveedor);
+        }
+
+        public List<EdetalleFacturaCompra> ListDetalleOC(int idOC)
+        {
+            return comprasDAL.ListDetalleOC(idOC);
+        }
+        //  ED  -  2019 07 01 END
+
         public DataTable VerCompras() => comprasDAL.GetFacturasCompras();
 
         public DataTable VerDetalleCompras() => comprasDAL.GetDetalleFacturaCompra();
@@ -58,6 +86,7 @@ namespace BLL
             }
             return -1; //solo si el proveedor existe y tira un false en el if 
         }
+        
 
         public DataTable ListarProveedores() => comprasDAL.GetProveedores();
 
@@ -70,16 +99,7 @@ namespace BLL
         {
             return 1;
         }
-        public DataTable CrearRemito()           //COMPLETAR
-        {
-            DataTable respuesta = new DataTable();
-            return respuesta;
-        }
-        public DataTable CrearDetalleRemito()    //COMPLETAR
-        {
-            DataTable respuesta = new DataTable();
-            return respuesta;
-        }
+        
         public DataTable ListarOrdenesdeCompraporEstado(int estado) => comprasDAL.GetOrdenesporEstado(estado);
 
         public DataTable DetalledeUnaorden(int id) => comprasDAL.GetDetalledeUnaOrden(id);

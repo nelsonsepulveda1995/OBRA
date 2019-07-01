@@ -33,10 +33,7 @@
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.mlrespuesta = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,35 +101,15 @@
             this.dataGridView1.Location = new System.Drawing.Point(108, 146);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(438, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(576, 327);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(701, 146);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(50, 20);
-            this.numericUpDown1.TabIndex = 16;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(588, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Numero de Orden";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // EstadoOrdenDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.mlrespuesta);
             this.Controls.Add(this.BotonCancelar);
@@ -143,7 +120,6 @@
             this.Text = "GestionarProvedores";
             this.Load += new System.EventHandler(this.GestionarProvedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,7 +132,5 @@
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private MaterialSkin.Controls.MaterialLabel mlrespuesta;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
     }
 }

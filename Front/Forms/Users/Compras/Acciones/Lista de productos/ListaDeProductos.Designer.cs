@@ -60,6 +60,7 @@
             this.BotonListaDeProductos.TabIndex = 1;
             this.BotonListaDeProductos.Text = "LISTAR PRODUCTOS";
             this.BotonListaDeProductos.UseVisualStyleBackColor = true;
+            this.BotonListaDeProductos.Click += new System.EventHandler(this.BotonListaDeProductos_Click);
             // 
             // dglistaproductos
             // 

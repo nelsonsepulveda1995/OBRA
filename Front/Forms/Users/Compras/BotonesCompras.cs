@@ -24,11 +24,7 @@ namespace Front.Forms.Users.Compras
         {
             Main.AtenderAccion<Acciones.FacturasDeCompras>(this);
         }
-
-        private void BotonRemitos_Click(object sender, EventArgs e)
-        {
-            Main.AtenderAccion<Acciones.GestionarRemitos>(this);
-        }
+        
 
         private void BotonListaDeProductos_Click(object sender, EventArgs e)
         {

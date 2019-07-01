@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Entidad;
+using System;
 using System.Collections.Generic;
 using System.Data;
 namespace BLL
@@ -43,6 +44,13 @@ namespace BLL
             }
             return respuesta;
         }
+        //  ED  -  2019 07 01
+        public DataTable ListarDetalleFV(string idFacturaVenta)
+        {            
+            return venta.ListarDetalleFV(idFacturaVenta);
+        }
+        //  ED  -  2019 07 01 END
+
         public DataTable BuscarCliente()
         {
             DataTable x = new DataTable();

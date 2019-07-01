@@ -32,7 +32,6 @@
             this.BotonOrdenCompra = new MaterialSkin.Controls.MaterialFlatButton();
             this.BotonProvedores = new MaterialSkin.Controls.MaterialFlatButton();
             this.BotonListaDeProductos = new MaterialSkin.Controls.MaterialFlatButton();
-            this.BotonRemitos = new MaterialSkin.Controls.MaterialFlatButton();
             this.BotonEstadoOrdenDeCompra = new MaterialSkin.Controls.MaterialFlatButton();
             this.BotonCrearProducto = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
@@ -102,7 +101,7 @@
             this.BotonListaDeProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.BotonListaDeProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BotonListaDeProductos.Icon = null;
-            this.BotonListaDeProductos.Location = new System.Drawing.Point(0, 144);
+            this.BotonListaDeProductos.Location = new System.Drawing.Point(0, 108);
             this.BotonListaDeProductos.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BotonListaDeProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonListaDeProductos.Name = "BotonListaDeProductos";
@@ -113,25 +112,6 @@
             this.BotonListaDeProductos.UseVisualStyleBackColor = true;
             this.BotonListaDeProductos.Click += new System.EventHandler(this.BotonListaDeProductos_Click);
             // 
-            // BotonRemitos
-            // 
-            this.BotonRemitos.AutoSize = true;
-            this.BotonRemitos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BotonRemitos.Depth = 0;
-            this.BotonRemitos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BotonRemitos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonRemitos.Icon = null;
-            this.BotonRemitos.Location = new System.Drawing.Point(0, 108);
-            this.BotonRemitos.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.BotonRemitos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BotonRemitos.Name = "BotonRemitos";
-            this.BotonRemitos.Primary = false;
-            this.BotonRemitos.Size = new System.Drawing.Size(188, 36);
-            this.BotonRemitos.TabIndex = 15;
-            this.BotonRemitos.Text = "Remitos";
-            this.BotonRemitos.UseVisualStyleBackColor = true;
-            this.BotonRemitos.Click += new System.EventHandler(this.BotonRemitos_Click);
-            // 
             // BotonEstadoOrdenDeCompra
             // 
             this.BotonEstadoOrdenDeCompra.AutoSize = true;
@@ -140,7 +120,7 @@
             this.BotonEstadoOrdenDeCompra.Dock = System.Windows.Forms.DockStyle.Top;
             this.BotonEstadoOrdenDeCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BotonEstadoOrdenDeCompra.Icon = null;
-            this.BotonEstadoOrdenDeCompra.Location = new System.Drawing.Point(0, 216);
+            this.BotonEstadoOrdenDeCompra.Location = new System.Drawing.Point(0, 180);
             this.BotonEstadoOrdenDeCompra.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BotonEstadoOrdenDeCompra.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonEstadoOrdenDeCompra.Name = "BotonEstadoOrdenDeCompra";
@@ -159,7 +139,7 @@
             this.BotonCrearProducto.Dock = System.Windows.Forms.DockStyle.Top;
             this.BotonCrearProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BotonCrearProducto.Icon = null;
-            this.BotonCrearProducto.Location = new System.Drawing.Point(0, 180);
+            this.BotonCrearProducto.Location = new System.Drawing.Point(0, 144);
             this.BotonCrearProducto.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BotonCrearProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonCrearProducto.Name = "BotonCrearProducto";
@@ -179,7 +159,6 @@
             this.Controls.Add(this.BotonEstadoOrdenDeCompra);
             this.Controls.Add(this.BotonCrearProducto);
             this.Controls.Add(this.BotonListaDeProductos);
-            this.Controls.Add(this.BotonRemitos);
             this.Controls.Add(this.FacturasDeCompras);
             this.Controls.Add(this.BotonOrdenCompra);
             this.Controls.Add(this.BotonProvedores);
@@ -197,7 +176,6 @@
         private MaterialSkin.Controls.MaterialFlatButton BotonOrdenCompra;
         private MaterialSkin.Controls.MaterialFlatButton BotonProvedores;
         private MaterialSkin.Controls.MaterialFlatButton BotonListaDeProductos;
-        private MaterialSkin.Controls.MaterialFlatButton BotonRemitos;
         private MaterialSkin.Controls.MaterialFlatButton BotonEstadoOrdenDeCompra;
         private MaterialSkin.Controls.MaterialFlatButton BotonCrearProducto;
     }

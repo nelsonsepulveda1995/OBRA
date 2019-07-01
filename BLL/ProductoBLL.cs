@@ -1,5 +1,6 @@
 using DAL;
 using Entidad;
+using System;
 using System.Data;
 
 namespace BLL
@@ -19,15 +20,12 @@ namespace BLL
         }
         public bool VerificarStockProducto(int ID) => productoDAL.GetStockProducto(ID) > 0;
 
-
-        public DataTable ListarMediodePagoBLL()
+        // ED  -  2019 07 01
+        public bool CheckExist(string getDescripcion)
         {
-            // ED  -  2019 06 23
-            DataTable respuesta = new DataTable();
-            respuesta = VentasDAL.ListarMedioP();
-            return respuesta;
-            // ED  -  2019 06 23 END
+            return productoDAL.CheckExist(getDescripcion);
         }
+        // ED  -  2019 07 01 END
 
         public DataTable ListarMediodePago() => productoDAL.GetMediosdePago();
 

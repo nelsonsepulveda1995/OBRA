@@ -32,8 +32,12 @@
             this.BotonFacturasDeCompras = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvwDetalleFC = new System.Windows.Forms.DataGridView();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
+            this.btnDetalleFC = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwDetalleFC)).BeginInit();
             this.SuspendLayout();
             // 
             // Titulo
@@ -83,23 +87,57 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(152, 155);
+            this.dataGridView1.Location = new System.Drawing.Point(67, 82);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(533, 288);
+            this.dataGridView1.Size = new System.Drawing.Size(649, 162);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // gvwDetalleFC
+            // 
+            this.gvwDetalleFC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvwDetalleFC.Location = new System.Drawing.Point(67, 317);
+            this.gvwDetalleFC.Name = "gvwDetalleFC";
+            this.gvwDetalleFC.Size = new System.Drawing.Size(649, 159);
+            this.gvwDetalleFC.TabIndex = 5;
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(666, 155);
+            this.vScrollBar1.Location = new System.Drawing.Point(698, 82);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(18, 288);
+            this.vScrollBar1.Size = new System.Drawing.Size(18, 162);
             this.vScrollBar1.TabIndex = 4;
+            // 
+            // vScrollBar2
+            // 
+            this.vScrollBar2.Location = new System.Drawing.Point(698, 317);
+            this.vScrollBar2.Name = "vScrollBar2";
+            this.vScrollBar2.Size = new System.Drawing.Size(18, 159);
+            this.vScrollBar2.TabIndex = 6;
+            // 
+            // btnDetalleFC
+            // 
+            this.btnDetalleFC.AutoSize = true;
+            this.btnDetalleFC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDetalleFC.Depth = 0;
+            this.btnDetalleFC.Icon = null;
+            this.btnDetalleFC.Location = new System.Drawing.Point(610, 250);
+            this.btnDetalleFC.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDetalleFC.Name = "btnDetalleFC";
+            this.btnDetalleFC.Primary = true;
+            this.btnDetalleFC.Size = new System.Drawing.Size(106, 36);
+            this.btnDetalleFC.TabIndex = 7;
+            this.btnDetalleFC.Text = "VER DETALLE";
+            this.btnDetalleFC.UseVisualStyleBackColor = true;
+            this.btnDetalleFC.Click += new System.EventHandler(this.BtnDetalleFC_Click);
             // 
             // FacturasDeCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.btnDetalleFC);
+            this.Controls.Add(this.vScrollBar2);
+            this.Controls.Add(this.gvwDetalleFC);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BotonCancelar);
@@ -109,6 +147,7 @@
             this.Name = "FacturasDeCompras";
             this.Text = "FacturasDeCompras";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwDetalleFC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +159,9 @@
         private MaterialSkin.Controls.MaterialRaisedButton BotonFacturasDeCompras;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvwDetalleFC;
         private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.VScrollBar vScrollBar2;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDetalleFC;
     }
 }

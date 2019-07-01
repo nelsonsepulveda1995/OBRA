@@ -41,6 +41,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRechazarOC = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             this.BotonCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BotonCancelar.Depth = 0;
             this.BotonCancelar.Icon = null;
-            this.BotonCancelar.Location = new System.Drawing.Point(435, 482);
+            this.BotonCancelar.Location = new System.Drawing.Point(213, 482);
             this.BotonCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BotonCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.BotonCancelar.Name = "BotonCancelar";
@@ -196,11 +197,28 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // btnRechazarOC
+            // 
+            this.btnRechazarOC.AutoSize = true;
+            this.btnRechazarOC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRechazarOC.Depth = 0;
+            this.btnRechazarOC.Icon = null;
+            this.btnRechazarOC.Location = new System.Drawing.Point(313, 482);
+            this.btnRechazarOC.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRechazarOC.Name = "btnRechazarOC";
+            this.btnRechazarOC.Primary = true;
+            this.btnRechazarOC.Size = new System.Drawing.Size(220, 36);
+            this.btnRechazarOC.TabIndex = 13;
+            this.btnRechazarOC.Text = "Rechazar Orden de Compra";
+            this.btnRechazarOC.UseVisualStyleBackColor = true;
+            this.btnRechazarOC.Click += new System.EventHandler(this.BtnRechazarOC_Click);
+            // 
             // OrdenesDeCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
+            this.Controls.Add(this.btnRechazarOC);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.cb_listprovee);
@@ -236,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRechazarOC;
     }
 }
