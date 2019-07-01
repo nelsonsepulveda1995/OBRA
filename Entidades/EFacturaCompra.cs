@@ -11,8 +11,23 @@ namespace Entidad
         private string fecha;
         private int id_Orden;
         private int id_prov;
+        private string nombreusuario;
+        private int mediodepago;
+        private decimal total;
 
         #region Setter
+        public void Settotal(decimal _total)
+        {
+            total = _total;
+        }
+        public void Setmediodepago(int medio)
+        {
+            mediodepago = medio;
+        }
+        public void SetnombreUsuario(string nombre)
+        {
+            nombreusuario = nombre;
+        }
         public void SetFecha(string _f)
         {
             fecha=_f;
@@ -28,6 +43,18 @@ namespace Entidad
         #endregion
 
         #region Getters
+        public string Getnombreusuario()
+        {
+            return nombreusuario;
+        }
+        public int Getmediodepago()
+        {
+            return mediodepago;
+        }
+        public decimal Gettotal()
+        {
+            return total;
+        }
         public string Getfecha()
         {
             return fecha;
