@@ -24,5 +24,13 @@ namespace Front.Forms.Users.Compras.Acciones
             tabla = productos.ListarProductos();
             dglistaproductos.DataSource = tabla;
         }
+        //  ED  -  2019 07 01
+        private void BotonListaDeProductos_Click(object sender, System.EventArgs e)
+        {
+            DataTable tabla = new DataTable();
+            tabla = productos.ListarProductos();
+            dglistaproductos.DataSource = tabla;
+        }
+        //  ED  -  2019 07 01 END
     }
 }

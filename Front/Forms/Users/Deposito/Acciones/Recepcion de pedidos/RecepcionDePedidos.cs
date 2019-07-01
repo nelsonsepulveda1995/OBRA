@@ -31,17 +31,11 @@ namespace Front.Forms.Users.Deposito.Acciones
         private void BotonRecepcionarPedido_Click(object sender, System.EventArgs e)
         {
 
-
             id_Produc = comboBox1.SelectedIndex + 1;
             cantidadUpdated = numericUpDown1.Value;
             string [] result;
             string aux = cantidadUpdated.ToString();
             result = aux.Split(',');
-
-
-
-
-
 
             if (result.Length == 1)
             {
@@ -54,31 +48,14 @@ namespace Front.Forms.Users.Deposito.Acciones
                 else
                 {
                     MessageBox.Show("Error Al actualizar.");
-
                     numericUpDown1.ResetText();
-
                 }
-
             }
             else
             {
                 numericUpDown1.ResetText();
-
                 MessageBox.Show("Solo se permiten numeros enteros");
-
             }
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }

@@ -27,7 +27,9 @@ namespace Front.Forms.Users.Compras.Acciones
                 proveedor.setcorreo(mlcorreo.Text);
                 try
                 {
-                    proveedor.setcuit(Convert.ToInt32(mlcuit.Text)); //SI SE INGRESAN LETRAS ERROR PASA A SER 1
+                    //  ED  -  2019 07 01
+                    proveedor.setcuit(mlcuit.Text); //SI SE INGRESAN LETRAS ERROR PASA A SER 1
+                    //  ED  -  2019 07 01 END
                 }
                 catch
                 {
@@ -41,15 +43,26 @@ namespace Front.Forms.Users.Compras.Acciones
                 int respuesta;
                 if (error == 0)
                 {
-                    respuesta = compras.CrearProveedor(proveedor);
-                    if (respuesta > 0)
+                    //  ED  -  2019 07 01
+                    Boolean existe;
+                    existe = compras.CheckProveedor(proveedor);
+                    if (!existe)
                     {
-                        mlrespuesta.Text = "Proveedor Creado Exitosamente";
+                        respuesta = compras.CrearProveedor(proveedor);
+                        if (respuesta > 0)
+                        {
+                            mlrespuesta.Text = "Proveedor Creado Exitosamente";
+                        }
+                        else
+                        {
+                            mlrespuesta.Text = "Error Intente crearlo nuevamente";
+                        }
                     }
                     else
                     {
-                        mlrespuesta.Text = "Error Intente crearlo nuevamente";
+                        mlrespuesta.Text = "El proveedor ya existe";
                     }
+                    //  ED  -  2019 07 01 END
                 }
             }
         }

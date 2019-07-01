@@ -13,7 +13,9 @@ namespace DAL
         //  ED  -  2019 06 30
         public DataTable ListarFacturasVentas() => nuevaC.LeerPorComando("SELECT [ID_FACTURAVENTA],[MEDIODEPAGO].[DESCRIPCION],[DNI],[NOMBREUSUARIO],[FECHA],[PRECIO_TOTAL] FROM [FACTURAVENTA] INNER JOIN [MEDIODEPAGO] ON [FACTURAVENTA].[ID_MEDIOP] = [MEDIODEPAGO].[ID_MEDIOP]");
         //  ED  -  2019 06 30 END
-        public DataTable ListarDetalleVenta() => nuevaC.LeerPorComando("select* from DETALLEFACTURAVENTA");
+        //  ED  -  2019 07 01
+        public DataTable ListarDetalleFV(string idFacturaVenta) => nuevaC.LeerPorComando($"SELECT [ID_DETALLEFV],[ID_FACTURAVENTA],[PRODUCTO].[DESCRIPCION],[CANT],[PRECIOXUNUDAD] FROM [Corralon].[dbo].[DETALLEFACTURAVENTA] INNER JOIN [Corralon].[dbo].[PRODUCTO] ON [DETALLEFACTURAVENTA].[ID_PROD] = [PRODUCTO].[ID_PROD] AND ID_FACTURAVENTA = {idFacturaVenta}");
+        //  ED  -  2019 07 01
 
         public int GuardarCliente(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
         {
@@ -61,7 +63,7 @@ namespace DAL
         {
             int respuesta;
             string consulta = $"INSERT INTO DETALLEFACTURAVENTA (ID_FACTURAVENTA,ID_PROD,CANT,PRECIOXUNUDAD)" +
-                              $"VALUES({detalle.GetIdFacturaCompra()},{detalle.GetIdProd()},{detalle.GetCant()},CONVERT(decimal,{detalle.GetPrecio()}))";            
+                              $"VALUES({detalle.GetIdFacturaVenta()},{detalle.GetIdProd()},{detalle.GetCant()},CONVERT(decimal,{detalle.GetPrecio()}))";            
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
 
@@ -71,10 +73,12 @@ namespace DAL
         {
             int respuesta;
             DataTable temp = new DataTable();
-            string consulta = "SELECT TOP(1) ID_FACTURAVENTA FROM FACTURAVENTA ORDER BY ID_FACTURAVENTA DESC";
-            temp = nuevaC.LeerPorComando(consulta);
-            if (temp.Rows.Count<0) {
-                respuesta =Convert.ToInt32(temp.Rows[0]["ID_FACTURAVENTA"]);
+            //  ED  -  2019 07 01
+            string consulta = "SELECT TOP(1) ID_FACTURAVENTA FROM [Corralon].[dbo].[FACTURAVENTA] ORDER BY ID_FACTURAVENTA DESC";
+            temp = nuevaC.LeerPorComando(consulta);            
+            if (temp.Rows.Count>0) {
+            //  ED  -  2019 07 01 END
+                respuesta = Convert.ToInt32(temp.Rows[0]["ID_FACTURAVENTA"]);
                 return respuesta;
             }
             else { return 1; }

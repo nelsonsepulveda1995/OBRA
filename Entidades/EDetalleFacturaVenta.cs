@@ -14,11 +14,12 @@ namespace Entidad
         private decimal precio;
 
         #region setters
-
+        //  ED  -  2019 07 01
         public void SetIdFacturaVenta(int idfactura)
         {
             id_Facturaventa=idfactura;
         }
+        //  ED  -  2019 07 01 END
         public void SetIdProd(int prod)
         {
             id_prod=prod;
@@ -35,7 +36,7 @@ namespace Entidad
         #endregion
 
         #region Getters
-        public int GetIdFacturaCompra()
+        public int GetIdFacturaVenta()
         {
             return id_Facturaventa;
         }

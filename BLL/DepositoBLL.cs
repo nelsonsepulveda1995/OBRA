@@ -8,24 +8,13 @@ namespace BLL
     public class DepositoBLL
     {
         readonly DepositoDAL deposito = new DepositoDAL();
-        readonly ProductoDAL producto = new ProductoDAL();
-
-        public DataTable ConsultarEstadoOrdenDeCompraBLL(int id_OCOMPRA= 0)
-        {
-            return deposito.ConsultarEstadoOrdenDeCompraDAL(id_OCOMPRA);
-        }
-
+        readonly ProductoDAL producto = new ProductoDAL();        
 
         public int UpdateStockBLL(int ID, decimal dato) => deposito.ModficarStock(ID, dato);
 		
-		public DataTable ListarProductosconPocoStock(int cantidad) => deposito.GetProductosConPocoStock(cantidad);
+		public DataTable ListarProductosconPocoStock(int cantidad) => producto.GetProductosConPocoStock(cantidad);
 
         public DataTable ListarTodosLosProdutos() => producto.GetListaProductos();
-
-        public DataTable ListarProductosConStockMenorAZero(int StockMenorA)
-        {
-            return deposito.GetProductosConPocoStock(StockMenorA);
-        }
 
         public int CrearOrdenCompraBLL(EordenCompra Orden, List<EDetalleOrdenCompra> listadetalles)
         {
@@ -54,7 +43,7 @@ namespace BLL
             return respuesta;
         }
 
-        public int CrearDetalleOrdenCompra(EDetalleOrdenCompra detalle)
+        private int CrearDetalleOrdenCompra(EDetalleOrdenCompra detalle)
         {
             int respuesta;
             respuesta = deposito.GuardarDetalleOrdenCompra(detalle);

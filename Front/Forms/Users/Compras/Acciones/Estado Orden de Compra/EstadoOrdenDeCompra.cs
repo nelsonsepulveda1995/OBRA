@@ -16,8 +16,9 @@ namespace Front.Forms.Users.Compras.Acciones
         private void BotonGestionarProvedores_Click(object sender, System.EventArgs e)
         {
 
-            
-            dataGridView1.DataSource = compras.ConsultarEstadoOrdenDeCompraBLL(Convert.ToInt32(numericUpDown1.Value));
+            //  ED  -  2019 07 01
+            dataGridView1.DataSource = compras.ConsultarEstadoOrdenDeCompraBLL();
+            //  ED  -  2019 07 01 END
         }
 
         private void GestionarProvedores_Load(object sender, EventArgs e)

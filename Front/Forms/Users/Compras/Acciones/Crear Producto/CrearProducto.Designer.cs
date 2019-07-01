@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Titulo = new System.Windows.Forms.Label();
-            this.BotonFacturasDeCompras = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCrearPrducto = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.sl_descripcion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -53,21 +53,21 @@
             this.Titulo.TabIndex = 0;
             this.Titulo.Text = "CREAR PRODUCTO";
             // 
-            // BotonFacturasDeCompras
+            // btnCrearPrducto
             // 
-            this.BotonFacturasDeCompras.AutoSize = true;
-            this.BotonFacturasDeCompras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BotonFacturasDeCompras.Depth = 0;
-            this.BotonFacturasDeCompras.Icon = null;
-            this.BotonFacturasDeCompras.Location = new System.Drawing.Point(546, 482);
-            this.BotonFacturasDeCompras.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BotonFacturasDeCompras.Name = "BotonFacturasDeCompras";
-            this.BotonFacturasDeCompras.Primary = true;
-            this.BotonFacturasDeCompras.Size = new System.Drawing.Size(139, 36);
-            this.BotonFacturasDeCompras.TabIndex = 1;
-            this.BotonFacturasDeCompras.Text = "Crear pRODUCTO";
-            this.BotonFacturasDeCompras.UseVisualStyleBackColor = true;
-            this.BotonFacturasDeCompras.Click += new System.EventHandler(this.BotonFacturasDeCompras_Click);
+            this.btnCrearPrducto.AutoSize = true;
+            this.btnCrearPrducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCrearPrducto.Depth = 0;
+            this.btnCrearPrducto.Icon = null;
+            this.btnCrearPrducto.Location = new System.Drawing.Point(546, 482);
+            this.btnCrearPrducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCrearPrducto.Name = "btnCrearPrducto";
+            this.btnCrearPrducto.Primary = true;
+            this.btnCrearPrducto.Size = new System.Drawing.Size(139, 36);
+            this.btnCrearPrducto.TabIndex = 1;
+            this.btnCrearPrducto.Text = "Crear pRODUCTO";
+            this.btnCrearPrducto.UseVisualStyleBackColor = true;
+            this.btnCrearPrducto.Click += new System.EventHandler(this.btnCrearPrducto_Click);
             // 
             // BotonCancelar
             // 
@@ -186,7 +186,7 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.sl_descripcion);
             this.Controls.Add(this.BotonCancelar);
-            this.Controls.Add(this.BotonFacturasDeCompras);
+            this.Controls.Add(this.btnCrearPrducto);
             this.Controls.Add(this.Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrearProducto";
@@ -201,7 +201,7 @@
         #endregion
 
         private System.Windows.Forms.Label Titulo;
-        private MaterialSkin.Controls.MaterialRaisedButton BotonFacturasDeCompras;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCrearPrducto;
         private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private MaterialSkin.Controls.MaterialSingleLineTextField sl_descripcion;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;

@@ -33,14 +33,14 @@ namespace DAL
 
 		public int ModficarStock(int id, decimal StockModify)
         {
-            string consulta = $"UPDATE PRODUCTO SET CANTIDAD = {StockModify} WHERE  ID_PROD={id}";
+            //  ED  -  2019 07 01
+            string consulta = $"UPDATE Corralon.dbo.PRODUCTO SET CANTIDAD = CANTIDAD + {StockModify} WHERE ID_PROD = {id}";
+            //  ED  -  2019 07 01 END
             return nuevaC.EscribirPorComando(consulta);      
         }
 
         public DataTable ListAllProducts() => nuevaC.LeerPorComando($"SELECT * FROM PRODUCTO");
-
-        //SE puede usar para filtrar (normalmente se usa con: 0)	
-        public DataTable GetProductosConPocoStock(int cantidad) => nuevaC.LeerPorComando($"SELECT * FROM PRODUCTO WHERE CANTIDAD<={cantidad}");
+                
 
         public int GuardarOrdenCompra(EordenCompra Orden)
         {

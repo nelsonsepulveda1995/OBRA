@@ -3,7 +3,9 @@
     public class Eproveedor
     {
         private int id_proveedor;
-        private int cuit;
+        // ED  -  2019 07 01
+        private string cuit;
+        // ED  -  2019 07 01 END
         private string nombre;
         private string direccion;
         private int telefono;
@@ -15,7 +17,7 @@
 
             return this.id_proveedor;
         }
-        public int getcuit()
+        public string getcuit()
         {
             return this.cuit;
         }
@@ -42,7 +44,7 @@
         {
             id_proveedor = id;
         }
-        public void setcuit(int _cuit)
+        public void setcuit(string _cuit)
         {
             cuit = _cuit;
         }
