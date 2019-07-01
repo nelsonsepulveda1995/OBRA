@@ -12,8 +12,19 @@ namespace Entidad
         private string id_usuario;
         private string Fecha;
         private int estado;
+        private decimal Ptotal;
 
         #region Getters
+        // ED - 2019 06 30
+        public decimal GetPtotal()
+        {
+            return Ptotal;
+        }
+        public void SetPtotal(decimal _Ptotal)
+        {
+            Ptotal = _Ptotal;
+        }
+        // ED - 2019 06 30 END
         public int GetIdOrdenCompra()
         {
             return OrdenCompra;

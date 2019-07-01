@@ -10,7 +10,9 @@ namespace DAL
         readonly Conexion nuevaC = new Conexion(); //llamar a esta instancia para la conexion
 
         public DataTable ListarClientes() => nuevaC.LeerPorComando("select * from CLIENTE");
-        public DataTable ListarFacturasVentas() => nuevaC.LeerPorComando("select* from FACTURAVENTA");
+        //  ED  -  2019 06 30
+        public DataTable ListarFacturasVentas() => nuevaC.LeerPorComando("SELECT [ID_FACTURAVENTA],[MEDIODEPAGO].[DESCRIPCION],[DNI],[NOMBREUSUARIO],[FECHA],[PRECIO_TOTAL] FROM [FACTURAVENTA] INNER JOIN [MEDIODEPAGO] ON [FACTURAVENTA].[ID_MEDIOP] = [MEDIODEPAGO].[ID_MEDIOP]");
+        //  ED  -  2019 06 30 END
         public DataTable ListarDetalleVenta() => nuevaC.LeerPorComando("select* from DETALLEFACTURAVENTA");
 
         public int GuardarCliente(Ecliente cliente) //VERIFICA SI EXISTE Y SI NO LO CREA
@@ -44,11 +46,15 @@ namespace DAL
 	
 	    public int CrearventaDAL(EFacturaVenta factura)
         {
-            int respuesta;
-            //string consulta = $"insert into FACTURAVENTA (ID_MEDIOP,DNI,NOMBREUSUARIO,FECHA)VALUES({factura.Getmediop()},{factura.Getdni()},'{factura.Getnombreusuario()}',CONVERT(date,'{factura.GetFecha()}'))";
-            string consulta = $"insert into FACTURAVENTA (ID_MEDIOP,DNI,NOMBREUSUARIO,FECHA)VALUES('{factura.Getmediop()}','{factura.Getdni()}','{factura.Getnombreusuario()}','{factura.GetFecha()}')";
+            int respuesta;  
+            // ED  -  2019 06 30
+            decimal amount = factura.getPtotal();
+            int amountI = Convert.ToInt32(amount);
+            string str = amountI.ToString();   
+            string consulta = $"insert into FACTURAVENTA (ID_MEDIOP,DNI,NOMBREUSUARIO,FECHA,PRECIO_TOTAL)VALUES('{factura.Getmediop()}','{factura.Getdni()}','{factura.Getnombreusuario()}','{factura.GetFecha()}','{str}')";            
             respuesta = nuevaC.EscribirPorComando(consulta);
             return respuesta;
+            // ED  -  2019 06 30 END
             
         }
         public int CrearDetalledeVenta(EDetalleFacturaVenta detalle)
