@@ -22,8 +22,8 @@ namespace Front.Forms.Windows.Otros
             SelectorInstancia.Items.Add("(local)");
             SelectorInstancia.Items.Add(@".\SQLEXPRESS");
             SelectorInstancia.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
-            SelectorInstancia.SelectedIndex = 3;
-            OpcionUsaCredenciales.Enabled = true;
+            SelectorInstancia.SelectedIndex = 2;
+            this.OpcionUsaCredenciales_CheckStateChanged(sender, e);
         }
 
         private void BotonAceptar_Click(object sender, EventArgs e)
@@ -45,28 +45,29 @@ namespace Front.Forms.Windows.Otros
         private string CargarCadenaDeConeccion()
         {
             string StringConection =
-            $"Server={SelectorInstancia.SelectedItem.ToString()};" +
-            $"DataBase={CajaTextoDatabase.Text}; ";
+            $"Data Source={SelectorInstancia.SelectedItem.ToString()};" +
+            $"Initial Catalog={CajaTextoDatabase.Text};";
             if (OpcionUsaCredenciales.Enabled)
             {
-                return StringConection + 
-                "integrated security=true";
+                return StringConection +
+                "Integrated Security=True";
             }
             else
             {
                 return StringConection +
-                "integrated security=false" +
-                $"User ID={CajaTextoUserName.Text}; " +
+                "Integrated Security=False;" +
+                $"User ID={CajaTextoUserName.Text};" +
                 $"password={CajaTextoPassword.Text};";
             }
         }
 
-        private void OpcionUsaCredenciales_CheckedChanged(object sender, EventArgs e)
+        private void OpcionUsaCredenciales_CheckStateChanged(object sender, EventArgs e)
         {
-            LabelUserName.Enabled = OpcionUsaCredenciales.Enabled;
-            LabelPassword.Enabled = OpcionUsaCredenciales.Enabled;
-            CajaTextoUserName.Enabled = OpcionUsaCredenciales.Enabled;
-            CajaTextoPassword.Enabled = OpcionUsaCredenciales.Enabled;
+            Console.WriteLine("El valor del checbox ahora es: " + OpcionUsaCredenciales.Checked);
+            LabelUserName.Enabled = !OpcionUsaCredenciales.Checked;
+            LabelPassword.Enabled = !OpcionUsaCredenciales.Checked;
+            CajaTextoUserName.Enabled = !OpcionUsaCredenciales.Checked;
+            CajaTextoPassword.Enabled = !OpcionUsaCredenciales.Checked;
         }
     }
 }

@@ -77,7 +77,7 @@
             this.LabelUserName.Depth = 0;
             this.LabelUserName.Font = new System.Drawing.Font("Roboto", 11F);
             this.LabelUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LabelUserName.Location = new System.Drawing.Point(22, 275);
+            this.LabelUserName.Location = new System.Drawing.Point(22, 279);
             this.LabelUserName.MouseState = MaterialSkin.MouseState.HOVER;
             this.LabelUserName.Name = "LabelUserName";
             this.LabelUserName.Size = new System.Drawing.Size(85, 19);
@@ -91,7 +91,7 @@
             this.LabelPassword.Depth = 0;
             this.LabelPassword.Font = new System.Drawing.Font("Roboto", 11F);
             this.LabelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LabelPassword.Location = new System.Drawing.Point(22, 325);
+            this.LabelPassword.Location = new System.Drawing.Point(22, 329);
             this.LabelPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.LabelPassword.Name = "LabelPassword";
             this.LabelPassword.Size = new System.Drawing.Size(79, 19);
@@ -103,7 +103,7 @@
             this.CajaTextoUserName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CajaTextoUserName.Depth = 0;
             this.CajaTextoUserName.Hint = "";
-            this.CajaTextoUserName.Location = new System.Drawing.Point(114, 272);
+            this.CajaTextoUserName.Location = new System.Drawing.Point(114, 276);
             this.CajaTextoUserName.MaxLength = 32767;
             this.CajaTextoUserName.MouseState = MaterialSkin.MouseState.HOVER;
             this.CajaTextoUserName.Name = "CajaTextoUserName";
@@ -121,7 +121,7 @@
             this.CajaTextoPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CajaTextoPassword.Depth = 0;
             this.CajaTextoPassword.Hint = "";
-            this.CajaTextoPassword.Location = new System.Drawing.Point(114, 322);
+            this.CajaTextoPassword.Location = new System.Drawing.Point(114, 326);
             this.CajaTextoPassword.MaxLength = 32767;
             this.CajaTextoPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.CajaTextoPassword.Name = "CajaTextoPassword";
@@ -226,23 +226,23 @@
             this.OpcionUsaCredenciales.TabIndex = 12;
             this.OpcionUsaCredenciales.Text = "El servidor usa la seguridad integrada de windows";
             this.OpcionUsaCredenciales.UseVisualStyleBackColor = false;
-            this.OpcionUsaCredenciales.CheckedChanged += new System.EventHandler(this.OpcionUsaCredenciales_CheckedChanged);
+            this.OpcionUsaCredenciales.CheckStateChanged += new System.EventHandler(this.OpcionUsaCredenciales_CheckStateChanged);
             // 
             // DataBaseConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 462);
+            this.Controls.Add(this.CajaTextoPassword);
             this.Controls.Add(this.OpcionUsaCredenciales);
+            this.Controls.Add(this.LabelUserName);
+            this.Controls.Add(this.LabelPassword);
             this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.CajaTextoUserName);
             this.Controls.Add(this.materialFlatButton1);
             this.Controls.Add(this.BotonAceptar);
             this.Controls.Add(this.SelectorInstancia);
             this.Controls.Add(this.CajaTextoDatabase);
-            this.Controls.Add(this.CajaTextoPassword);
-            this.Controls.Add(this.CajaTextoUserName);
-            this.Controls.Add(this.LabelPassword);
-            this.Controls.Add(this.LabelUserName);
             this.Controls.Add(this.LabelDatabase);
             this.Controls.Add(this.LabelServer);
             this.Name = "DataBaseConfig";
