@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.BotonOrdenarCompras = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BotonCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.cb_listordenes = new System.Windows.Forms.ComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -37,8 +38,6 @@
             this.cb_listprovee = new System.Windows.Forms.ComboBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.cb_mediodepago = new System.Windows.Forms.ComboBox();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +71,22 @@
             this.BotonOrdenarCompras.Text = "Confirmar Orden de Compra";
             this.BotonOrdenarCompras.UseVisualStyleBackColor = true;
             this.BotonOrdenarCompras.Click += new System.EventHandler(this.BotonOrdenarCompras_Click);
+            // 
+            // BotonCancelar
+            // 
+            this.BotonCancelar.AutoSize = true;
+            this.BotonCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BotonCancelar.Depth = 0;
+            this.BotonCancelar.Icon = null;
+            this.BotonCancelar.Location = new System.Drawing.Point(435, 482);
+            this.BotonCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BotonCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BotonCancelar.Name = "BotonCancelar";
+            this.BotonCancelar.Primary = false;
+            this.BotonCancelar.Size = new System.Drawing.Size(91, 36);
+            this.BotonCancelar.TabIndex = 2;
+            this.BotonCancelar.Text = "Cancelar";
+            this.BotonCancelar.UseVisualStyleBackColor = true;
             // 
             // cb_listordenes
             // 
@@ -159,34 +174,11 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(346, 189);
             this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(59, 490);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(191, 19);
-            this.materialLabel4.TabIndex = 13;
-            this.materialLabel4.Text = "Seleccionar Medio de pago";
-            this.materialLabel4.Click += new System.EventHandler(this.MaterialLabel4_Click);
-            // 
-            // cb_mediodepago
-            // 
-            this.cb_mediodepago.FormattingEnabled = true;
-            this.cb_mediodepago.Location = new System.Drawing.Point(267, 488);
-            this.cb_mediodepago.Name = "cb_mediodepago";
-            this.cb_mediodepago.Size = new System.Drawing.Size(187, 21);
-            this.cb_mediodepago.TabIndex = 14;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "DESCRIPCION";
-            this.Column2.HeaderText = "Descripcion";
+            this.Column2.HeaderText = "Descripccion";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
@@ -209,8 +201,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 557);
-            this.Controls.Add(this.cb_mediodepago);
-            this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.cb_listprovee);
@@ -218,6 +208,7 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.cb_listordenes);
+            this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonOrdenarCompras);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -234,6 +225,7 @@
 
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton BotonOrdenarCompras;
+        private MaterialSkin.Controls.MaterialFlatButton BotonCancelar;
         private System.Windows.Forms.ComboBox cb_listordenes;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
@@ -241,8 +233,6 @@
         private System.Windows.Forms.ComboBox cb_listprovee;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.ComboBox cb_mediodepago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
